@@ -173,6 +173,7 @@ MIT License
 ## Developer Information
 
 - **Name**: Dante
+- **Company**: Dantelabs
 - **Email**: datapod.k@gmail.com
 - **Company Homepage**: https://dante-datalab.com
 - **YouTube**: https://youtube.com/@단테랩스
