@@ -7,10 +7,10 @@
       "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
       "typeVersion": 2,
       "position": [
-        704,
-        -1872
+        -400,
+        -1888
       ],
-      "id": "9bf92807-a54a-414a-b47c-d3866f579599",
+      "id": "d99ea56d-e974-4e69-a6c1-fbe2b837069e",
       "name": "MCP Server Trigger",
       "webhookId": "6bb43ca6-32e5-47f2-a9c9-6a519ca72a82"
     },
@@ -46,10 +46,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -224,
-        -1872
+        -320,
+        -1888
       ],
-      "id": "be3f286a-54a9-4ab2-8eac-2c00f150c6d6",
+      "id": "cfa1b094-5d92-4db1-9ab1-44949b18e8db",
       "name": "Create Rectangle"
     },
     {
@@ -84,10 +84,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -16,
-        -1872
+        -240,
+        -1888
       ],
-      "id": "323af1aa-edd9-450c-af9f-76601aad86ca",
+      "id": "ede44f51-3989-46bb-a957-581da783fd05",
       "name": "Create Frame"
     },
     {
@@ -120,10 +120,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        176,
-        -1872
+        -160,
+        -1888
       ],
-      "id": "8a20f976-1e5a-4d09-9128-684ac2bdcd5e",
+      "id": "67e953bd-5d54-48fa-bb82-c3806c7fb9c7",
       "name": "Create Text"
     },
     {
@@ -135,10 +135,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        384,
-        -1872
+        -80,
+        -1888
       ],
-      "id": "fa55dad8-4ca5-4458-93d2-0b530f3121d8",
+      "id": "aff72168-65b0-4f36-8dd8-f03169c0c10a",
       "name": "Get Document Info"
     },
     {
@@ -150,10 +150,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        576,
-        -1872
+        0,
+        -1888
       ],
-      "id": "7a3cc102-d474-4268-8661-195f934fa5c9",
+      "id": "dd72cbdb-bfd7-4038-87cb-a5dcc307de5b",
       "name": "Get Selection"
     },
     {
@@ -172,10 +172,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -224,
-        -1664
+        80,
+        -1680
       ],
-      "id": "4a1b9240-5ca7-4cca-9e59-ff50b4d447e0",
+      "id": "180d88b8-8821-4180-9a1d-1722de229c7d",
       "name": "Move Node"
     },
     {
@@ -194,10 +194,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -16,
-        -1664
+        160,
+        -1680
       ],
-      "id": "0f35d068-5eef-44fb-ab11-ec499da39793",
+      "id": "232c03de-a9e0-41ac-9227-c8522737c524",
       "name": "Resize Node"
     },
     {
@@ -214,10 +214,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        176,
-        -1664
+        240,
+        -1680
       ],
-      "id": "1bee49d7-9dfa-440d-b349-9ffd5ea80210",
+      "id": "124239f0-f734-4b7e-82b9-e723db19b4d7",
       "name": "Delete Node"
     },
     {
@@ -238,10 +238,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        384,
-        -1664
+        320,
+        -1680
       ],
-      "id": "357f0ff0-c771-4963-93ee-76e1d3e80c24",
+      "id": "89a6aa0f-5d37-47c7-994b-3fcb174281c2",
       "name": "Set Fill Color"
     },
     {
@@ -262,10 +262,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        576,
-        -1664
+        -400,
+        -1680
       ],
-      "id": "128470e9-373d-4845-bc91-f887004e54e0",
+      "id": "48803eae-4ed3-4d35-8d70-c9214c935311",
       "name": "Set Stroke Color"
     },
     {
@@ -282,10 +282,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -224,
-        -1472
+        -320,
+        -1488
       ],
-      "id": "141bbbea-a0d8-4189-8bc0-f9a3e61b585d",
+      "id": "bea83b13-4e23-4e0b-8681-57d365730108",
       "name": "Clone Node"
     },
     {
@@ -304,10 +304,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -16,
-        -1472
+        -240,
+        -1488
       ],
-      "id": "00c6f5f9-07a2-4e35-8db1-d03cf4fd03a0",
+      "id": "787c237c-1bd0-436c-b7b3-76ec4d07d103",
       "name": "Export Node as Image"
     },
     {
@@ -324,10 +324,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        176,
-        -1472
+        -160,
+        -1488
       ],
-      "id": "9f6a5ad6-7741-43ec-a146-e42108430f01",
+      "id": "f6b61f47-c8a7-4ff9-a0b8-74679fb0b372",
       "name": "Get Node Info"
     },
     {
@@ -344,10 +344,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        384,
-        -1472
+        -80,
+        -1488
       ],
-      "id": "bffa447a-1fce-48c0-b114-78a0251c4a50",
+      "id": "1bf390d8-3ae6-4841-966c-49957791ca9f",
       "name": "Set Text Content"
     },
     {
@@ -359,10 +359,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        576,
-        -1472
+        0,
+        -1488
       ],
-      "id": "d5952c62-9656-4be7-bf64-223d9589574e",
+      "id": "3df69d2e-ece0-4a82-a995-1fc6747cbd32",
       "name": "Get Styles"
     },
     {
@@ -374,10 +374,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -224,
-        -1264
+        80,
+        -1280
       ],
-      "id": "faee1240-8a56-404d-bdd1-5542e36638a7",
+      "id": "f32bba2d-f97a-4c92-9ec9-a15ccfa40727",
       "name": "Get Local Components"
     },
     {
@@ -397,10 +397,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -16,
-        -1264
+        160,
+        -1280
       ],
-      "id": "e42b36c6-7b54-4e50-8ddf-c5995f8f493d",
+      "id": "db0b34e1-4015-4387-a72f-e79dfb6a6e6e",
       "name": "Create Component Instance"
     },
     {
@@ -418,10 +418,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        176,
-        -1264
+        240,
+        -1280
       ],
-      "id": "515d4a92-148b-4d8a-9a3f-473bb3635cd0",
+      "id": "9e2e9014-bc59-4976-86c1-9ed3aca64c3b",
       "name": "Set Corner Radius"
     },
     {
@@ -438,10 +438,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        384,
-        -1264
+        320,
+        -1280
       ],
-      "id": "7c5c716e-1cd7-4c66-b7f1-162344665aa1",
+      "id": "ca41bbdb-2841-4c4c-9d61-3c6352a8c305",
       "name": "Scan Text Nodes"
     },
     {
@@ -459,10 +459,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        576,
-        -1264
+        -400,
+        -1280
       ],
-      "id": "cc79f37b-d3c1-4f12-b838-d5934b0f434d",
+      "id": "0eb4dd5e-3f0e-40b0-94ec-669bcb1a024e",
       "name": "Set Layout Mode"
     },
     {
@@ -473,10 +473,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -224,
-        -1072
+        -320,
+        -1088
       ],
-      "id": "398f6ba1-947a-41a6-ad4b-7e33e51e335b",
+      "id": "db2b6dcb-5f08-4036-a866-4ab69e11eb2d",
       "name": "Get Channels"
     },
     {
@@ -493,10 +493,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -16,
-        -1072
+        -240,
+        -1088
       ],
-      "id": "cfeb4c58-5fa3-41b3-8528-eb0d9219e562",
+      "id": "55fd2b91-4abc-4440-8974-4323797f2694",
       "name": "Get Nodes Info"
     },
     {
@@ -514,10 +514,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        176,
-        -1072
+        -160,
+        -1088
       ],
-      "id": "e5096d0b-6f22-4787-876f-cb2c63fec98a",
+      "id": "94b7b087-f0cb-426d-b05f-047232d6fbcf",
       "name": "Scan Nodes by Types"
     },
     {
@@ -534,10 +534,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        384,
-        -1072
+        -80,
+        -1088
       ],
-      "id": "d135cc56-3b9e-4526-badd-fccba0e99e8b",
+      "id": "2168e289-2c42-4e3c-906e-0d0c2744c1d2",
       "name": "Set Multiple Text Contents"
     },
     {
@@ -554,10 +554,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        576,
-        -1072
+        0,
+        -1088
       ],
-      "id": "73be5506-5e40-4e92-82a5-19e6591e57a5",
+      "id": "158d7fe4-d929-4914-b7e2-ef30d92db8d8",
       "name": "Delete Multiple Nodes"
     },
     {
@@ -578,10 +578,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -224,
-        -864
+        80,
+        -880
       ],
-      "id": "79d96300-dda7-4de9-a6c2-4614f07fae83",
+      "id": "4ce145e1-aeac-4a76-9adc-f51e116c1d53",
       "name": "Set Padding"
     },
     {
@@ -598,10 +598,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -16,
-        -864
+        160,
+        -880
       ],
-      "id": "eb95914b-2b75-41b4-88bd-2b8d8a148ac3",
+      "id": "460b0111-5f6b-4687-8b9d-9d859e91db1f",
       "name": "Set Axis Align"
     },
     {
@@ -618,10 +618,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        176,
-        -864
+        240,
+        -880
       ],
-      "id": "a6aae534-3999-492e-92d2-3f66fcfce452",
+      "id": "25279fe9-05aa-413e-b868-9533697f076d",
       "name": "Set Layout Sizing"
     },
     {
@@ -639,10 +639,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        384,
-        -864
+        320,
+        -880
       ],
-      "id": "45a88940-cb3b-4fb5-9934-e6d4ec758280",
+      "id": "55bcc4aa-053c-4b16-9d35-f65c97ff6f58",
       "name": "Set Item Spacing"
     },
     {
@@ -659,10 +659,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        576,
-        -864
+        -400,
+        -880
       ],
-      "id": "d611d77a-1b86-4570-8e5c-37f5e7da05d9",
+      "id": "899964f1-6789-495f-af27-52752032c275",
       "name": "Get Annotations"
     },
     {
@@ -680,10 +680,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -224,
-        -672
+        -320,
+        -688
       ],
-      "id": "2b44e3b0-5aa3-4091-8b50-e2b1e3619843",
+      "id": "190af2ef-d409-486c-ab45-d7e416298880",
       "name": "Set Annotation"
     },
     {
@@ -700,10 +700,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -16,
-        -672
+        -240,
+        -688
       ],
-      "id": "26148f89-2103-469b-9c99-514c13b0d2e4",
+      "id": "48babaf8-7f64-46dd-b058-970873875286",
       "name": "Get Instance Overrides"
     },
     {
@@ -720,10 +720,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        176,
-        -672
+        -160,
+        -688
       ],
-      "id": "3aec7bd3-4adf-4aad-be7a-b8f0bc29445c",
+      "id": "1539f4d1-67da-408f-a571-cebef47b6d70",
       "name": "Set Instance Overrides"
     },
     {
@@ -739,10 +739,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        384,
-        -672
+        -80,
+        -688
       ],
-      "id": "6239315a-2b7b-4079-94e1-0b0879558dc2",
+      "id": "9f6ed6ee-30b3-4c2f-bfb1-ac21ce110d34",
       "name": "Get Reactions"
     },
     {
@@ -759,10 +759,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        576,
-        -672
+        0,
+        -688
       ],
-      "id": "a55ae5f1-1e4a-409a-8e80-17b7c0ef0a64",
+      "id": "e4405ad2-aa45-451a-bf87-a7a1301e5121",
       "name": "Set Default Connector"
     },
     {
@@ -779,10 +779,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -224,
-        -464
+        80,
+        -480
       ],
-      "id": "c4de3414-6eea-4474-928a-470331f505ae",
+      "id": "3dfc1319-bd8b-4818-b3e3-3dc642e77bfe",
       "name": "Create Connections"
     },
     {
@@ -805,10 +805,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -16,
-        -464
+        160,
+        -480
       ],
-      "id": "c791194a-6e9e-434d-b41a-616fed004603",
+      "id": "ec15c3c7-1cb5-47b2-8f4d-21305bc674c3",
       "name": "Create Image from URL"
     },
     {
@@ -833,10 +833,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        176,
-        -464
+        240,
+        -480
       ],
-      "id": "5a3c21d0-4a1c-41ad-a020-9cd06eac4098",
+      "id": "6110ec38-1b58-423c-aacc-0cf96fb809e0",
       "name": "Create Slider"
     },
     {
@@ -873,10 +873,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        384,
-        -464
+        320,
+        -480
       ],
-      "id": "d8992db1-65b8-411a-913f-2dcd7653cabb",
+      "id": "ec35e32d-92b3-4a33-a004-79f49286a3dd",
       "name": "Create Ellipse"
     },
     {
@@ -894,10 +894,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        576,
-        -464
+        -400,
+        -480
       ],
-      "id": "3c5a1e56-7556-407e-b5d1-25d89a45503b",
+      "id": "203a3505-7a74-4b79-a397-cc3f80be29ed",
       "name": "Create Vector Path"
     },
     {
@@ -921,10 +921,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -224,
-        -256
+        -320,
+        -272
       ],
-      "id": "af15418d-df8a-4637-9e31-30127784cb66",
+      "id": "65c9c6ea-6ec8-45fc-9282-228b416e7392",
       "name": "Create Button"
     },
     {
@@ -943,10 +943,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -16,
-        -256
+        -240,
+        -272
       ],
-      "id": "6c33c369-06e8-4ea9-9dd3-3fca0aeeb18a",
+      "id": "b6301eda-6eb1-4960-b0bd-9f276e09abc1",
       "name": "Create Boolean Operation"
     },
     {
@@ -965,10 +965,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        176,
-        -256
+        -160,
+        -272
       ],
-      "id": "4480df66-9ecf-4059-a7a2-94166f915c37",
+      "id": "75293066-6fc6-442d-bbb3-d829e4844a7e",
       "name": "Create Icon from SVG"
     },
     {
@@ -992,10 +992,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        384,
-        -256
+        -80,
+        -272
       ],
-      "id": "cbaf581e-c234-436e-95b4-9087397be8c5",
+      "id": "f4f89e57-e30b-4a02-a5dd-03e892b63947",
       "name": "Create Input Field"
     },
     {
@@ -1019,10 +1019,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        576,
-        -256
+        0,
+        -272
       ],
-      "id": "0a9cbb66-2bd4-4b11-bbfb-c78544e18b4c",
+      "id": "3d8a43fc-7232-4d76-b68f-899b7e71ce2c",
       "name": "Create Checkbox"
     },
     {
@@ -1046,10 +1046,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -224,
-        -64
+        80,
+        -80
       ],
-      "id": "ffb5987a-9841-4ee3-99cc-35229a30fb16",
+      "id": "72d3d855-9a33-4585-a6fc-b2ac2950190c",
       "name": "Create Toggle"
     },
     {
@@ -1070,10 +1070,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -16,
-        -64
+        160,
+        -80
       ],
-      "id": "aafdb08d-eec0-4b51-93da-505e3e511d83",
+      "id": "faf5ad9b-4b6c-47e5-80a8-77c2dd7ae5f4",
       "name": "Create Symbol"
     },
     {
@@ -1097,10 +1097,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        176,
-        -64
+        240,
+        -80
       ],
-      "id": "da0781bd-c9b9-4188-b6d9-8fc0907fd1c3",
+      "id": "fcf94cdf-e40a-40bc-b05f-e088fd91d826",
       "name": "Create Avatar"
     },
     {
@@ -1125,10 +1125,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        384,
-        -64
+        320,
+        -80
       ],
-      "id": "7dc16117-3fcf-4edd-812c-7ba649f0b1bb",
+      "id": "949580c8-2fe3-4e98-ac5d-b3c1dd8a3371",
       "name": "Create Progress Bar"
     },
     {
@@ -1140,10 +1140,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        576,
-        -64
+        -400,
+        -80
       ],
-      "id": "88f887b0-9fa1-4175-95fa-b74919d9f07a",
+      "id": "434cb347-d486-48e7-9b50-8c6c3b896d94",
       "name": "Create SVG to Vector"
     },
     {
@@ -1155,10 +1155,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -224,
+        -320,
         160
       ],
-      "id": "ae63cb06-b12a-4356-9854-0e186ad3ecb6",
+      "id": "a0534b66-c54d-420f-8a82-549cc52a0c05",
       "name": "Execute Custom Command"
     },
     {
@@ -1168,10 +1168,10 @@
       "type": "CUSTOM.figmationStrategyTool",
       "typeVersion": 1,
       "position": [
-        -16,
+        -240,
         368
       ],
-      "id": "d510a20f-eb28-4f1d-81f1-f96f16973ead",
+      "id": "382d8104-8489-4b5b-a826-c7cfe8477eba",
       "name": "Reaction to Connector Strategy"
     },
     {
@@ -1182,10 +1182,10 @@
       "type": "CUSTOM.figmationStrategyTool",
       "typeVersion": 1,
       "position": [
-        176,
+        -160,
         368
       ],
-      "id": "82322078-fcdb-442a-9e42-bfe333c99d44",
+      "id": "e8389078-8386-41cd-b789-99be6a6814e3",
       "name": "Design System Strategy"
     },
     {
@@ -1196,10 +1196,10 @@
       "type": "CUSTOM.figmationStrategyTool",
       "typeVersion": 1,
       "position": [
-        384,
+        -80,
         368
       ],
-      "id": "d2cc32ed-958a-47a6-9bc9-41038e997afa",
+      "id": "413f8646-0dcf-42cc-abe6-35fd50ca9ab5",
       "name": "Component Library Strategy"
     },
     {
@@ -1210,10 +1210,10 @@
       "type": "CUSTOM.figmationStrategyTool",
       "typeVersion": 1,
       "position": [
-        576,
+        0,
         368
       ],
-      "id": "61f00be1-7f7d-46c6-a070-ecdaf91e6844",
+      "id": "ed88821d-bcb4-4b86-8fb1-92f6da7f63c3",
       "name": "Custom Strategy"
     }
   ],
