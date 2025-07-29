@@ -180,4 +180,10 @@ MIT License
 
 ## Related Projects
 
-- [figma-plugin-figmation](https://github.com/dandacompany/figma-plugin-figmation): Figma plugin 
+- [figma-plugin-figmation](https://github.com/dandacompany/figma-plugin-figmation): Figma plugin
+
+## Acknowledgments
+
+This project was inspired by [Cursor Talk to Figma MCP](https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp) by [@sonnylazuardi](https://github.com/sonnylazuardi). We extend our gratitude for the innovative MCP integration approach that enabled us to create an n8n workflow-compatible version for Figma automation.
+
+Special thanks to the original project for demonstrating the power of Model Context Protocol (MCP) in bridging AI tools with design workflows. 
