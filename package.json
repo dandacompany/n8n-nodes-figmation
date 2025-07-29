@@ -1,0 +1,44 @@
+{
+  "name": "n8n-nodes-figmation",
+  "version": "1.0.0",
+  "description": "Figmation - n8n custom nodes for Figma automation via WebSocket communication",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && npm run copy-assets",
+    "copy-assets": "for dir in src/nodes/*/; do if [ -f \"$dir/figmation.png\" ]; then cp \"$dir/figmation.png\" \"dist/nodes/$(basename \"$dir\")/\"; fi; done",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "n8n",
+    "figma",
+    "figmation",
+    "websocket",
+    "automation"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "n8n-core": "^1.14.1",
+    "n8n-workflow": "^1.82.0",
+    "ws": "^8.14.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/ws": "^8.5.5",
+    "@types/uuid": "^9.0.7",
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/FigmationConnector/FigmationConnector.node.js",
+      "dist/nodes/FigmationCommander/FigmationCommander.node.js",
+      "dist/nodes/FigmationStrategy/FigmationStrategy.node.js"
+    ]
+  }
+} 

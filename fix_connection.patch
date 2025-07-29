@@ -1,0 +1,27 @@
+--- a/src/nodes/FigmaWebSocketCommand/FigmaWebSocketCommand.node.ts
++++ b/src/nodes/FigmaWebSocketCommand/FigmaWebSocketCommand.node.ts
+@@ -420,6 +420,21 @@
+ 		// WebSocket 클라이언트로 연결
+ 		const webSocketClient = new FigmaWebSocketServer({ host, port }, 'client', 'command', serverId);
+ 
++		// 연결이 완료될 때까지 대기
++		await new Promise<void>((resolve, reject) => {
++			const timeout = setTimeout(() => {
++				reject(new Error('WebSocket connection timeout'));
++			}, 5000);
++
++			webSocketClient.once('registration_success', () => {
++				clearTimeout(timeout);
++				console.log('WebSocket client registered successfully');
++				resolve();
++			});
++
++			webSocketClient.once('registration_error', (error) => {
++				clearTimeout(timeout);
++				console.error('WebSocket client registration failed:', error);
++				reject(new Error(`Registration failed: ${error.error || error}`));
++			});
++		});
++
+ 		// 명령 파라미터 구성
+ 		let commandParams: any = {};
