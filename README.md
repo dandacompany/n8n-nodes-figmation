@@ -1,88 +1,88 @@
 # n8n-nodes-figmation
 
-n8n 워크플로우 자동화를 위한 Figma 커스텀 노드 패키지입니다. WebSocket 서버를 통해 Figma 플러그인과 연결되어 36개의 Figma API 명령을 실행할 수 있습니다.
+n8n custom nodes package for Figma workflow automation. Connects to Figma plugin via WebSocket server to execute 36 Figma API commands.
 
-## 주요 기능
+## Key Features
 
-- **36개 Figma API 명령 지원**: create_rectangle, create_text, move_node 등
-- **WebSocket 서버**: Figma 플러그인과의 실시간 통신
-- **채널 기반 격리**: 워크플로우별 멀티 채널 지원
-- **MCP 통합**: AI 에이전트와의 호환성을 위한 도구 노드
-- **동적 UI**: 선택한 명령에 따라 파라미터 필드 자동 생성
+- **36 Figma API Commands Support**: create_rectangle, create_text, move_node, and more
+- **WebSocket Server**: Real-time communication with Figma plugin
+- **Channel-based Isolation**: Multi-channel support for workflow separation
+- **MCP Integration**: Tool nodes for AI agent compatibility
+- **Dynamic UI**: Auto-generate parameter fields based on selected command
 
-## 설치 및 사용법
+## Installation and Usage
 
-### 개발 환경 설정
+### Development Environment Setup
 
 ```bash
-# 의존성 설치
+# Install dependencies
 npm install
 
-# TypeScript 빌드 및 에셋 복사
+# TypeScript build and asset copy
 npm run build
 
-# 개발 모드 (감시 모드)
+# Development mode (watch mode)
 npm run dev
 
-# n8n 인스턴스에 설치
+# Install to n8n instance
 ./install.sh
 ```
 
-### n8n에서 사용
+### Using in n8n
 
-1. n8n 인스턴스 재시작
-2. "Figma Connector" 및 "Figma Commander" 노드 사용 가능
-3. 워크플로우에서 Figma 이벤트 기반 자동화 구축
+1. Restart n8n instance
+2. "Figma Connector" and "Figma Commander" nodes available
+3. Build Figma event-based automation workflows
 
-## 노드 타입
+## Node Types
 
-### FigmationConnector (트리거 노드)
+### FigmationConnector (Trigger Node)
 
-WebSocket 서버를 시작하고 Figma 플러그인과의 연결을 관리합니다.
+Starts WebSocket server and manages connection with Figma plugin.
 
-**주요 기능:**
-- WebSocket 서버 시작/중지
-- 채널 생성 및 관리
-- 플러그인 등록 및 상태 모니터링
-- 연결 이벤트 트리거
+**Key Features:**
+- Start/stop WebSocket server
+- Channel creation and management
+- Plugin registration and status monitoring
+- Connection event triggering
 
-### FigmationCommander (액션 노드)
+### FigmationCommander (Action Node)
 
-Figma API 명령을 실행하는 메인 액션 노드입니다.
+Main action node that executes Figma API commands.
 
-**지원 명령 (36개):**
+**Supported Commands (36):**
 
-#### 생성 명령
-- `create_rectangle`: 사각형 생성
-- `create_frame`: 프레임 생성
-- `create_text`: 텍스트 생성
-- `create_circle`: 원형 생성
-- `create_line`: 선 생성
+#### Creation Commands
+- `create_rectangle`: Create rectangle
+- `create_frame`: Create frame
+- `create_text`: Create text
+- `create_circle`: Create circle
+- `create_line`: Create line
 
-#### 조작 명령
-- `move_node`: 노드 이동
-- `resize_node`: 노드 크기 조정
-- `set_fill_color`: 채우기 색상 설정
-- `set_stroke_color`: 테두리 색상 설정
-- `set_text_content`: 텍스트 내용 변경
+#### Manipulation Commands
+- `move_node`: Move node
+- `resize_node`: Resize node
+- `set_fill_color`: Set fill color
+- `set_stroke_color`: Set stroke color
+- `set_text_content`: Change text content
 
-#### 정보 명령
-- `get_document_info`: 문서 정보 조회
-- `get_selection`: 선택된 요소 정보
-- `get_node_info`: 특정 노드 정보
+#### Information Commands
+- `get_document_info`: Get document information
+- `get_selection`: Get selected elements information
+- `get_node_info`: Get specific node information
 
-#### 관리 명령
-- `delete_node`: 노드 삭제
-- `clone_node`: 노드 복제
-- `export_node_as_image`: 노드를 이미지로 내보내기
+#### Management Commands
+- `delete_node`: Delete node
+- `clone_node`: Clone node
+- `export_node_as_image`: Export node as image
 
-### FigmationCommanderTool (도구 노드)
+### FigmationCommanderTool (Tool Node)
 
-AI 에이전트와의 호환성을 위한 도구 노드입니다. MCP(Model Context Protocol) 통합을 지원합니다.
+Tool node for AI agent compatibility. Supports MCP (Model Context Protocol) integration.
 
-## 워크플로우 예제
+## Workflow Examples
 
-### 기본 연결 워크플로우
+### Basic Connection Workflow
 
 ```json
 {
@@ -113,63 +113,63 @@ AI 에이전트와의 호환성을 위한 도구 노드입니다. MCP(Model Cont
 }
 ```
 
-### MCP 통합 워크플로우
+### MCP Integration Workflow
 
-`examples/mcp-workflow.json` 파일에서 36개 도구 노드가 포함된 완전한 MCP 워크플로우를 확인할 수 있습니다.
+Check `examples/mcp-workflow.json` file for complete MCP workflow with 36 tool nodes.
 
-## 아키텍처
+## Architecture
 
-### WebSocket 통신 흐름
+### WebSocket Communication Flow
 
 ```
-n8n 워크플로우 → FigmationCommander → WebSocketServer → Figma 플러그인 → Figma API
+n8n Workflow → FigmationCommander → WebSocketServer → Figma Plugin → Figma API
 ```
 
-### 채널 시스템
+### Channel System
 
-각 워크플로우는 고유한 채널을 통해 격리된 통신을 제공합니다:
+Each workflow provides isolated communication through unique channels:
 
-1. **채널 생성**: FigmationConnector가 이름이 있는 채널 생성
-2. **클라이언트 등록**: Figma 플러그인이 특정 채널에 연결
-3. **명령 라우팅**: FigmationCommander가 채널 ID로 특정 채널 지정
-4. **격리**: 각 채널은 별도의 클라이언트 목록 유지
+1. **Channel Creation**: FigmationConnector creates a named channel
+2. **Client Registration**: Figma plugin connects to a specific channel
+3. **Command Routing**: FigmationCommander specifies channel ID for specific channel
+4. **Isolation**: Each channel maintains separate client lists
 
-## 개발 가이드
+## Development Guide
 
-### 새로운 명령 추가
+### Adding New Commands
 
-1. `src/nodes/FigmationCommander/FigmationCommander.node.ts`에 명령 추가:
+1. Add command in `src/nodes/FigmationCommander/FigmationCommander.node.ts`:
 ```typescript
 {
   name: 'New Command',
   value: 'new_command',
-  description: '새 명령에 대한 설명'
+  description: 'Description for new command'
 }
 ```
 
-2. 파라미터 정의: 노드의 properties 배열에 파라미터 필드 추가
+2. Define parameters: Add parameter fields to node's properties array
 
-3. Figma 플러그인에도 동일한 명령 핸들러 추가 (별도 레포지토리)
+3. Add same command handler to Figma plugin (separate repository)
 
-### 에러 처리
+### Error Handling
 
-- **연결 실패**: 타임아웃 및 재시도 메커니즘
-- **명령 타임아웃**: 10초 타임아웃 및 정리
-- **채널 에러**: 채널 존재 및 권한 검증
-- **Figma API 에러**: 디자인 모드 검증 및 파라미터 체크
+- **Connection Failure**: Timeout and retry mechanisms
+- **Command Timeout**: 10-second timeout and cleanup
+- **Channel Error**: Channel existence and permission validation
+- **Figma API Error**: Design mode validation and parameter checking
 
-## 기술 스택
+## Tech Stack
 
-- **런타임**: Node.js
-- **언어**: TypeScript
-- **WebSocket**: ws 라이브러리
-- **빌드 도구**: TypeScript 컴파일러
-- **패키징**: npm
+- **Runtime**: Node.js
+- **Language**: TypeScript
+- **WebSocket**: ws library
+- **Build Tool**: TypeScript compiler
+- **Packaging**: npm
 
-## 라이선스
+## License
 
 MIT License
 
-## 관련 프로젝트
+## Related Projects
 
-- [figma-plugin-figmation](https://github.com/dandacompany/figma-plugin-figmation): Figma 플러그인 
+- [figma-plugin-figmation](https://github.com/dandacompany/figma-plugin-figmation): Figma plugin 
