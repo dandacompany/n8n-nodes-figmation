@@ -27,7 +27,7 @@
     "email": "datapod.k@gmail.com",
     "url": "https://dante-datalab.com"
   },
-  "license": "CC-BY-NC-4.0",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dandacompany/n8n-nodes-figmation.git"
