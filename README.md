@@ -172,4 +172,4 @@ MIT License
 
 ## 관련 프로젝트
 
-- [figma-plugin-figmation](https://github.com/your-username/figma-plugin-figmation): Figma 플러그인 
+- [figma-plugin-figmation](https://github.com/dandacompany/figma-plugin-figmation): Figma 플러그인 
