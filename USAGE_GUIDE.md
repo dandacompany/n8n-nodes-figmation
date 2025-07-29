@@ -1,78 +1,78 @@
-# n8n-nodes-figmation 사용 가이드
+# n8n-nodes-figmation Usage Guide
 
-이 문서는 n8n-nodes-figmation 프로젝트의 상세한 사용 방법을 제공합니다.
+This document provides detailed usage instructions for the n8n-nodes-figmation project.
 
-## 📋 목차
+## 📋 Table of Contents
 
-1. [시작하기](#시작하기)
-2. [노드별 상세 가이드](#노드별-상세-가이드)
-3. [워크플로우 예시](#워크플로우-예시)
-4. [MCP 연동](#mcp-연동)
-5. [문제 해결](#문제-해결)
+1. [Getting Started](#getting-started)
+2. [Detailed Node Guides](#detailed-node-guides)
+3. [Workflow Examples](#workflow-examples)
+4. [MCP Integration](#mcp-integration)
+5. [Troubleshooting](#troubleshooting)
 
-## 🚀 시작하기
+## 🚀 Getting Started
 
-### 1. 설치
+### 1. Installation
 
 ```bash
-# 프로젝트 클론
+# Clone project
 git clone <repository-url>
 cd n8n-nodes-figmation
 
-# 의존성 설치 및 빌드
+# Install dependencies and build
 npm install
 npm run build
 
-# n8n에 설치
+# Install to n8n
 ./install.sh
 ```
 
-### 2. n8n 재시작
+### 2. Restart n8n
 
-설치 후 n8n 인스턴스를 재시작하여 새 노드들을 인식하도록 합니다.
+After installation, restart your n8n instance to recognize the new nodes.
 
-### 3. 노드 확인
+### 3. Verify Nodes
 
-n8n 워크플로우 편집기에서 다음 노드들이 나타나는지 확인:
+Check that the following nodes appear in the n8n workflow editor:
 - FigmationConnector
 - FigmationCommander
 - FigmationStrategy
 
-## 🔧 노드별 상세 가이드
+## 🔧 Detailed Node Guides
 
 ### FigmationConnector
 
-#### 기본 설정
+#### Basic Configuration
 
-1. **서버 설정**
-   - WebSocket Port: 3055 (기본값)
-   - WebSocket Host: localhost (기본값)
-   - Webhook Port: 3056 (기본값)
-   - Webhook Host: localhost (기본값)
+1. **Server Settings**
+   - WebSocket Port: 3055 (default)
+   - WebSocket Host: localhost (default)
+   - Webhook Port: 3056 (default)
+   - Webhook Host: localhost (default)
 
-2. **채널 설정**
-   - Channel ID: 자동 생성 또는 수동 입력
-   - Channel Name: 선택사항
+2. **Channel Settings**
+   - Channel ID: Auto-generated or manual input
+   - Channel Name: Optional
 
-3. **이벤트 설정**
-   - Event Types: 수신할 이벤트 선택
+3. **Event Settings**
+   - Event Types: Select events to receive
      - ✅ Webhook Commands
      - ✅ Figma Events
      - ✅ Connection Events
 
-#### 사용 예시
+#### Usage Example
 
 ```javascript
-// 워크플로우에서 이벤트 처리
+// Handle events in workflow
 if ($json.eventType === 'webhook_command') {
-  // 웹훅 명령 처리
+  // Handle webhook command
   return {
     command: $json.command,
     params: $json.params,
     channelId: $json.channelId
   };
 } else if ($json.eventType === 'figma_event') {
-  // Figma 이벤트 처리
+  // Handle Figma event
   return {
     figmaData: $json.data,
     timestamp: $json.timestamp
@@ -82,21 +82,21 @@ if ($json.eventType === 'webhook_command') {
 
 ### FigmationCommander
 
-#### 연결 설정
+#### Connection Settings
 
-1. **연결 방법 선택**
-   - Use Existing Server Connection: 기존 서버 연결 사용
-   - Inherit from Previous Node: 이전 노드에서 상속
+1. **Connection Method Selection**
+   - Use Existing Server Connection: Use existing server connection
+   - Inherit from Previous Node: Inherit from previous node
 
-2. **명령 선택**
-   - 40+ 개의 Figma 명령 중 선택
-   - 명령별 매개변수 설정
+2. **Command Selection**
+   - Choose from 40+ Figma commands
+   - Set parameters for each command
 
-#### 주요 명령 카테고리
+#### Major Command Categories
 
-##### 기본 도형 생성
+##### Basic Shape Creation
 ```javascript
-// 사각형 생성
+// Create rectangle
 {
   "command": "create_rectangle",
   "params": {
@@ -108,7 +108,7 @@ if ($json.eventType === 'webhook_command') {
   }
 }
 
-// 프레임 생성
+// Create frame
 {
   "command": "create_frame",
   "params": {
@@ -121,9 +121,9 @@ if ($json.eventType === 'webhook_command') {
 }
 ```
 
-##### UI 컴포넌트 생성
+##### UI Component Creation
 ```javascript
-// 버튼 생성
+// Create button
 {
   "command": "create_button",
   "params": {
@@ -136,7 +136,7 @@ if ($json.eventType === 'webhook_command') {
   }
 }
 
-// 입력 필드 생성
+// Create input field
 {
   "command": "create_input_field",
   "params": {
@@ -150,9 +150,9 @@ if ($json.eventType === 'webhook_command') {
 }
 ```
 
-##### 노드 조작
+##### Node Manipulation
 ```javascript
-// 노드 이동
+// Move node
 {
   "command": "move_node",
   "params": {
@@ -162,7 +162,7 @@ if ($json.eventType === 'webhook_command') {
   }
 }
 
-// 노드 크기 조정
+// Resize node
 {
   "command": "resize_node",
   "params": {
@@ -173,15 +173,15 @@ if ($json.eventType === 'webhook_command') {
 }
 ```
 
-##### 정보 조회
+##### Information Retrieval
 ```javascript
-// 선택된 요소 조회
+// Get selected elements
 {
   "command": "get_selection",
   "params": {}
 }
 
-// 노드 상세 정보 조회
+// Get detailed node information
 {
   "command": "get_node_info",
   "params": {
@@ -192,33 +192,33 @@ if ($json.eventType === 'webhook_command') {
 
 ### FigmationStrategy
 
-#### 전략 타입
+#### Strategy Types
 
 1. **Reaction to Connector Strategy**
-   - 프로토타입 반응을 시각적 커넥터로 변환
-   - 단계별 프로세스 제공
+   - Convert prototype reactions to visual connectors
+   - Provides step-by-step process
 
 2. **Design System Strategy**
-   - 디자인 시스템 구현 가이던스
-   - 컴포넌트 아키텍처 설계
+   - Design system implementation guidance
+   - Component architecture design
 
 3. **Component Library Strategy**
-   - 컴포넌트 라이브러리 조직
-   - Atomic Design 원칙 적용
+   - Component library organization
+   - Atomic Design principles application
 
 4. **Custom Strategy**
-   - 사용자 정의 전략
-   - 마크다운 형식 지원
+   - User-defined strategies
+   - Markdown format support
 
-#### 출력 형식
+#### Output Formats
 
-- **Full Strategy Document**: 완전한 전략 문서
-- **Process Steps Only**: 단계별 프로세스만
-- **Summary**: 전략 요약
+- **Full Strategy Document**: Complete strategy document
+- **Process Steps Only**: Step-by-step process only
+- **Summary**: Strategy summary
 
-## 🔄 워크플로우 예시
+## 🔄 Workflow Examples
 
-### 1. 기본 Figma 자동화
+### 1. Basic Figma Automation
 
 ```json
 {
@@ -276,7 +276,7 @@ if ($json.eventType === 'webhook_command') {
 }
 ```
 
-### 2. MCP 연동 워크플로우
+### 2. MCP Integration Workflow
 
 ```json
 {
@@ -316,7 +316,7 @@ if ($json.eventType === 'webhook_command') {
 }
 ```
 
-### 3. 반응형 UI 생성
+### 3. Responsive UI Generation
 
 ```json
 {
@@ -379,16 +379,16 @@ if ($json.eventType === 'webhook_command') {
 }
 ```
 
-## 🔗 MCP 연동
+## 🔗 MCP Integration
 
-### MCP 서버 설정
+### MCP Server Setup
 
-1. **MCP 서버 설치**
+1. **Install MCP Server**
 ```bash
 npm install -g @modelcontextprotocol/server
 ```
 
-2. **MCP 설정 파일**
+2. **MCP Configuration File**
 ```json
 {
   "mcpServers": {
@@ -403,11 +403,11 @@ npm install -g @modelcontextprotocol/server
 }
 ```
 
-### Tool 타입 노드 사용
+### Using Tool Type Nodes
 
 #### FigmationCommander Tool
 ```javascript
-// MCP 클라이언트에서 호출
+// Call from MCP client
 const result = await mcpClient.callTool({
   name: "figmation_commander",
   arguments: {
@@ -424,7 +424,7 @@ const result = await mcpClient.callTool({
 
 #### FigmationStrategy Tool
 ```javascript
-// 전략 가이던스 요청
+// Request strategy guidance
 const strategy = await mcpClient.callTool({
   name: "figmation_strategy",
   arguments: {
@@ -434,69 +434,69 @@ const strategy = await mcpClient.callTool({
 });
 ```
 
-## 🛠️ 문제 해결
+## 🛠️ Troubleshooting
 
-### 일반적인 문제들
+### Common Issues
 
-#### 1. 연결 실패
-**증상**: WebSocket 연결이 실패하거나 Figma 플러그인이 연결되지 않음
+#### 1. Connection Failure
+**Symptoms**: WebSocket connection fails or Figma plugin cannot connect
 
-**해결 방법**:
-- 포트가 사용 가능한지 확인: `lsof -i :3055`
-- 방화벽 설정 확인
-- Figma 플러그인 재시작
+**Solutions**:
+- Check if port is available: `lsof -i :3055`
+- Verify firewall settings
+- Restart Figma plugin
 
-#### 2. 명령 실행 실패
-**증상**: FigmationCommander에서 명령이 실행되지 않음
+#### 2. Command Execution Failure
+**Symptoms**: Commands don't execute in FigmationCommander
 
-**해결 방법**:
-- Figma 플러그인이 연결되어 있는지 확인
-- 명령 매개변수가 올바른지 확인
-- 로그에서 오류 메시지 확인
+**Solutions**:
+- Check if Figma plugin is connected
+- Verify command parameters are correct
+- Check error messages in logs
 
-#### 3. MCP 연동 문제
-**증상**: MCP 서버에서 Tool 노드가 인식되지 않음
+#### 3. MCP Integration Issues
+**Symptoms**: Tool nodes not recognized by MCP server
 
-**해결 방법**:
-- Tool 타입 노드가 올바르게 설정되었는지 확인
-- MCP 서버가 실행 중인지 확인
-- 워크플로우 연결이 올바른지 확인
+**Solutions**:
+- Verify Tool type nodes are configured correctly
+- Check if MCP server is running
+- Verify workflow connections are correct
 
-### 디버깅 팁
+### Debugging Tips
 
-#### 1. 로그 확인
+#### 1. Check Logs
 ```bash
-# n8n 로그 확인
+# Check n8n logs
 tail -f ~/.n8n/logs/n8n.log
 
-# WebSocket 서버 로그
-# FigmationConnector 노드의 로그 출력 확인
+# WebSocket server logs
+# Check log output from FigmationConnector node
 ```
 
-#### 2. 상태 확인
+#### 2. Status Check
 ```bash
-# WebSocket 서버 상태
+# WebSocket server status
 curl http://localhost:3056/status
 
-# 포트 사용 확인
+# Check port usage
 netstat -an | grep 3055
 netstat -an | grep 3056
 ```
 
-#### 3. 테스트 연결
+#### 3. Test Connection
 ```javascript
-// WebSocket 연결 테스트
+// Test WebSocket connection
 const ws = new WebSocket('ws://localhost:3055');
 ws.onopen = () => console.log('Connected');
 ws.onerror = (error) => console.error('Connection failed:', error);
 ```
 
-### 성능 최적화
+### Performance Optimization
 
-#### 1. 배치 처리
-여러 명령을 한 번에 실행하려면:
+#### 1. Batch Processing
+To execute multiple commands at once:
 ```javascript
-// 여러 명령을 순차적으로 실행
+// Execute multiple commands sequentially
 const commands = [
   { command: 'create_rectangle', params: {...} },
   { command: 'create_text', params: {...} },
@@ -508,10 +508,10 @@ for (const cmd of commands) {
 }
 ```
 
-#### 2. 연결 재사용
-WebSocket 연결을 재사용하여 성능 향상:
+#### 2. Connection Reuse
+Improve performance by reusing WebSocket connections:
 ```javascript
-// 연결 풀 사용
+// Use connection pool
 const connectionPool = new Map();
 
 function getConnection(channelId) {
@@ -522,40 +522,40 @@ function getConnection(channelId) {
 }
 ```
 
-## 📚 추가 리소스
+## 📚 Additional Resources
 
-### 공식 문서
-- [n8n 공식 문서](https://docs.n8n.io/)
+### Official Documentation
+- [n8n Official Documentation](https://docs.n8n.io/)
 - [Figma Plugin API](https://www.figma.com/plugin-docs/)
-- [MCP 공식 문서](https://modelcontextprotocol.io/)
+- [MCP Official Documentation](https://modelcontextprotocol.io/)
 
-### 예시 프로젝트
-- [기본 워크플로우 예시](./examples/connector-workflow.json)
-- [MCP 워크플로우 예시](./examples/mcp-workflow.json)
+### Example Projects
+- [Basic Workflow Examples](./examples/connector-workflow.json)
+- [MCP Workflow Examples](./examples/mcp-workflow.json)
 
-### 커뮤니티
-- [n8n 커뮤니티](https://community.n8n.io/)
+### Community
+- [n8n Community](https://community.n8n.io/)
 - [GitHub Issues](https://github.com/your-repo/n8n-nodes-figmation/issues)
 
-## 🔄 업데이트 및 유지보수
+## 🔄 Updates and Maintenance
 
-### 정기 업데이트
-- n8n 버전 호환성 확인
-- Figma API 변경사항 반영
-- 보안 패치 적용
+### Regular Updates
+- Check n8n version compatibility
+- Reflect Figma API changes
+- Apply security patches
 
-### 버그 리포트
-버그를 발견하거나 개선 제안이 있으시면:
-1. GitHub Issues에 상세한 설명과 함께 리포트
-2. 재현 가능한 최소 예시 제공
-3. 환경 정보 포함 (n8n 버전, OS 등)
+### Bug Reports
+If you find bugs or have improvement suggestions:
+1. Report with detailed description in GitHub Issues
+2. Provide reproducible minimal examples
+3. Include environment information (n8n version, OS, etc.)
 
-### 기여하기
-프로젝트에 기여하고 싶으시면:
-1. Fork 후 개발 브랜치 생성
-2. 변경사항 구현 및 테스트
-3. Pull Request 생성
+### Contributing
+To contribute to the project:
+1. Fork and create development branch
+2. Implement changes and test
+3. Create Pull Request
 
 ---
 
-이 가이드를 통해 n8n-nodes-figmation을 효과적으로 활용하시기 바랍니다. 추가 질문이나 도움이 필요하시면 언제든지 GitHub Issues를 통해 문의해 주세요. 
+Use this guide to effectively utilize n8n-nodes-figmation. For additional questions or help, please contact us through GitHub Issues anytime. 
