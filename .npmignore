@@ -1,0 +1,42 @@
+# Source files
+src/
+tsconfig.json
+
+# Development files
+.git/
+.gitignore
+.npmignore
+README.md
+USAGE_GUIDE.md
+examples/
+install.sh
+fix_connection.patch
+
+# Build artifacts
+*.tsbuildinfo
+
+# Test files
+test/
+__tests__/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp 

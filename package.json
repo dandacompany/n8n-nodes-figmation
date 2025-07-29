@@ -1,7 +1,7 @@
 {
   "name": "n8n-nodes-figmation",
   "version": "1.0.0",
-  "description": "Figmation - n8n custom nodes for Figma automation via WebSocket communication",
+  "description": "n8n custom nodes package for Figma workflow automation. Connects to Figma plugin via WebSocket server to execute 36 Figma API commands.",
   "main": "index.js",
   "scripts": {
     "build": "tsc && npm run copy-assets",
@@ -15,10 +15,27 @@
     "figma",
     "figmation",
     "websocket",
-    "automation"
+    "automation",
+    "design",
+    "workflow",
+    "plugin",
+    "mcp",
+    "ai"
   ],
-  "author": "Your Name",
+  "author": {
+    "name": "Dante",
+    "email": "datapod.k@gmail.com",
+    "url": "https://dante-datalab.com"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dandacompany/n8n-nodes-figmation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dandacompany/n8n-nodes-figmation/issues"
+  },
+  "homepage": "https://github.com/dandacompany/n8n-nodes-figmation#readme",
   "dependencies": {
     "n8n-core": "^1.14.1",
     "n8n-workflow": "^1.82.0",
@@ -41,4 +58,4 @@
       "dist/nodes/FigmationStrategy/FigmationStrategy.node.js"
     ]
   }
-} 
+}
