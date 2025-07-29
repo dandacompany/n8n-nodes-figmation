@@ -170,6 +170,13 @@ Each workflow provides isolated communication through unique channels:
 
 MIT License
 
+## Developer Information
+
+- **Name**: Dante
+- **Email**: datapod.k@gmail.com
+- **Company Homepage**: https://dante-datalab.com
+- **YouTube**: https://youtube.com/@단테랩스
+
 ## Related Projects
 
 - [figma-plugin-figmation](https://github.com/dandacompany/figma-plugin-figmation): Figma plugin 
