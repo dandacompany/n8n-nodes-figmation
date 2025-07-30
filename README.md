@@ -2,13 +2,143 @@
 
 n8n custom nodes package for Figma workflow automation. Connects to Figma plugin via WebSocket server to execute 36 Figma API commands.
 
-## Key Features
+## 🎯 Core Architecture
+
+```mermaid
+graph TB
+    subgraph "External AI Agent"
+        A[AI Agent<br/>Claude/GPT/Gemini]
+    end
+    
+    subgraph "n8n Workflow"
+        B[MCP Server Trigger<br/>AI Agent Connection]
+        C[n8n Command Node<br/>Figma Command Execution]
+    end
+    
+    subgraph "Communication Layer"
+        D[WebSocket Connector<br/>Real-time Communication]
+    end
+    
+    subgraph "Figma Plugin"
+        E[Figma Plugin<br/>Command Reception & Execution]
+    end
+    
+    subgraph "Figma Design"
+        F[Figma Canvas<br/>Design Output]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    
+    style A fill:#ff6b6b
+    style B fill:#4ecdc4
+    style C fill:#45b7d1
+    style D fill:#ffd93d
+    style E fill:#96ceb4
+    style F fill:#f8f9fa
+```
+
+## 🔄 Data Flow
+
+```mermaid
+sequenceDiagram
+    participant AI as External AI Agent
+    participant MCP as MCP Server Trigger
+    participant CMD as n8n Command Node
+    participant WS as WebSocket Connector
+    participant PLG as Figma Plugin
+    participant FIG as Figma Design
+    
+    Note over AI,FIG: 1. AI Agent sends natural language command
+    AI->>MCP: "Create a blue button"
+    MCP->>CMD: Parse and convert command
+    
+    Note over AI,FIG: 2. Execute Figma command in n8n
+    CMD->>WS: Send create_rectangle command
+    WS->>PLG: Forward command via WebSocket
+    
+    Note over AI,FIG: 3. Generate design in Figma
+    PLG->>FIG: Call Figma API
+    FIG->>PLG: Return created button
+    PLG->>WS: Send execution result
+    WS->>CMD: Receive result
+    CMD->>MCP: Report completion
+    MCP->>AI: Notify design completion
+```
+
+## ⚡ Key Features
 
 - **36 Figma API Commands Support**: create_rectangle, create_text, move_node, and more
 - **WebSocket Server**: Real-time communication with Figma plugin
 - **Channel-based Isolation**: Multi-channel support for workflow separation
 - **MCP Integration**: Tool nodes for AI agent compatibility
 - **Dynamic UI**: Auto-generate parameter fields based on selected command
+
+## 🏗️ Component Architecture
+
+```mermaid
+graph LR
+    subgraph "AI Layer"
+        A1[AI Agent<br/>Natural Language Commands]
+    end
+    
+    subgraph "n8n Layer"
+        B1[MCP Server Trigger<br/>AI Agent Connection Point]
+        B2[Command Node<br/>Figma Command Processing]
+    end
+    
+    subgraph "Communication Layer"
+        C1[WebSocket Connector<br/>Real-time Bidirectional Communication]
+    end
+    
+    subgraph "Figma Layer"
+        D1[Figma Plugin<br/>Command Execution Engine]
+        D2[Figma Design<br/>Final Output]
+    end
+    
+    A1 --> B1
+    B1 --> B2
+    B2 --> C1
+    C1 --> D1
+    D1 --> D2
+    
+    style A1 fill:#ff6b6b
+    style B1 fill:#4ecdc4
+    style B2 fill:#45b7d1
+    style C1 fill:#ffd93d
+    style D1 fill:#96ceb4
+    style D2 fill:#f8f9fa
+```
+
+## 🎯 Node Architecture
+
+```mermaid
+mindmap
+  root((n8n-nodes-figmation<br/>Node Architecture))
+    FigmationConnector
+      WebSocket Server Management
+      Channel Creation & Management
+      Plugin Registration
+      Connection Event Triggering
+    FigmationCommander
+      36 Figma API Commands
+      Dynamic Parameter UI
+      Command Execution
+      Result Handling
+    FigmationCommanderTool
+      MCP Protocol Support
+      AI Agent Integration
+      Tool Node Compatibility
+      Natural Language Processing
+    WebSocketServer
+      Real-time Communication
+      Channel Isolation
+      Client Management
+      Message Routing
+```
 
 ## Installation and Usage
 
