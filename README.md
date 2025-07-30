@@ -76,6 +76,8 @@ sequenceDiagram
 - **Channel-based Isolation**: Multi-channel support for workflow separation
 - **MCP Integration**: Tool nodes for AI agent compatibility
 - **Dynamic UI**: Auto-generate parameter fields based on selected command
+- **External Server Access**: Support for cloud deployments and remote connections
+- **Flexible Host Configuration**: Configurable WebSocket host (localhost or 0.0.0.0)
 
 ## 🏗️ Component Architecture
 
@@ -139,6 +141,22 @@ mindmap
       Client Management
       Message Routing
 ```
+
+## 📋 Changelog
+
+### v1.1.0 (Latest)
+- ✨ **External Server Access**: Added support for cloud deployments and remote connections
+- 🔧 **Flexible Host Configuration**: Configurable WebSocket host (localhost or 0.0.0.0)
+- 🌐 **Cloud Deployment Support**: Enable n8n.cloud and custom domain connections
+- 🔒 **Security Protocols**: Support for both ws:// and wss:// protocols
+- 📚 **Enhanced Documentation**: Updated setup instructions for external access
+
+### v1.0.0
+- 🎉 **Initial Release**: 36 Figma API commands support
+- 🔌 **WebSocket Communication**: Real-time connection with Figma plugin
+- 📡 **Channel-based Isolation**: Multi-channel support for workflow separation
+- 🤖 **MCP Integration**: Tool nodes for AI agent compatibility
+- 🎨 **Dynamic UI**: Auto-generate parameter fields based on selected command
 
 ## Installation and Usage
 
