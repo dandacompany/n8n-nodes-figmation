@@ -342,7 +342,7 @@ export class FigmationCommander implements INodeType {
 				},
 				displayOptions: {
 					show: {
-						command: [
+						'/command': [
 							'create_rectangle',
 							'create_frame',
 							'create_text',
@@ -387,6 +387,7 @@ export class FigmationCommander implements INodeType {
 							'create_symbol',
 							'create_avatar',
 							'create_progress_bar',
+							'execute_custom_command',
 						],
 					},
 				},
@@ -460,7 +461,7 @@ export class FigmationCommander implements INodeType {
 							// Text parameters
 							{
 								displayName: 'Text Content',
-								name: 'text',
+								name: 'textContent',
 								type: 'string',
 								default: 'Hello World',
 								description: 'Text content',
@@ -495,7 +496,46 @@ export class FigmationCommander implements INodeType {
 									},
 								},
 							},
-							// Color parameters
+							// Fill Type selection
+							{
+								displayName: 'Fill Type',
+								name: 'Fill_Type',
+								type: 'options',
+								default: 'solid',
+								options: [
+									{
+										name: 'Solid Color',
+										value: 'solid',
+										description: 'Single solid color',
+									},
+									{
+										name: 'Linear Gradient',
+										value: 'linear_gradient',
+										description: 'Linear gradient between colors',
+									},
+									{
+										name: 'Radial Gradient',
+										value: 'radial_gradient',
+										description: 'Radial gradient from center',
+									},
+									{
+										name: 'Angular Gradient',
+										value: 'angular_gradient',
+										description: 'Angular/conical gradient',
+									},
+									{
+										name: 'Diamond Gradient',
+										value: 'diamond_gradient',
+										description: 'Diamond-shaped gradient',
+									},
+								],
+								displayOptions: {
+									show: {
+										'/command': ['set_fill_color'],
+									},
+								},
+							},
+							// Solid Color parameters
 							{
 								displayName: 'Red Value',
 								name: 'Red_Value',
@@ -504,7 +544,20 @@ export class FigmationCommander implements INodeType {
 								description: 'Red value (0-1)',
 								displayOptions: {
 									show: {
-										'/command': ['set_fill_color', 'set_stroke_color'],
+										'/command': ['set_fill_color'],
+										'Fill_Type': ['solid'],
+									},
+								},
+							},
+							{
+								displayName: 'Stroke Red Value',
+								name: 'Stroke_Red_Value',
+								type: 'number',
+								default: 1,
+								description: 'Stroke red value (0-1)',
+								displayOptions: {
+									show: {
+										'/command': ['set_stroke_color'],
 									},
 								},
 							},
@@ -516,7 +569,20 @@ export class FigmationCommander implements INodeType {
 								description: 'Green value (0-1)',
 								displayOptions: {
 									show: {
-										'/command': ['set_fill_color', 'set_stroke_color'],
+										'/command': ['set_fill_color'],
+										'Fill_Type': ['solid'],
+									},
+								},
+							},
+							{
+								displayName: 'Stroke Green Value',
+								name: 'Stroke_Green_Value',
+								type: 'number',
+								default: 0,
+								description: 'Stroke green value (0-1)',
+								displayOptions: {
+									show: {
+										'/command': ['set_stroke_color'],
 									},
 								},
 							},
@@ -528,7 +594,20 @@ export class FigmationCommander implements INodeType {
 								description: 'Blue value (0-1)',
 								displayOptions: {
 									show: {
-										'/command': ['set_fill_color', 'set_stroke_color'],
+										'/command': ['set_fill_color'],
+										'Fill_Type': ['solid'],
+									},
+								},
+							},
+							{
+								displayName: 'Stroke Blue Value',
+								name: 'Stroke_Blue_Value',
+								type: 'number',
+								default: 0,
+								description: 'Stroke blue value (0-1)',
+								displayOptions: {
+									show: {
+										'/command': ['set_stroke_color'],
 									},
 								},
 							},
@@ -540,7 +619,72 @@ export class FigmationCommander implements INodeType {
 								description: 'Alpha value (0-1)',
 								displayOptions: {
 									show: {
-										'/command': ['set_fill_color', 'set_stroke_color'],
+										'/command': ['set_fill_color'],
+										'Fill_Type': ['solid'],
+									},
+								},
+							},
+							{
+								displayName: 'Stroke Alpha Value',
+								name: 'Stroke_Alpha_Value',
+								type: 'number',
+								default: 1,
+								description: 'Stroke alpha value (0-1)',
+								displayOptions: {
+									show: {
+										'/command': ['set_stroke_color'],
+									},
+								},
+							},
+							{
+								displayName: 'Remove Stroke',
+								name: 'Remove_Stroke',
+								type: 'boolean',
+								default: false,
+								description: 'Remove stroke completely (overrides color settings)',
+								displayOptions: {
+									show: {
+										'/command': ['set_stroke_color'],
+									},
+								},
+							},
+							// Gradient parameters
+							{
+								displayName: 'Gradient Start Color',
+								name: 'Gradient_Start_Color',
+								type: 'string',
+								default: '#FF0000',
+								description: 'Gradient start color (hex format)',
+								displayOptions: {
+									show: {
+										'/command': ['set_fill_color'],
+										'Fill_Type': ['linear_gradient', 'radial_gradient', 'angular_gradient', 'diamond_gradient'],
+									},
+								},
+							},
+							{
+								displayName: 'Gradient End Color',
+								name: 'Gradient_End_Color',
+								type: 'string',
+								default: '#0000FF',
+								description: 'Gradient end color (hex format)',
+								displayOptions: {
+									show: {
+										'/command': ['set_fill_color'],
+										'Fill_Type': ['linear_gradient', 'radial_gradient', 'angular_gradient', 'diamond_gradient'],
+									},
+								},
+							},
+							{
+								displayName: 'Gradient Angle',
+								name: 'Gradient_Angle',
+								type: 'number',
+								default: 0,
+								description: 'Gradient angle in degrees (0-360)',
+								displayOptions: {
+									show: {
+										'/command': ['set_fill_color'],
+										'Fill_Type': ['linear_gradient', 'angular_gradient'],
 									},
 								},
 							},
@@ -616,7 +760,7 @@ export class FigmationCommander implements INodeType {
 								description: 'Corner radius',
 								displayOptions: {
 									show: {
-										'/command': ['set_corner_radius', 'create_image_from_url'],
+										'/command': ['set_corner_radius', 'create_image_from_url', 'create_rectangle', 'create_frame'],
 									},
 								},
 							},
@@ -835,7 +979,7 @@ export class FigmationCommander implements INodeType {
 							},
 							{
 								displayName: 'Parent Node ID',
-								name: 'parentId',
+								name: 'parentIdForImage',
 								type: 'string',
 								default: '',
 								description: 'ID of the parent node to place the object under (optional)',
@@ -918,7 +1062,7 @@ export class FigmationCommander implements INodeType {
 							},
 							{
 								displayName: 'Parent Node ID',
-								name: 'parentId',
+								name: 'parentIdForSlider',
 								type: 'string',
 								default: '',
 								description: 'ID of the parent node to place the slider under (optional)',
@@ -931,7 +1075,7 @@ export class FigmationCommander implements INodeType {
 							// Button parameters
 							{
 								displayName: 'Button Text',
-								name: 'text',
+								name: 'buttonText',
 								type: 'string',
 								default: 'Button',
 								description: 'Text to display on the button',
@@ -996,64 +1140,19 @@ export class FigmationCommander implements INodeType {
 								},
 							},
 							// Custom JSON command parameter
-							{
-								displayName: 'Custom JSON',
-								name: 'customJson',
-								type: 'json',
-								default: '{"type": "FRAME", "name": "Custom Node", "width": 100, "height": 100, "fills": [{"type": "SOLID", "color": {"r": 0.8, "g": 0.8, "b": 0.8}}]}',
-								description: 'Custom Figma API properties in JSON format',
-								displayOptions: {
-									show: {
-										'/command': ['execute_custom_command'],
-									},
-								},
-							},
-							{
-								displayName: 'Node Type',
-								name: 'nodeType',
-								type: 'options',
-								options: [
-									{
-										name: 'Frame',
-										value: 'FRAME',
-									},
-									{
-										name: 'Rectangle',
-										value: 'RECTANGLE',
-									},
-									{
-										name: 'Ellipse',
-										value: 'ELLIPSE',
-									},
-									{
-										name: 'Text',
-										value: 'TEXT',
-									},
-									{
-										name: 'Vector',
-										value: 'VECTOR',
-									},
-									{
-										name: 'Line',
-										value: 'LINE',
-									},
-									{
-										name: 'Star',
-										value: 'STAR',
-									},
-									{
-										name: 'Polygon',
-										value: 'POLYGON',
-									},
-								],
-								default: 'FRAME',
-								description: 'Type of node to create (can be overridden by JSON)',
-								displayOptions: {
-									show: {
-										'/command': ['execute_custom_command'],
-									},
-								},
-							},
+                            {
+                                displayName: 'Custom JSON Payload',
+                                name: 'customJson',
+                                type: 'json',
+                                default: '{\n  "command": "create_rectangle",\n  "params": {\n    "name": "My Custom Rectangle",\n    "x": 200,\n    "y": 200,\n    "width": 150,\n    "height": 75,\n    "fills": [{"type": "SOLID", "color": {"r": 1, "g": 0, "b": 0}}],\n    "cornerRadius": 8\n  }\n}',
+                                description: 'Enter the full Figma API JSON payload here. The plugin will parse and execute it directly.',
+                                displayOptions: {
+                                    show: {
+                                        '/command': ['execute_custom_command'],
+                                    },
+                                },
+                            },
+							
 							// Boolean operation parameters
 							{
 								displayName: 'Operation Type',
@@ -1151,7 +1250,7 @@ export class FigmationCommander implements INodeType {
 							// Checkbox parameters
 							{
 								displayName: 'Checkbox Label',
-								name: 'label',
+								name: 'checkboxLabel',
 								type: 'string',
 								default: 'Checkbox',
 								description: 'Label text for the checkbox',
@@ -1176,7 +1275,7 @@ export class FigmationCommander implements INodeType {
 							// Toggle parameters  
 							{
 								displayName: 'Toggle Label',
-								name: 'label',
+								name: 'toggleLabel',
 								type: 'string',
 								default: 'Toggle',
 								description: 'Label text for the toggle switch',
@@ -1250,7 +1349,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_avatar'],
-										'/avatarType': ['initials'],
+										'avatarType': ['initials'],
 									},
 								},
 							},
@@ -1318,7 +1417,7 @@ export class FigmationCommander implements INodeType {
 							// Parent ID for new commands
 							{
 								displayName: 'Parent Node ID',
-								name: 'parentId',
+								name: 'parentIdForNode',
 								type: 'string',
 								default: '',
 								description: 'ID of the parent node to place the object under (optional)',
@@ -1513,7 +1612,7 @@ export class FigmationCommander implements INodeType {
 								},
 							},
 							{
-								displayName: 'Corner Radius',
+								displayName: 'Initial Corner Radius',
 								name: 'initialCornerRadius',
 								type: 'number',
 								default: 0,
@@ -1570,7 +1669,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_rectangle', 'create_frame', 'create_ellipse', 'create_text'],
-										'/addDropShadow': [true],
+										'addDropShadow': [true],
 									},
 								},
 							},
@@ -1583,7 +1682,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_rectangle', 'create_frame', 'create_ellipse', 'create_text'],
-										'/addDropShadow': [true],
+										'addDropShadow': [true],
 									},
 								},
 							},
@@ -1596,7 +1695,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_rectangle', 'create_frame', 'create_ellipse', 'create_text'],
-										'/addDropShadow': [true],
+										'addDropShadow': [true],
 									},
 								},
 							},
@@ -1609,7 +1708,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_rectangle', 'create_frame', 'create_ellipse', 'create_text'],
-										'/addDropShadow': [true],
+										'addDropShadow': [true],
 									},
 								},
 							},
@@ -1622,7 +1721,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_rectangle', 'create_frame', 'create_ellipse', 'create_text'],
-										'/addDropShadow': [true],
+										'addDropShadow': [true],
 									},
 								},
 							},
@@ -1635,7 +1734,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_rectangle', 'create_frame', 'create_ellipse', 'create_text'],
-										'/addDropShadow': [true],
+										'addDropShadow': [true],
 									},
 								},
 							},
@@ -1648,7 +1747,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_rectangle', 'create_frame', 'create_ellipse', 'create_text'],
-										'/addDropShadow': [true],
+										'addDropShadow': [true],
 									},
 								},
 							},
@@ -1688,7 +1787,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_frame'],
-										'/initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
+										'initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
 									},
 								},
 							},
@@ -1701,7 +1800,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_frame'],
-										'/initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
+										'initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
 									},
 								},
 							},
@@ -1714,7 +1813,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_frame'],
-										'/initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
+										'initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
 									},
 								},
 							},
@@ -1727,7 +1826,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_frame'],
-										'/initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
+										'initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
 									},
 								},
 							},
@@ -1740,7 +1839,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_frame'],
-										'/initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
+										'initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
 									},
 								},
 							},
@@ -2181,7 +2280,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_frame'],
-										'/initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
+										'initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
 									},
 								},
 							},
@@ -2198,7 +2297,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_frame'],
-										'/initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
+										'initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
 									},
 								},
 							},
@@ -2217,7 +2316,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_frame'],
-										'/initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
+										'initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
 									},
 								},
 							},
@@ -2235,7 +2334,7 @@ export class FigmationCommander implements INodeType {
 								displayOptions: {
 									show: {
 										'/command': ['create_frame'],
-										'/initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
+										'initialLayoutMode': ['HORIZONTAL', 'VERTICAL'],
 									},
 								},
 							},
@@ -2546,6 +2645,47 @@ export class FigmationCommander implements INodeType {
 						break;
 
 					case 'set_fill_color':
+						if (!parameters.nodeId) {
+							throw new Error('Node ID is required.');
+						}
+						
+						// Check if gradient or solid color
+						const fillType = parameters.Fill_Type || 'solid';
+						
+						if (fillType === 'solid') {
+							// Handle both hex color and RGB values
+							if (parameters.color) {
+								// Hex color format
+								commandParams = {
+									nodeId: parameters.nodeId,
+									color: parameters.color,
+								};
+							} else {
+								// RGB format
+								commandParams = {
+									nodeId: parameters.nodeId,
+									color: {
+										r: parameters.Red_Value || 1,
+										g: parameters.Green_Value || 0,
+										b: parameters.Blue_Value || 0,
+										a: parameters.Alpha_Value || 1,
+									},
+								};
+							}
+						} else {
+							// Gradient parameters
+							commandParams = {
+								nodeId: parameters.nodeId,
+								gradient: {
+									type: fillType.toUpperCase(), // 'linear_gradient' -> 'LINEAR_GRADIENT'
+									startColor: parameters.Start_Color || parameters.Gradient_Start_Color || '#FF0000',
+									endColor: parameters.End_Color || parameters.Gradient_End_Color || '#0000FF',
+									angle: parameters.Angle || parameters.Gradient_Angle || 0,
+								},
+							};
+						}
+						break;
+						
 					case 'set_stroke_color':
 						if (!parameters.nodeId) {
 							throw new Error('Node ID is required.');
@@ -2553,11 +2693,12 @@ export class FigmationCommander implements INodeType {
 						commandParams = {
 							nodeId: parameters.nodeId,
 							color: {
-								r: parameters.Red_Value || 1,
-								g: parameters.Green_Value || 0,
-								b: parameters.Blue_Value || 0,
-								a: parameters.Alpha_Value || 1,
+								r: parameters.Stroke_Red_Value || 1,
+								g: parameters.Stroke_Green_Value || 0,
+								b: parameters.Stroke_Blue_Value || 0,
+								a: parameters.Stroke_Alpha_Value || 1,
 							},
+							removeStroke: parameters.Remove_Stroke || false,
 						};
 						break;
 
@@ -3003,14 +3144,15 @@ export class FigmationCommander implements INodeType {
 						if (!parameters.customJson) {
 							throw new Error('Custom JSON is required for custom command execution.');
 						}
-						commandParams = {
-							customJson: parameters.customJson,
-							nodeType: parameters.nodeType || 'FRAME',
-							x: parameters.x || 0,
-							y: parameters.y || 0,
-							name: parameters.name || `Custom Node ${Date.now()}`,
-							parentId: parameters.parentId || null,
-						};
+						try {
+							const customJsonObject = JSON.parse(parameters.customJson);
+							commandParams = customJsonObject;
+						} catch (error) {
+							if (error instanceof Error) {
+								throw new Error(`Invalid JSON format for custom command: ${error.message}`);
+							}
+							throw new Error('Invalid JSON format for custom command');
+						}
 						break;
 
 					case 'get_document_info':

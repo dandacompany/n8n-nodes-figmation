@@ -7,10 +7,10 @@
       "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
       "typeVersion": 2,
       "position": [
-        -400,
-        -1888
+        -960,
+        -432
       ],
-      "id": "d99ea56d-e974-4e69-a6c1-fbe2b837069e",
+      "id": "544cc4dd-39bb-4deb-91f9-af31c3a7ae8a",
       "name": "MCP Server Trigger",
       "webhookId": "6bb43ca6-32e5-47f2-a9c9-6a519ca72a82"
     },
@@ -26,19 +26,20 @@
             "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the rectangle`, 'number') }}",
             "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the rectangle`, 'number') }}",
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the rectangle layer in Figma`, 'string') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this rectangle should be placed (leave empty for root level)`, 'string') }}",
-            "fillColorR": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__R_', `Red component of the fill color (0-1 range)`, 'number') }}",
-            "fillColorG": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__G_', `Green component of the fill color (0-1 range)`, 'number') }}",
-            "fillColorB": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__B_', `Blue component of the fill color (0-1 range)`, 'number') }}",
-            "fillColorA": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__A_', `Alpha/transparency component of the fill color (0-1 range)`, 'number') }}",
-            "strokeColorR": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', `Red component of the stroke/border color (0-1 range)`, 'number') }}",
-            "strokeColorG": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', `Green component of the stroke/border color (0-1 range)`, 'number') }}",
-            "strokeColorB": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', `Blue component of the stroke/border color (0-1 range)`, 'number') }}",
-            "strokeColorA": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', `Alpha/transparency component of the stroke color (0-1 range)`, 'number') }}",
+            "cornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Rectangle_Corner_Radius', `Corner radius for the rectangle in pixels`, 'number') }}",
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}",
+            "Fill_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__R_', ``, 'number') }}",
+            "Fill_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__G_', ``, 'number') }}",
+            "Fill_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__B_', ``, 'number') }}",
+            "Fill_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__A_', ``, 'number') }}",
+            "Stroke_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', ``, 'number') }}",
+            "Stroke_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', ``, 'number') }}",
+            "Stroke_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', ``, 'number') }}",
+            "Stroke_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', ``, 'number') }}",
             "strokeWeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Weight', `Thickness of the stroke/border in pixels`, 'number') }}",
             "initialOpacity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Opacity', `Opacity level of the rectangle (0-1 range)`, 'number') }}",
             "initialRotation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Rotation', `Rotation angle of the rectangle in degrees`, 'number') }}",
-            "initialCornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Corner_Radius', `Corner radius for rounded corners in pixels`, 'number') }}",
+            "initialCornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Initial_Corner_Radius', `Corner radius for rounded corners in pixels`, 'number') }}",
             "addDropShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Drop_Shadow', `Whether to add a drop shadow effect to the rectangle`, 'boolean') }}"
           }
         }
@@ -46,10 +47,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -320,
-        -1888
+        -1136,
+        -192
       ],
-      "id": "cfa1b094-5d92-4db1-9ab1-44949b18e8db",
+      "id": "a8b616ae-992d-4517-9c8c-11fbda082d4d",
       "name": "Create Rectangle"
     },
     {
@@ -64,19 +65,20 @@
             "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the frame`, 'number') }}",
             "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the frame`, 'number') }}",
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the frame layer in Figma`, 'string') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this frame should be placed (leave empty for root level)`, 'string') }}",
-            "fillColorR": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__R_', `Red component of the fill color (0-1 range)`, 'number') }}",
-            "fillColorG": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__G_', `Green component of the fill color (0-1 range)`, 'number') }}",
-            "fillColorB": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__B_', `Blue component of the fill color (0-1 range)`, 'number') }}",
-            "fillColorA": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__A_', `Alpha/transparency component of the fill color (0-1 range)`, 'number') }}",
-            "strokeColorR": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', `Red component of the stroke/border color (0-1 range)`, 'number') }}",
-            "strokeColorG": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', `Green component of the stroke/border color (0-1 range)`, 'number') }}",
-            "strokeColorB": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', `Blue component of the stroke/border color (0-1 range)`, 'number') }}",
-            "strokeColorA": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', `Alpha/transparency component of the stroke color (0-1 range)`, 'number') }}",
+            "cornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Frame_Corner_Radius', `Corner radius for the frame in pixels`, 'number') }}",
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}",
+            "Fill_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__R_', ``, 'number') }}",
+            "Fill_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__G_', ``, 'number') }}",
+            "Fill_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__B_', ``, 'number') }}",
+            "Fill_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__A_', ``, 'number') }}",
+            "Stroke_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', ``, 'number') }}",
+            "Stroke_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', ``, 'number') }}",
+            "Stroke_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', ``, 'number') }}",
+            "Stroke_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', ``, 'number') }}",
             "strokeWeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Weight', `Thickness of the stroke/border in pixels`, 'number') }}",
             "initialOpacity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Opacity', `Opacity level of the frame (0-1 range)`, 'number') }}",
             "initialRotation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Rotation', `Rotation angle of the frame in degrees`, 'number') }}",
-            "initialCornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Corner_Radius', `Corner radius for rounded corners in pixels`, 'number') }}",
+            "initialCornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Initial_Corner_Radius', `Corner radius for rounded corners in pixels`, 'number') }}",
             "addDropShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Drop_Shadow', `Whether to add a drop shadow effect to the frame`, 'boolean') }}"
           }
         }
@@ -84,10 +86,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -240,
-        -1888
+        -928,
+        -192
       ],
-      "id": "ede44f51-3989-46bb-a957-581da783fd05",
+      "id": "716c957f-7fb0-4532-975a-bcddc505f93e",
       "name": "Create Frame"
     },
     {
@@ -100,13 +102,13 @@
             "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the text should be placed on the Figma canvas`, 'number') }}",
             "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the text should be placed on the Figma canvas`, 'number') }}",
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the text layer in Figma`, 'string') }}",
-            "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Text_Content', `The actual text content to display in the text node`, 'string') }}",
+            "textContent": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Text_Content', ``, 'string') }}",
             "fontSize": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Size', `The font size in pixels for the text`, 'number') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this text should be placed (leave empty for root level)`, 'string') }}",
-            "fontColorR": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__R_', `Red component of the font color (0-1 range)`, 'number') }}",
-            "fontColorG": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__G_', `Green component of the font color (0-1 range)`, 'number') }}",
-            "fontColorB": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__B_', `Blue component of the font color (0-1 range)`, 'number') }}",
-            "fontColorA": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__A_', `Alpha/transparency component of the font color (0-1 range)`, 'number') }}",
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}",
+            "Font_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__R_', ``, 'number') }}",
+            "Font_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__G_', ``, 'number') }}",
+            "Font_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__B_', ``, 'number') }}",
+            "Font_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__A_', ``, 'number') }}",
             "initialOpacity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Opacity', `Opacity level of the text (0-1 range)`, 'number') }}",
             "initialRotation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Rotation', `Rotation angle of the text in degrees`, 'number') }}",
             "addDropShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Drop_Shadow', `Whether to add a drop shadow effect to the text`, 'boolean') }}",
@@ -120,10 +122,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -160,
-        -1888
+        -736,
+        -192
       ],
-      "id": "67e953bd-5d54-48fa-bb82-c3806c7fb9c7",
+      "id": "b05a27d2-3c6f-4328-bbf4-f04255c26918",
       "name": "Create Text"
     },
     {
@@ -135,10 +137,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -80,
-        -1888
+        -528,
+        -192
       ],
-      "id": "aff72168-65b0-4f36-8dd8-f03169c0c10a",
+      "id": "ecb505c6-ffc6-43b6-b0b5-be88053b8a74",
       "name": "Get Document Info"
     },
     {
@@ -150,10 +152,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        0,
-        -1888
+        -336,
+        -192
       ],
-      "id": "dd72cbdb-bfd7-4038-87cb-a5dcc307de5b",
+      "id": "6533e709-611f-4c21-a10f-c6bcdb5e3433",
       "name": "Get Selection"
     },
     {
@@ -172,10 +174,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        80,
-        -1680
+        -1136,
+        32
       ],
-      "id": "180d88b8-8821-4180-9a1d-1722de229c7d",
+      "id": "0be8914f-b5ce-4547-9635-900b556ba9fd",
       "name": "Move Node"
     },
     {
@@ -194,10 +196,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        160,
-        -1680
+        -928,
+        32
       ],
-      "id": "232c03de-a9e0-41ac-9227-c8522737c524",
+      "id": "ac1121d5-c9ed-45ce-a31e-42c736f371d1",
       "name": "Resize Node"
     },
     {
@@ -214,58 +216,35 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        240,
-        -1680
+        -736,
+        32
       ],
-      "id": "124239f0-f734-4b7e-82b9-e723db19b4d7",
+      "id": "6ade3243-7b81-4d1a-8364-d546e08ef0f5",
       "name": "Delete Node"
     },
     {
       "parameters": {
-        "toolDescription": "Sets the fill color of a node in Figma using RGBA values. Parameters: nodeId (string), colorR (number 0-1), colorG (number 0-1), colorB (number 0-1), colorA (number 0-1).",
-        "serverId": "hellofigma",
-        "command": "set_fill_color",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}",
-            "colorR": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Red_Value', `The red color component value between 0.0 and 1.0`, 'number') }}",
-            "colorG": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Green_Value', `The green color component value between 0.0 and 1.0`, 'number') }}",
-            "colorB": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Blue_Value', `The blue color component value between 0.0 and 1.0`, 'number') }}",
-            "colorA": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Alpha_Value', `The alpha transparency value between 0.0 (transparent) and 1.0 (opaque)`, 'number') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        320,
-        -1680
-      ],
-      "id": "89a6aa0f-5d37-47c7-994b-3fcb174281c2",
-      "name": "Set Fill Color"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Sets the stroke color of a node in Figma using RGBA values. Parameters: nodeId (string), colorR (number 0-1), colorG (number 0-1), colorB (number 0-1), colorA (number 0-1).",
+        "toolDescription": "Sets the stroke/border color of a node in Figma using RGBA values or removes stroke completely. Parameters: nodeId (string), colorR (number 0-1), colorG (number 0-1), colorB (number 0-1), colorA (number 0-1), removeStroke (boolean).",
         "serverId": "hellofigma",
         "command": "set_stroke_color",
         "parameters": {
           "params": {
             "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}",
-            "colorR": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Red_Value', `The red color component value between 0.0 and 1.0`, 'number') }}",
-            "colorG": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Green_Value', `The green color component value between 0.0 and 1.0`, 'number') }}",
-            "colorB": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Blue_Value', `The blue color component value between 0.0 and 1.0`, 'number') }}",
-            "colorA": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Alpha_Value', `The alpha transparency value between 0.0 (transparent) and 1.0 (opaque)`, 'number') }}"
+            "Stroke_Red_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Red_Value', `The red color component value for stroke (0-1 range, where 0 is no red and 1 is full red)`, 'number') }}",
+            "Stroke_Green_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Green_Value', `The green color component value for stroke (0-1 range, where 0 is no green and 1 is full green)`, 'number') }}",
+            "Stroke_Blue_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Blue_Value', `The blue color component value for stroke (0-1 range, where 0 is no blue and 1 is full blue)`, 'number') }}",
+            "Stroke_Alpha_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Alpha_Value', `The alpha/transparency value for stroke (0-1 range, where 0 is fully transparent and 1 is fully opaque)`, 'number') }}",
+            "Remove_Stroke": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Remove_Stroke', `Remove stroke completely (overrides color settings)`, 'boolean') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -400,
-        -1680
+        -336,
+        32
       ],
-      "id": "48803eae-4ed3-4d35-8d70-c9214c935311",
+      "id": "0764e1c2-c67f-4965-95bb-703119cd7f3a",
       "name": "Set Stroke Color"
     },
     {
@@ -282,10 +261,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -320,
-        -1488
+        -1136,
+        224
       ],
-      "id": "bea83b13-4e23-4e0b-8681-57d365730108",
+      "id": "d17d4cc2-fdc3-41b6-881d-b73d2e364b9a",
       "name": "Clone Node"
     },
     {
@@ -304,10 +283,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -240,
-        -1488
+        -928,
+        224
       ],
-      "id": "787c237c-1bd0-436c-b7b3-76ec4d07d103",
+      "id": "321345cf-e96d-4818-8a54-5ee5d120e321",
       "name": "Export Node as Image"
     },
     {
@@ -324,10 +303,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -160,
-        -1488
+        -736,
+        224
       ],
-      "id": "f6b61f47-c8a7-4ff9-a0b8-74679fb0b372",
+      "id": "db6e8ecb-d24a-4716-97c7-809e1bb84ce5",
       "name": "Get Node Info"
     },
     {
@@ -337,17 +316,17 @@
         "command": "set_text_content",
         "parameters": {
           "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}"
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target text node in Figma to update the content of`, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -80,
-        -1488
+        -528,
+        224
       ],
-      "id": "1bf390d8-3ae6-4841-966c-49957791ca9f",
+      "id": "62ab9be0-07af-4f94-83ae-1cb0103d72a3",
       "name": "Set Text Content"
     },
     {
@@ -359,10 +338,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        0,
-        -1488
+        -336,
+        224
       ],
-      "id": "3df69d2e-ece0-4a82-a995-1fc6747cbd32",
+      "id": "3ba14977-a7de-4888-941d-d3dec6c64a64",
       "name": "Get Styles"
     },
     {
@@ -374,10 +353,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        80,
-        -1280
+        -1136,
+        432
       ],
-      "id": "f32bba2d-f97a-4c92-9ec9-a15ccfa40727",
+      "id": "fe86bd66-b806-4fe7-903d-196674f8d26a",
       "name": "Get Local Components"
     },
     {
@@ -390,17 +369,18 @@
             "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the component instance should be placed on the Figma canvas`, 'number') }}",
             "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the component instance should be placed on the Figma canvas`, 'number') }}",
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the component instance layer in Figma`, 'string') }}",
-            "componentKey": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Component_Key', `The unique key identifier of the component to create an instance from`, 'string') }}"
+            "componentKey": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Component_Key', `The unique key identifier of the component to create an instance from`, 'string') }}",
+            "parentIdForImage": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        160,
-        -1280
+        -928,
+        432
       ],
-      "id": "db0b34e1-4015-4387-a72f-e79dfb6a6e6e",
+      "id": "f70bdf16-36a2-4771-bfff-529930e61631",
       "name": "Create Component Instance"
     },
     {
@@ -418,10 +398,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        240,
-        -1280
+        -736,
+        432
       ],
-      "id": "9e2e9014-bc59-4976-86c1-9ed3aca64c3b",
+      "id": "3c2b5fe3-b7b5-47b9-a4e3-1cfd0f949167",
       "name": "Set Corner Radius"
     },
     {
@@ -438,10 +418,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        320,
-        -1280
+        -528,
+        432
       ],
-      "id": "ca41bbdb-2841-4c4c-9d61-3c6352a8c305",
+      "id": "19e8a2ae-1b8c-4065-b895-910b6c50317d",
       "name": "Scan Text Nodes"
     },
     {
@@ -452,17 +432,17 @@
         "parameters": {
           "params": {
             "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}",
-            "layoutMode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Layout_Mode', `The auto layout direction: NONE (disable), HORIZONTAL (left to right), or VERTICAL (top to bottom)`, 'string') }}"
+            "layoutMode": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Layout_Mode', `The auto layout direction: NONE (disable), HORIZONTAL (left to right), or VERTICAL (top to bottom)`, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -400,
-        -1280
+        -336,
+        432
       ],
-      "id": "0eb4dd5e-3f0e-40b0-94ec-669bcb1a024e",
+      "id": "0bed321f-4574-4ae5-ae93-c239d15059fd",
       "name": "Set Layout Mode"
     },
     {
@@ -473,10 +453,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -320,
-        -1088
+        -144,
+        -192
       ],
-      "id": "db2b6dcb-5f08-4036-a866-4ab69e11eb2d",
+      "id": "e94c545e-df30-4154-97a6-492545f9c786",
       "name": "Get Channels"
     },
     {
@@ -493,10 +473,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -240,
-        -1088
+        64,
+        -192
       ],
-      "id": "55fd2b91-4abc-4440-8974-4323797f2694",
+      "id": "191d45ef-118d-4a37-b12f-188f51144d0b",
       "name": "Get Nodes Info"
     },
     {
@@ -514,10 +494,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -160,
-        -1088
+        256,
+        -192
       ],
-      "id": "94b7b087-f0cb-426d-b05f-047232d6fbcf",
+      "id": "9bce03bb-8c5c-4d84-81cb-26c9b6191df2",
       "name": "Scan Nodes by Types"
     },
     {
@@ -534,10 +514,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -80,
-        -1088
+        464,
+        -192
       ],
-      "id": "2168e289-2c42-4e3c-906e-0d0c2744c1d2",
+      "id": "23412834-7324-4a19-bc0d-e96d35852858",
       "name": "Set Multiple Text Contents"
     },
     {
@@ -554,10 +534,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        0,
-        -1088
+        656,
+        -192
       ],
-      "id": "158d7fe4-d929-4914-b7e2-ef30d92db8d8",
+      "id": "0989a3c6-58a6-459b-b63d-fb6929267928",
       "name": "Delete Multiple Nodes"
     },
     {
@@ -578,10 +558,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        80,
-        -880
+        -144,
+        32
       ],
-      "id": "4ce145e1-aeac-4a76-9adc-f51e116c1d53",
+      "id": "e577542c-acb5-4155-a70a-9cf8c7f3cf28",
       "name": "Set Padding"
     },
     {
@@ -591,17 +571,17 @@
         "command": "set_axis_align",
         "parameters": {
           "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}"
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target auto layout frame in Figma to set alignment for`, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        160,
-        -880
+        64,
+        32
       ],
-      "id": "460b0111-5f6b-4687-8b9d-9d859e91db1f",
+      "id": "5947683d-acd8-442f-a2d1-8012be5f3920",
       "name": "Set Axis Align"
     },
     {
@@ -611,17 +591,17 @@
         "command": "set_layout_sizing",
         "parameters": {
           "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}"
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target auto layout frame in Figma to set sizing behavior for`, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        240,
-        -880
+        256,
+        32
       ],
-      "id": "25279fe9-05aa-413e-b868-9533697f076d",
+      "id": "fb93c6e6-951f-4580-beaa-f627d456c229",
       "name": "Set Layout Sizing"
     },
     {
@@ -639,10 +619,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        320,
-        -880
+        464,
+        32
       ],
-      "id": "55bcc4aa-053c-4b16-9d35-f65c97ff6f58",
+      "id": "fbebeb78-fdf1-4441-bf43-049b5c62c16e",
       "name": "Set Item Spacing"
     },
     {
@@ -659,10 +639,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -400,
-        -880
+        656,
+        32
       ],
-      "id": "899964f1-6789-495f-af27-52752032c275",
+      "id": "b19eb09e-b88e-424e-b244-f7cd4a70dbdb",
       "name": "Get Annotations"
     },
     {
@@ -680,10 +660,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -320,
-        -688
+        -144,
+        224
       ],
-      "id": "190af2ef-d409-486c-ab45-d7e416298880",
+      "id": "596521d2-eb30-49d6-ae71-b3bd531e7f7a",
       "name": "Set Annotation"
     },
     {
@@ -700,10 +680,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -240,
-        -688
+        64,
+        224
       ],
-      "id": "48babaf8-7f64-46dd-b058-970873875286",
+      "id": "e00afdcd-7aea-4e60-acd1-13087f5f57cb",
       "name": "Get Instance Overrides"
     },
     {
@@ -720,17 +700,15 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -160,
-        -688
+        256,
+        224
       ],
-      "id": "1539f4d1-67da-408f-a571-cebef47b6d70",
+      "id": "b1ee48a9-e861-47eb-83c5-48abc1303cbe",
       "name": "Set Instance Overrides"
     },
     {
       "parameters": {
         "toolDescription": "Retrieves prototype interactions and reactions for specified nodes. Parameters: nodeIds (string - comma separated node IDs, optional).",
-        "connectionMethod": "connect",
-        "host": "localhost",
         "port": 3055,
         "serverId": "hellofigma",
         "command": "get_reactions",
@@ -739,10 +717,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -80,
-        -688
+        464,
+        224
       ],
-      "id": "9f6ed6ee-30b3-4c2f-bfb1-ac21ce110d34",
+      "id": "69a94b4e-07b6-4079-88ec-200a6eb43196",
       "name": "Get Reactions"
     },
     {
@@ -759,10 +737,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        0,
-        -688
+        656,
+        224
       ],
-      "id": "e4405ad2-aa45-451a-bf87-a7a1301e5121",
+      "id": "7bc8a1bb-0a3d-4ec6-add0-88c47100825e",
       "name": "Set Default Connector"
     },
     {
@@ -779,10 +757,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        80,
-        -480
+        -144,
+        432
       ],
-      "id": "3dfc1319-bd8b-4818-b3e3-3dc642e77bfe",
+      "id": "997cb0ac-61f5-499d-b002-8eea544d0081",
       "name": "Create Connections"
     },
     {
@@ -797,18 +775,19 @@
             "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the image frame`, 'number') }}",
             "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the image frame`, 'number') }}",
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the image layer in Figma`, 'string') }}",
+            "cornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Image_Corner_Radius', `Corner radius for the image frame in pixels`, 'number') }}",
             "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Image_URL', `The URL of the image to load and create in Figma`, 'string') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this image should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForImage": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        160,
-        -480
+        64,
+        432
       ],
-      "id": "ec15c3c7-1cb5-47b2-8f4d-21305bc674c3",
+      "id": "7ed702aa-134a-4630-919b-a6cbbf7cf98b",
       "name": "Create Image from URL"
     },
     {
@@ -826,17 +805,17 @@
             "minValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Min_Value', `The minimum value for the slider range`, 'number') }}",
             "maxValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Max_Value', `The maximum value for the slider range`, 'number') }}",
             "currentValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Current_Value', `The current value of the slider within the min-max range`, 'number') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this slider should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForSlider": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        240,
-        -480
+        256,
+        432
       ],
-      "id": "6110ec38-1b58-423c-aacc-0cf96fb809e0",
+      "id": "7839f611-50e8-4b83-a649-cec93bf6ee6a",
       "name": "Create Slider"
     },
     {
@@ -851,15 +830,15 @@
             "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the ellipse`, 'number') }}",
             "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the ellipse`, 'number') }}",
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the ellipse layer in Figma`, 'string') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this ellipse should be placed (leave empty for root level)`, 'string') }}",
-            "fillColorR": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__R_', `Red component of the fill color (0-1 range)`, 'number') }}",
-            "fillColorG": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__G_', `Green component of the fill color (0-1 range)`, 'number') }}",
-            "fillColorB": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__B_', `Blue component of the fill color (0-1 range)`, 'number') }}",
-            "fillColorA": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__A_', `Alpha/transparency component of the fill color (0-1 range)`, 'number') }}",
-            "strokeColorR": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', `Red component of the stroke/border color (0-1 range)`, 'number') }}",
-            "strokeColorG": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', `Green component of the stroke/border color (0-1 range)`, 'number') }}",
-            "strokeColorB": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', `Blue component of the stroke/border color (0-1 range)`, 'number') }}",
-            "strokeColorA": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', `Alpha/transparency component of the stroke color (0-1 range)`, 'number') }}",
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}",
+            "Fill_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__R_', ``, 'number') }}",
+            "Fill_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__G_', ``, 'number') }}",
+            "Fill_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__B_', ``, 'number') }}",
+            "Fill_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__A_', ``, 'number') }}",
+            "Stroke_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', ``, 'number') }}",
+            "Stroke_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', ``, 'number') }}",
+            "Stroke_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', ``, 'number') }}",
+            "Stroke_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', ``, 'number') }}",
             "strokeWeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Weight', `Thickness of the stroke/border in pixels`, 'number') }}",
             "initialOpacity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Opacity', `Opacity level of the ellipse (0-1 range)`, 'number') }}",
             "initialRotation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Rotation', `Rotation angle of the ellipse in degrees`, 'number') }}",
@@ -873,10 +852,10 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        320,
-        -480
+        464,
+        432
       ],
-      "id": "ec35e32d-92b3-4a33-a004-79f49286a3dd",
+      "id": "d1319b55-0714-4e62-8839-10040af88183",
       "name": "Create Ellipse"
     },
     {
@@ -887,17 +866,17 @@
         "parameters": {
           "params": {
             "pathData": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('SVG_Path_Data', `SVG path data string (d attribute) for creating custom vector shapes`, 'string') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this vector path should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -400,
-        -480
+        656,
+        432
       ],
-      "id": "203a3505-7a74-4b79-a397-cc3f80be29ed",
+      "id": "73354ee2-714a-4973-ae33-2ab7a27801f6",
       "name": "Create Vector Path"
     },
     {
@@ -912,19 +891,18 @@
             "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the button component`, 'number') }}",
             "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the button component`, 'number') }}",
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the button component in Figma`, 'string') }}",
-            "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Button_Text', `The text to display on the button`, 'string') }}",
             "buttonStyle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Button_Style', `The visual style of the button: primary, secondary, or outline`, 'string') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this button should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -320,
-        -272
+        -1136,
+        624
       ],
-      "id": "65c9c6ea-6ec8-45fc-9282-228b416e7392",
+      "id": "a00e8db7-d217-4615-a421-a0090d906b73",
       "name": "Create Button"
     },
     {
@@ -936,17 +914,17 @@
           "params": {
             "operation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Operation_Type', `The type of boolean operation: UNION, SUBTRACT, INTERSECT, or EXCLUDE`, 'string') }}",
             "sourceNodeIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Source_Node_IDs', `Comma-separated list of node IDs to combine using the boolean operation`, 'string') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this boolean operation result should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -240,
-        -272
+        -928,
+        624
       ],
-      "id": "b6301eda-6eb1-4960-b0bd-9f276e09abc1",
+      "id": "0d08813a-6f9d-4f83-b5ea-a5a575b185ab",
       "name": "Create Boolean Operation"
     },
     {
@@ -958,17 +936,17 @@
           "params": {
             "pathData": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('SVG_Path_Data', `SVG path data string (d attribute) as alternative to svgContent`, 'string') }}",
             "svgContent": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('SVG_Content', `Complete SVG markup for icon creation`, 'string') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this icon should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -160,
-        -272
+        -736,
+        624
       ],
-      "id": "75293066-6fc6-442d-bbb3-d829e4844a7e",
+      "id": "910f1f33-4629-44d6-8374-c066edf91fd2",
       "name": "Create Icon from SVG"
     },
     {
@@ -985,17 +963,17 @@
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the input field component in Figma`, 'string') }}",
             "placeholder": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Placeholder_Text', `The placeholder text to display in the input field`, 'string') }}",
             "inputType": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Input_Type', `The type of input field: text, password, email, or number`, 'string') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this input field should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -80,
-        -272
+        -528,
+        624
       ],
-      "id": "f4f89e57-e30b-4a02-a5dd-03e892b63947",
+      "id": "eee288a8-02ac-465c-b228-ffea31287b97",
       "name": "Create Input Field"
     },
     {
@@ -1010,19 +988,18 @@
             "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the checkbox component`, 'number') }}",
             "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the checkbox component`, 'number') }}",
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the checkbox component in Figma`, 'string') }}",
-            "label": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Checkbox_Label', `The label text for the checkbox`, 'string') }}",
             "checked": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Checked_State', `The initial checked state of the checkbox (true/false)`, 'boolean') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this checkbox should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        0,
-        -272
+        -336,
+        624
       ],
-      "id": "3d8a43fc-7232-4d76-b68f-899b7e71ce2c",
+      "id": "edd77a48-a31c-4ff8-aef9-ec41f534825d",
       "name": "Create Checkbox"
     },
     {
@@ -1037,19 +1014,18 @@
             "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the toggle component`, 'number') }}",
             "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the toggle component`, 'number') }}",
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the toggle component in Figma`, 'string') }}",
-            "label": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Toggle_Label', `The label text for the toggle switch`, 'string') }}",
             "enabled": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Enabled_State', `The initial enabled state of the toggle (true/false)`, 'boolean') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this toggle should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        80,
-        -80
+        -1136,
+        816
       ],
-      "id": "72d3d855-9a33-4585-a6fc-b2ac2950190c",
+      "id": "62cf9d46-201c-4eab-9971-652c27a9505b",
       "name": "Create Toggle"
     },
     {
@@ -1063,17 +1039,17 @@
             "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the symbol should be placed on the Figma canvas`, 'number') }}",
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the symbol component in Figma`, 'string') }}",
             "sourceNodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Source_Node_ID', `The node ID to create symbol from (if empty, uses current selection)`, 'string') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this symbol should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        160,
-        -80
+        -928,
+        816
       ],
-      "id": "faf5ad9b-4b6c-47e5-80a8-77c2dd7ae5f4",
+      "id": "9eaced82-5c72-4ba6-9bb4-ad4ed26b4a9d",
       "name": "Create Symbol"
     },
     {
@@ -1090,17 +1066,17 @@
             "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the avatar component in Figma`, 'string') }}",
             "avatarType": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Avatar_Type', `The type of avatar: initials, profile, or icon`, 'string') }}",
             "avatarSize": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Avatar_Size', `The size of the avatar in pixels (e.g., 48 for 48x48px avatar)`, 'number') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this avatar should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        240,
-        -80
+        -736,
+        816
       ],
-      "id": "fcf94cdf-e40a-40bc-b05f-e088fd91d826",
+      "id": "0cf64734-da00-4f72-a5b4-522be9c2b00f",
       "name": "Create Avatar"
     },
     {
@@ -1118,17 +1094,17 @@
             "progress": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Progress_Value', `The progress percentage value (0-100)`, 'number') }}",
             "progressStyle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Progress_Style', `The style of progress bar: linear or circular`, 'string') }}",
             "showProgressText": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Show_Progress_Text', `Whether to show percentage text on progress bar (true/false)`, 'boolean') }}",
-            "parentId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node where this progress bar should be placed (leave empty for root level)`, 'string') }}"
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        320,
-        -80
+        -528,
+        816
       ],
-      "id": "949580c8-2fe3-4e98-ac5d-b3c1dd8a3371",
+      "id": "25e210d6-d425-4188-8043-d6fa2079c176",
       "name": "Create Progress Bar"
     },
     {
@@ -1140,25 +1116,30 @@
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -400,
-        -80
+        -528,
+        32
       ],
-      "id": "434cb347-d486-48e7-9b50-8c6c3b896d94",
+      "id": "ac319766-4169-47b4-870e-cd2003260cf2",
       "name": "Create SVG to Vector"
     },
     {
       "parameters": {
-        "toolDescription": "Executes custom Figma API commands using raw JSON input. Parameters: customJson (string), nodeType (string).",
+        "toolDescription": "Executes custom Figma API commands using raw JSON input. Parameters: customJson (string)",
         "serverId": "hellofigma",
-        "command": "execute_custom_command"
+        "command": "execute_custom_command",
+        "parameters": {
+          "params": {
+            "customJson": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Custom_JSON_Payload', ``, 'json') }}"
+          }
+        }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -320,
-        160
+        -144,
+        624
       ],
-      "id": "a0534b66-c54d-420f-8a82-549cc52a0c05",
+      "id": "9aed0a6d-c9e6-4062-bf07-1669dbb36d68",
       "name": "Execute Custom Command"
     },
     {
@@ -1168,10 +1149,10 @@
       "type": "CUSTOM.figmationStrategyTool",
       "typeVersion": 1,
       "position": [
-        -240,
-        368
+        64,
+        624
       ],
-      "id": "382d8104-8489-4b5b-a826-c7cfe8477eba",
+      "id": "8e5ebd15-9c9f-462b-86d8-e5094f318030",
       "name": "Reaction to Connector Strategy"
     },
     {
@@ -1182,10 +1163,10 @@
       "type": "CUSTOM.figmationStrategyTool",
       "typeVersion": 1,
       "position": [
-        -160,
-        368
+        256,
+        624
       ],
-      "id": "e8389078-8386-41cd-b789-99be6a6814e3",
+      "id": "28eb8044-893a-4f42-a0d2-533f703ccef9",
       "name": "Design System Strategy"
     },
     {
@@ -1196,10 +1177,10 @@
       "type": "CUSTOM.figmationStrategyTool",
       "typeVersion": 1,
       "position": [
-        -80,
-        368
+        464,
+        624
       ],
-      "id": "413f8646-0dcf-42cc-abe6-35fd50ca9ab5",
+      "id": "d4498163-cde5-406c-b764-cbe2e738f03d",
       "name": "Component Library Strategy"
     },
     {
@@ -1210,11 +1191,129 @@
       "type": "CUSTOM.figmationStrategyTool",
       "typeVersion": 1,
       "position": [
-        0,
-        368
+        656,
+        624
       ],
-      "id": "ed88821d-bcb4-4b86-8fb1-92f6da7f63c3",
+      "id": "876110ad-ce89-45bd-b518-8256adcd1c06",
       "name": "Custom Strategy"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets a solid fill color for a node in Figma using RGBA values. Parameters: nodeId (string), colorR (number 0-1), colorG (number 0-1), colorB (number 0-1), colorA (number 0-1).",
+        "serverId": "hellofigma",
+        "command": "set_fill_color",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to apply the solid fill color to`, 'string') }}",
+            "Red_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Red_Value', `The red color component value (0-1 range, where 0 is no red and 1 is full red)`, 'number') }}",
+            "Green_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Green_Value', `The green color component value (0-1 range, where 0 is no green and 1 is full green)`, 'number') }}",
+            "Blue_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Blue_Value', `The blue color component value (0-1 range, where 0 is no blue and 1 is full blue)`, 'number') }}",
+            "Alpha_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Alpha_Value', `The alpha/transparency value (0-1 range, where 0 is fully transparent and 1 is fully opaque)`, 'number') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -320,
+        816
+      ],
+      "id": "74420981-0d2a-415c-b58a-6e824e9a2ede",
+      "name": "Set Fill Solid Color"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets a linear gradient fill for a node in Figma. Parameters: nodeId (string), gradientStartColor (string), gradientEndColor (string), gradientAngle (number).",
+        "serverId": "hellofigma",
+        "command": "set_fill_color",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to apply the linear gradient fill to`, 'string') }}",
+            "Fill_Type": "linear_gradient",
+            "Gradient_Start_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Start_Color', `The starting color of the linear gradient (hex color code, e.g., #FF0000 for red)`, 'string') }}",
+            "Gradient_End_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_End_Color', `The ending color of the linear gradient (hex color code, e.g., #0000FF for blue)`, 'string') }}",
+            "Gradient_Angle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Angle', `The angle of the linear gradient in degrees (0-360, where 0 is horizontal left-to-right)`, 'number') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -144,
+        816
+      ],
+      "id": "8288876e-24b0-4015-804d-0fbe7f5d64d2",
+      "name": "Set Fill Linear Gradient Color"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets a radial gradient fill for a node in Figma. Parameters: nodeId (string), gradientStartColor (string), gradientEndColor (string).",
+        "serverId": "hellofigma",
+        "command": "set_fill_color",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to apply the radial gradient fill to`, 'string') }}",
+            "Fill_Type": "radial_gradient",
+            "Gradient_Start_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Start_Color', `The center color of the radial gradient (hex color code, e.g., #FF0000 for red)`, 'string') }}",
+            "Gradient_End_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_End_Color', `The outer color of the radial gradient (hex color code, e.g., #0000FF for blue)`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        64,
+        816
+      ],
+      "id": "01ddaceb-591d-41cf-8a79-2c6b224e9521",
+      "name": "Set Fill Radial Gradient Color"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets an angular gradient fill for a node in Figma. Parameters: nodeId (string), gradientStartColor (string), gradientEndColor (string), gradientAngle (number).",
+        "serverId": "hellofigma",
+        "command": "set_fill_color",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to apply the angular gradient fill to`, 'string') }}",
+            "Fill_Type": "angular_gradient",
+            "Gradient_Start_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Start_Color', `The starting color of the angular gradient (hex color code, e.g., #FF0000 for red)`, 'string') }}",
+            "Gradient_End_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_End_Color', `The ending color of the angular gradient (hex color code, e.g., #0000FF for blue)`, 'string') }}",
+            "Gradient_Angle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Angle', `The starting angle of the angular gradient in degrees (0-360)`, 'number') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        272,
+        816
+      ],
+      "id": "450dbcfe-b4ff-4c0c-b11f-60146250f215",
+      "name": "Set Fill Angular Gradient Color"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets a diamond gradient fill for a node in Figma. Parameters: nodeId (string), gradientStartColor (string), gradientEndColor (string).",
+        "serverId": "hellofigma",
+        "command": "set_fill_color",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to apply the diamond gradient fill to`, 'string') }}",
+            "Fill_Type": "diamond_gradient",
+            "Gradient_Start_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Start_Color', `The center color of the diamond gradient (hex color code, e.g., #FF0000 for red)`, 'string') }}",
+            "Gradient_End_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_End_Color', `The corner color of the diamond gradient (hex color code, e.g., #0000FF for blue)`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        448,
+        816
+      ],
+      "id": "1398a7a5-3a5a-4c3e-8ce6-957610c470dc",
+      "name": "Set Fill Diamond Gradient Color"
     }
   ],
   "connections": {
@@ -1296,17 +1395,6 @@
       ]
     },
     "Delete Node": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Fill Color": {
       "ai_tool": [
         [
           {
@@ -1813,6 +1901,61 @@
       ]
     },
     "Custom Strategy": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Fill Solid Color": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Fill Linear Gradient Color": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Fill Radial Gradient Color": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Fill Angular Gradient Color": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Fill Diamond Gradient Color": {
       "ai_tool": [
         [
           {

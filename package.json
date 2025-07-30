@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-figmation",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "n8n custom nodes package for Figma workflow automation. Connects to Figma plugin via WebSocket server to execute 36 Figma API commands. Supports both local and cloud deployments with external server access.",
   "main": "index.js",
   "scripts": {
