@@ -1331,7 +1331,7 @@ export class FigmationCommander implements INodeType {
 							// Advanced Figma API Properties - Fill Color (simplified)
 							{
 								displayName: 'Fill Color (R)',
-								name: 'fillColorR',
+								name: 'Fill_Color_R',
 								type: 'number',
 								default: 0.2,
 								description: 'Fill color red value (0-1)',
@@ -1343,7 +1343,7 @@ export class FigmationCommander implements INodeType {
 							},
 							{
 								displayName: 'Fill Color (G)',
-								name: 'fillColorG',
+								name: 'Fill_Color_G',
 								type: 'number',
 								default: 0.6,
 								description: 'Fill color green value (0-1)',
@@ -1355,7 +1355,7 @@ export class FigmationCommander implements INodeType {
 							},
 							{
 								displayName: 'Fill Color (B)',
-								name: 'fillColorB',
+								name: 'Fill_Color_B',
 								type: 'number',
 								default: 1.0,
 								description: 'Fill color blue value (0-1)',
@@ -1367,7 +1367,7 @@ export class FigmationCommander implements INodeType {
 							},
 							{
 								displayName: 'Fill Color (A)',
-								name: 'fillColorA',
+								name: 'Fill_Color_A',
 								type: 'number',
 								default: 1.0,
 								description: 'Fill color alpha value (0-1)',
@@ -1380,7 +1380,7 @@ export class FigmationCommander implements INodeType {
 							// Stroke Properties
 							{
 								displayName: 'Stroke Color (R)',
-								name: 'strokeColorR',
+								name: 'Stroke_Color_R',
 								type: 'number',
 								default: 0,
 								description: 'Stroke color red value (0-1)',
@@ -1392,7 +1392,7 @@ export class FigmationCommander implements INodeType {
 							},
 							{
 								displayName: 'Stroke Color (G)',
-								name: 'strokeColorG',
+								name: 'Stroke_Color_G',
 								type: 'number',
 								default: 0,
 								description: 'Stroke color green value (0-1)',
@@ -1404,7 +1404,7 @@ export class FigmationCommander implements INodeType {
 							},
 							{
 								displayName: 'Stroke Color (B)',
-								name: 'strokeColorB',
+								name: 'Stroke_Color_B',
 								type: 'number',
 								default: 0,
 								description: 'Stroke color blue value (0-1)',
@@ -1416,7 +1416,7 @@ export class FigmationCommander implements INodeType {
 							},
 							{
 								displayName: 'Stroke Color (A)',
-								name: 'strokeColorA',
+								name: 'Stroke_Color_A',
 								type: 'number',
 								default: 1,
 								description: 'Stroke color alpha value (0-1)',
@@ -1441,7 +1441,7 @@ export class FigmationCommander implements INodeType {
 							// Text-specific properties
 							{
 								displayName: 'Font Color (R)',
-								name: 'fontColorR',
+								name: 'Font_Color_R',
 								type: 'number',
 								default: 0,
 								description: 'Font color red value (0-1)',
@@ -1453,7 +1453,7 @@ export class FigmationCommander implements INodeType {
 							},
 							{
 								displayName: 'Font Color (G)',
-								name: 'fontColorG',
+								name: 'Font_Color_G',
 								type: 'number',
 								default: 0,
 								description: 'Font color green value (0-1)',
@@ -1465,7 +1465,7 @@ export class FigmationCommander implements INodeType {
 							},
 							{
 								displayName: 'Font Color (B)',
-								name: 'fontColorB',
+								name: 'Font_Color_B',
 								type: 'number',
 								default: 0,
 								description: 'Font color blue value (0-1)',
@@ -1477,7 +1477,7 @@ export class FigmationCommander implements INodeType {
 							},
 							{
 								displayName: 'Font Color (A)',
-								name: 'fontColorA',
+								name: 'Font_Color_A',
 								type: 'number',
 								default: 1,
 								description: 'Font color alpha value (0-1)',
@@ -2330,23 +2330,23 @@ export class FigmationCommander implements INodeType {
 						};
 						
 						// Add advanced Figma API properties if provided
-						if (parameters.fillColorR !== undefined || parameters.fillColorG !== undefined || 
-							parameters.fillColorB !== undefined || parameters.fillColorA !== undefined) {
+						if (parameters.Fill_Color_R !== undefined || parameters.Fill_Color_G !== undefined || 
+							parameters.Fill_Color_B !== undefined || parameters.Fill_Color_A !== undefined) {
 							commandParams.fillColor = {
-								r: parameters.fillColorR || 0,
-								g: parameters.fillColorG || 0,
-								b: parameters.fillColorB || 0,
-								a: parameters.fillColorA !== undefined ? parameters.fillColorA : 1,
+								r: parameters.Fill_Color_R || 0,
+								g: parameters.Fill_Color_G || 0,
+								b: parameters.Fill_Color_B || 0,
+								a: parameters.Fill_Color_A !== undefined ? parameters.Fill_Color_A : 1,
 							};
 						}
 						
-						if (parameters.strokeColorR !== undefined || parameters.strokeColorG !== undefined || 
-							parameters.strokeColorB !== undefined || parameters.strokeColorA !== undefined) {
+						if (parameters.Stroke_Color_R !== undefined || parameters.Stroke_Color_G !== undefined || 
+							parameters.Stroke_Color_B !== undefined || parameters.Stroke_Color_A !== undefined) {
 							commandParams.strokeColor = {
-								r: parameters.strokeColorR || 0,
-								g: parameters.strokeColorG || 0,
-								b: parameters.strokeColorB || 0,
-								a: parameters.strokeColorA !== undefined ? parameters.strokeColorA : 1,
+								r: parameters.Stroke_Color_R || 0,
+								g: parameters.Stroke_Color_G || 0,
+								b: parameters.Stroke_Color_B || 0,
+								a: parameters.Stroke_Color_A !== undefined ? parameters.Stroke_Color_A : 1,
 							};
 						}
 						
@@ -2373,23 +2373,23 @@ export class FigmationCommander implements INodeType {
 						};
 						
 						// Add advanced Figma API properties if provided
-						if (parameters.fillColorR !== undefined || parameters.fillColorG !== undefined || 
-							parameters.fillColorB !== undefined || parameters.fillColorA !== undefined) {
+						if (parameters.Fill_Color_R !== undefined || parameters.Fill_Color_G !== undefined || 
+							parameters.Fill_Color_B !== undefined || parameters.Fill_Color_A !== undefined) {
 							commandParams.fillColor = {
-								r: parameters.fillColorR || 0,
-								g: parameters.fillColorG || 0,
-								b: parameters.fillColorB || 0,
-								a: parameters.fillColorA !== undefined ? parameters.fillColorA : 1,
+								r: parameters.Fill_Color_R || 0,
+								g: parameters.Fill_Color_G || 0,
+								b: parameters.Fill_Color_B || 0,
+								a: parameters.Fill_Color_A !== undefined ? parameters.Fill_Color_A : 1,
 							};
 						}
 						
-						if (parameters.strokeColorR !== undefined || parameters.strokeColorG !== undefined || 
-							parameters.strokeColorB !== undefined || parameters.strokeColorA !== undefined) {
+						if (parameters.Stroke_Color_R !== undefined || parameters.Stroke_Color_G !== undefined || 
+							parameters.Stroke_Color_B !== undefined || parameters.Stroke_Color_A !== undefined) {
 							commandParams.strokeColor = {
-								r: parameters.strokeColorR || 0,
-								g: parameters.strokeColorG || 0,
-								b: parameters.strokeColorB || 0,
-								a: parameters.strokeColorA !== undefined ? parameters.strokeColorA : 1,
+								r: parameters.Stroke_Color_R || 0,
+								g: parameters.Stroke_Color_G || 0,
+								b: parameters.Stroke_Color_B || 0,
+								a: parameters.Stroke_Color_A !== undefined ? parameters.Stroke_Color_A : 1,
 							};
 						}
 						
@@ -2425,23 +2425,23 @@ export class FigmationCommander implements INodeType {
 						};
 						
 						// Add advanced Figma API properties if provided
-						if (parameters.fillColorR !== undefined || parameters.fillColorG !== undefined || 
-							parameters.fillColorB !== undefined || parameters.fillColorA !== undefined) {
+						if (parameters.Fill_Color_R !== undefined || parameters.Fill_Color_G !== undefined || 
+							parameters.Fill_Color_B !== undefined || parameters.Fill_Color_A !== undefined) {
 							commandParams.fillColor = {
-								r: parameters.fillColorR || 0,
-								g: parameters.fillColorG || 0,
-								b: parameters.fillColorB || 0,
-								a: parameters.fillColorA !== undefined ? parameters.fillColorA : 1,
+								r: parameters.Fill_Color_R || 0,
+								g: parameters.Fill_Color_G || 0,
+								b: parameters.Fill_Color_B || 0,
+								a: parameters.Fill_Color_A !== undefined ? parameters.Fill_Color_A : 1,
 							};
 						}
 						
-						if (parameters.strokeColorR !== undefined || parameters.strokeColorG !== undefined || 
-							parameters.strokeColorB !== undefined || parameters.strokeColorA !== undefined) {
+						if (parameters.Stroke_Color_R !== undefined || parameters.Stroke_Color_G !== undefined || 
+							parameters.Stroke_Color_B !== undefined || parameters.Stroke_Color_A !== undefined) {
 							commandParams.strokeColor = {
-								r: parameters.strokeColorR || 0,
-								g: parameters.strokeColorG || 0,
-								b: parameters.strokeColorB || 0,
-								a: parameters.strokeColorA !== undefined ? parameters.strokeColorA : 1,
+								r: parameters.Stroke_Color_R || 0,
+								g: parameters.Stroke_Color_G || 0,
+								b: parameters.Stroke_Color_B || 0,
+								a: parameters.Stroke_Color_A !== undefined ? parameters.Stroke_Color_A : 1,
 							};
 						}
 						
@@ -2473,23 +2473,23 @@ export class FigmationCommander implements INodeType {
 						};
 						
 						// Add advanced Figma API properties if provided
-						if (parameters.fillColorR !== undefined || parameters.fillColorG !== undefined || 
-							parameters.fillColorB !== undefined || parameters.fillColorA !== undefined) {
-							commandParams.fillColor = {
-								r: parameters.fillColorR || 0,
-								g: parameters.fillColorG || 0,
-								b: parameters.fillColorB || 0,
-								a: parameters.fillColorA !== undefined ? parameters.fillColorA : 1,
+						if (parameters.Font_Color_R !== undefined || parameters.Font_Color_G !== undefined || 
+							parameters.Font_Color_B !== undefined || parameters.Font_Color_A !== undefined) {
+							commandParams.fontColor = {
+								r: parameters.Font_Color_R || 0,
+								g: parameters.Font_Color_G || 0,
+								b: parameters.Font_Color_B || 0,
+								a: parameters.Font_Color_A !== undefined ? parameters.Font_Color_A : 1,
 							};
 						}
 						
-						if (parameters.strokeColorR !== undefined || parameters.strokeColorG !== undefined || 
-							parameters.strokeColorB !== undefined || parameters.strokeColorA !== undefined) {
+						if (parameters.Stroke_Color_R !== undefined || parameters.Stroke_Color_G !== undefined || 
+							parameters.Stroke_Color_B !== undefined || parameters.Stroke_Color_A !== undefined) {
 							commandParams.strokeColor = {
-								r: parameters.strokeColorR || 0,
-								g: parameters.strokeColorG || 0,
-								b: parameters.strokeColorB || 0,
-								a: parameters.strokeColorA !== undefined ? parameters.strokeColorA : 1,
+								r: parameters.Stroke_Color_R || 0,
+								g: parameters.Stroke_Color_G || 0,
+								b: parameters.Stroke_Color_B || 0,
+								a: parameters.Stroke_Color_A !== undefined ? parameters.Stroke_Color_A : 1,
 							};
 						}
 						
