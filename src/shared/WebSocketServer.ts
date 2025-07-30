@@ -18,8 +18,10 @@ export interface FigmaResponse {
 }
 
 export interface WebSocketServerConfig {
-  port: number;
+  port?: number;
   host?: string;
+  path?: string;
+  server?: any; // HTTP server for integration
 }
 
 export interface Channel {
@@ -44,18 +46,49 @@ export class FigmaWebSocketServer extends EventEmitter {
   constructor(config: WebSocketServerConfig, mode: 'server' | 'client' = 'server', clientPurpose?: string, channelId?: string) {
     super();
     
-    this.serverUrl = `ws://${config.host || 'localhost'}:${config.port}`;
+    // Determine server URL based on configuration
+    if (config.path && config.server) {
+      // Integrated mode: use HTTP server with path
+      this.serverUrl = `ws://${config.host || 'localhost'}${config.path}`;
+    } else if (config.path && config.port) {
+      // Path-based standalone mode: use port with path
+      this.serverUrl = `ws://${config.host || 'localhost'}:${config.port}${config.path}`;
+    } else if (config.port) {
+      // Standard standalone mode: use separate port
+      this.serverUrl = `ws://${config.host || 'localhost'}:${config.port}`;
+    } else {
+      throw new Error('Invalid WebSocket configuration: either port or path+server must be provided');
+    }
+    
     this.isServer = mode === 'server';
     
     if (this.isServer) {
       // Server mode: Create WebSocket server
-      this.wss = new WebSocketServer({
-        port: config.port,
-        host: config.host || 'localhost'
-      });
+      if (config.path && config.server) {
+        // Integrated mode: attach to existing HTTP server
+        this.wss = new WebSocketServer({
+          server: config.server,
+          path: config.path
+        });
+        console.log(`🚀 Figma WebSocket Server integrated with HTTP server at ${this.serverUrl}`);
+      } else if (config.path && config.port) {
+        // Path-based standalone mode: create server with path
+        this.wss = new WebSocketServer({
+          port: config.port,
+          host: config.host || 'localhost',
+          path: config.path
+        });
+        console.log(`🚀 Figma WebSocket Server started on ${this.serverUrl}`);
+      } else if (config.port) {
+        // Standard standalone mode: create separate server
+        this.wss = new WebSocketServer({
+          port: config.port,
+          host: config.host || 'localhost'
+        });
+        console.log(`🚀 Figma WebSocket Server started on ${this.serverUrl}`);
+      }
       
       this.setupServerEventHandlers();
-      console.log(`🚀 Figma WebSocket Server started on ${this.serverUrl}`);
       console.log(`📡 Server is ready to accept connections from Figma plugins and n8n nodes`);
     } else {
       // Client mode: Connect to existing server

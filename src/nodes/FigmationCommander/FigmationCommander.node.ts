@@ -24,47 +24,12 @@ export class FigmationCommander implements INodeType {
 		subtitle: '={{$parameter["command"] === "get_channels" ? "Get available channels" : $parameter["command"] === "create_rectangle" ? "Create rectangle: " + ($parameter["width"] || "100") + "×" + ($parameter["height"] || "100") : $parameter["command"] === "create_frame" ? "Create frame: " + ($parameter["width"] || "100") + "×" + ($parameter["height"] || "100") : $parameter["command"] === "create_text" ? "Create text: \"" + ($parameter["text"] || "Sample Text") + "\"" : $parameter["command"] === "create_image_from_url" ? "Create image from: " + ($parameter["url"] || "URL") : $parameter["command"] === "create_slider" ? "Create slider: " + ($parameter["minValue"] || "0") + "-" + ($parameter["maxValue"] || "100") : $parameter["command"] === "create_ellipse" ? "Create ellipse: " + ($parameter["width"] || "100") + "×" + ($parameter["height"] || "100") : $parameter["command"] === "create_vector_path" ? "Create vector path" : $parameter["command"] === "create_button" ? "Create button: \"" + ($parameter["text"] || "Button") + "\"" : $parameter["command"] === "create_boolean_operation" ? "Boolean op: " + ($parameter["operation"] || "UNION") : $parameter["command"] === "create_icon_from_svg" ? "Create icon from SVG" : $parameter["command"] === "create_input_field" ? "Create input field: \"" + ($parameter["placeholder"] || "Enter text...") + "\"" : $parameter["command"] === "create_checkbox" ? "Create checkbox: \"" + ($parameter["label"] || "Checkbox") + "\"" : $parameter["command"] === "create_toggle" ? "Create toggle: \"" + ($parameter["label"] || "Toggle") + "\"" : $parameter["command"] === "create_symbol" ? "Create symbol from selection" : $parameter["command"] === "create_avatar" ? "Create avatar: " + ($parameter["avatarSize"] || "48") + "px " + ($parameter["avatarType"] || "initials") : $parameter["command"] === "create_progress_bar" ? "Create progress: " + ($parameter["progress"] || "50") + "%" : $parameter["command"] === "create_svg_to_vector" ? "Convert SVG to vector: " + ($parameter["name"] || "SVG Vector") : $parameter["command"] === "execute_custom_command" ? "Custom command: " + ($parameter["nodeType"] || "FRAME") : $parameter["command"] === "get_document_info" ? "Get document information" : $parameter["command"] === "get_selection" ? "Get selected elements" : $parameter["command"] === "move_node" ? "Move to: (" + ($parameter["x"] || "0") + ", " + ($parameter["y"] || "0") + ")" : $parameter["command"] === "resize_node" ? "Resize to: " + ($parameter["width"] || "100") + "×" + ($parameter["height"] || "100") : $parameter["command"] === "delete_node" ? "Delete element" : $parameter["command"] === "set_fill_color" ? "Fill color: " + ($parameter["color"] || "#FF5733") : $parameter["command"] === "set_stroke_color" ? "Stroke color: " + ($parameter["color"] || "#000000") : $parameter["command"] === "clone_node" ? "Clone element" : $parameter["command"] === "export_node_as_image" ? "Export as image" : $parameter["command"] || "Select command"}}',
 		properties: [
 			{
-				displayName: 'Connection Method',
-				name: 'connectionMethod',
-				type: 'options',
-				options: [
-					{
-						name: 'Connect to Existing Server',
-						value: 'connect',
-						description: 'Connect to an existing WebSocket server',
-					},
-					{
-						name: 'Use Server from Previous Node',
-						value: 'inherit',
-						description: 'Inherit server information from the previous node',
-					},
-				],
-				default: 'connect',
-				description: 'How to connect to the WebSocket server',
-			},
-			{
-				displayName: 'Server Host',
-				name: 'host',
-				type: 'string',
-				default: 'localhost',
-				description: 'WebSocket server host',
-				displayOptions: {
-					show: {
-						connectionMethod: ['connect'],
-					},
-				},
-			},
-			{
 				displayName: 'Server Port',
 				name: 'port',
 				type: 'number',
 				default: 3055,
-				description: 'WebSocket server port',
-				displayOptions: {
-					show: {
-						connectionMethod: ['connect'],
-					},
-				},
+				description: 'WebSocket server port (localhost only)',
+				required: true,
 			},
 			{
 				displayName: 'Server ID',
@@ -73,11 +38,6 @@ export class FigmationCommander implements INodeType {
 				default: '',
 				description: 'Target WebSocket server ID (channel ID)',
 				required: true,
-				displayOptions: {
-					show: {
-						connectionMethod: ['connect'],
-					},
-				},
 			},
 			{
 				displayName: 'Command',
@@ -2329,38 +2289,17 @@ export class FigmationCommander implements INodeType {
 
 		for (let i = 0; i < items.length; i++) {
 			try {
-				const connectionMethod = this.getNodeParameter('connectionMethod', i) as string;
 				const command = this.getNodeParameter('command', i) as string;
 				const parameters = this.getNodeParameter('parameters.params', i, {}) as any;
+				const port = this.getNodeParameter('port', i, 3055) as number;
+				const serverId = this.getNodeParameter('serverId', i) as string;
+				const host = 'localhost'; // Fixed to localhost
 
-				let host: string;
-				let port: number;
-				let serverId: string;
-
-				// Determine server info based on connection method
-				if (connectionMethod === 'inherit') {
-					// Inherit server info from previous node
-					const inputData = items[i].json;
-					host = inputData.host as string || 'localhost';
-					port = inputData.port as number || 3055;
-					serverId = inputData.serverId as string;
-					
-					if (!serverId) {
-						throw new Error('Cannot find serverId from previous node.');
-					}
-				} else {
-					// Direct connection
-					host = this.getNodeParameter('host', i, 'localhost') as string;
-					port = this.getNodeParameter('port', i, 3055) as number;
-					serverId = this.getNodeParameter('serverId', i) as string;
-					
-					if (!serverId) {
-						throw new Error('Server ID is required.');
-					}
+				if (!serverId) {
+					throw new Error('Server ID is required.');
 				}
 
 				console.log('=== Figma WebSocket Command Debug ===');
-				console.log('Connection method:', connectionMethod);
 				console.log('Host:', host);
 				console.log('Port:', port);
 				console.log('Server ID:', serverId);

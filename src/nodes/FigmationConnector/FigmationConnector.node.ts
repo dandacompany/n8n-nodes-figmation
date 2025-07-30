@@ -58,21 +58,14 @@ export class FigmationConnector implements INodeType {
 		activationMessage: 'Figma WebSocket server has started.',
 		properties: [
 			{
-				displayName: 'WebSocket Host',
-				name: 'wsHost',
-				type: 'string',
-				default: '0.0.0.0',
-				description: 'WebSocket server host (use 0.0.0.0 for all interfaces, localhost for local only)',
-				required: true,
-			},
-			{
 				displayName: 'WebSocket Port',
 				name: 'wsPort',
 				type: 'number',
 				default: 3055,
-				description: 'WebSocket server port',
+				description: 'WebSocket server port (localhost only)',
 				required: true,
 			},
+
 			{
 				displayName: 'Server ID (Channel ID)',
 				name: 'serverId',
@@ -111,8 +104,9 @@ export class FigmationConnector implements INodeType {
 	async trigger(this: ITriggerFunctions): Promise<ITriggerResponse> {
 		console.log('🚀 FigmaWebSocketTrigger trigger node activated');
 		
-		const wsHost = this.getNodeParameter('wsHost') as string;
 		const wsPort = this.getNodeParameter('wsPort') as number;
+		const wsHost = 'localhost'; // Fixed to localhost
+		
 		const serverId = this.getNodeParameter('serverId') as string;
 		const eventTypes = this.getNodeParameter('eventTypes') as string[];
 
@@ -140,7 +134,11 @@ export class FigmationConnector implements INodeType {
 
 		// Create WebSocket server
 		console.log('🚀 Creating WebSocket server...');
-		const webSocketServer = new FigmaWebSocketServer({ port: wsPort, host: wsHost });
+		const webSocketServer = new FigmaWebSocketServer({ 
+			port: wsPort, 
+			host: wsHost
+		});
+		
 		console.log(`✅ WebSocket server created: ${webSocketServer.getServerUrl()}`);
 
 		// Create channel (use server ID as channel ID)

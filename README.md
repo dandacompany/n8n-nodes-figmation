@@ -144,7 +144,21 @@ mindmap
 
 ## 📋 Changelog
 
-### v1.1.0 (Latest)
+### v1.2.1 (Latest)
+- 🏠 **Localhost Only**: Simplified to localhost-only connections for better stability
+- 🗑️ **Removed Complex Features**: Eliminated connection types, host configuration, and path settings
+- 🔧 **Fixed Parameter Dependencies**: Resolved n8n displayOptions circular dependency issues
+- ⚡ **Simplified WebSocket**: Direct port-based connections without paths
+- 🛡️ **Enhanced Security**: Local-only connections prevent external access issues
+
+### v1.2.0
+- 🔗 **Connection Type Support**: Added standalone (port-based) and integrated (path-based) connection modes
+- 🛣️ **Path-based WebSocket**: Support for WebSocket paths (e.g., `/ws`) for reverse proxy setups
+- 🔧 **Enhanced Parameter Handling**: Fixed "Could not get parameter" errors with conditional UI fields
+- 🌐 **Improved Domain Support**: Better handling of external domains and localhost path connections
+- 📝 **Better Error Messages**: Enhanced logging and error reporting for connection issues
+
+### v1.1.0
 - ✨ **External Server Access**: Added support for cloud deployments and remote connections
 - 🔧 **Flexible Host Configuration**: Configurable WebSocket host (localhost or 0.0.0.0)
 - 🌐 **Cloud Deployment Support**: Enable n8n.cloud and custom domain connections
