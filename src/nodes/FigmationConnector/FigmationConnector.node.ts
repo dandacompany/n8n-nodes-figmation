@@ -58,6 +58,14 @@ export class FigmationConnector implements INodeType {
 		activationMessage: 'Figma WebSocket server has started.',
 		properties: [
 			{
+				displayName: 'WebSocket Host',
+				name: 'wsHost',
+				type: 'string',
+				default: '0.0.0.0',
+				description: 'WebSocket server host (use 0.0.0.0 for all interfaces, localhost for local only)',
+				required: true,
+			},
+			{
 				displayName: 'WebSocket Port',
 				name: 'wsPort',
 				type: 'number',
@@ -103,6 +111,7 @@ export class FigmationConnector implements INodeType {
 	async trigger(this: ITriggerFunctions): Promise<ITriggerResponse> {
 		console.log('🚀 FigmaWebSocketTrigger trigger node activated');
 		
+		const wsHost = this.getNodeParameter('wsHost') as string;
 		const wsPort = this.getNodeParameter('wsPort') as number;
 		const serverId = this.getNodeParameter('serverId') as string;
 		const eventTypes = this.getNodeParameter('eventTypes') as string[];
@@ -114,6 +123,7 @@ export class FigmationConnector implements INodeType {
 		const triggerId = `trigger_${finalServerId}_${Date.now()}`;
 
 		console.log('📋 Trigger parameters:', {
+			wsHost,
 			wsPort,
 			serverId: finalServerId,
 			eventTypes,
@@ -122,15 +132,15 @@ export class FigmationConnector implements INodeType {
 
 		// Check WebSocket port availability
 		console.log('🔍 Checking WebSocket port availability...');
-		const wsPortAvailable = await isPortAvailable(wsPort, 'localhost');
+		const wsPortAvailable = await isPortAvailable(wsPort, wsHost);
 
 		if (!wsPortAvailable) {
-			throw new Error(`WebSocket port ${wsPort} is already in use.`);
+			throw new Error(`WebSocket port ${wsPort} on host ${wsHost} is already in use.`);
 		}
 
 		// Create WebSocket server
 		console.log('🚀 Creating WebSocket server...');
-		const webSocketServer = new FigmaWebSocketServer({ port: wsPort, host: 'localhost' });
+		const webSocketServer = new FigmaWebSocketServer({ port: wsPort, host: wsHost });
 		console.log(`✅ WebSocket server created: ${webSocketServer.getServerUrl()}`);
 
 		// Create channel (use server ID as channel ID)
@@ -233,7 +243,7 @@ export class FigmationConnector implements INodeType {
 			id: triggerId,
 			serverId: finalServerId,
 			wsPort,
-			wsHost: 'localhost',
+			wsHost,
 			startTime: new Date().toISOString(),
 			webSocketServer,
 		};
