@@ -76,8 +76,8 @@ sequenceDiagram
 - **Channel-based Isolation**: Multi-channel support for workflow separation
 - **MCP Integration**: Tool nodes for AI agent compatibility
 - **Dynamic UI**: Auto-generate parameter fields based on selected command
-- **External Server Access**: Support for cloud deployments and remote connections
-- **Flexible Host Configuration**: Configurable WebSocket host (localhost or 0.0.0.0)
+- **Localhost-only Connections**: Simplified configuration for enhanced security and stability
+- **Fixed Host Configuration**: WebSocket host fixed to localhost for reliable local development
 
 ## 🏗️ Component Architecture
 
@@ -196,6 +196,16 @@ npm run dev
 2. "Figma Connector" and "Figma Commander" nodes available
 3. Build Figma event-based automation workflows
 
+### Configuration
+
+The nodes are configured for **localhost-only connections** for enhanced security and stability:
+
+- **Host**: Fixed to `localhost` (cannot be changed)
+- **Port**: Configurable (default: 3055)
+- **Connection URL**: `ws://localhost:{port}` (no path)
+
+This simplified configuration eliminates external server access issues and ensures reliable local development.
+
 ## Node Types
 
 ### FigmationConnector (Trigger Node)
@@ -203,10 +213,11 @@ npm run dev
 Starts WebSocket server and manages connection with Figma plugin.
 
 **Key Features:**
-- Start/stop WebSocket server
+- Start/stop WebSocket server on localhost
 - Channel creation and management
 - Plugin registration and status monitoring
 - Connection event triggering
+- Simplified localhost-only configuration
 
 ### FigmationCommander (Action Node)
 
