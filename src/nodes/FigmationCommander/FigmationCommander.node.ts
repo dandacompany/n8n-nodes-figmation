@@ -497,8 +497,8 @@ export class FigmationCommander implements INodeType {
 							},
 							// Color parameters
 							{
-								displayName: 'Color (R)',
-								name: 'colorR',
+								displayName: 'Red Value',
+								name: 'Red_Value',
 								type: 'number',
 								default: 1,
 								description: 'Red value (0-1)',
@@ -509,8 +509,8 @@ export class FigmationCommander implements INodeType {
 								},
 							},
 							{
-								displayName: 'Color (G)',
-								name: 'colorG',
+								displayName: 'Green Value',
+								name: 'Green_Value',
 								type: 'number',
 								default: 0,
 								description: 'Green value (0-1)',
@@ -521,8 +521,8 @@ export class FigmationCommander implements INodeType {
 								},
 							},
 							{
-								displayName: 'Color (B)',
-								name: 'colorB',
+								displayName: 'Blue Value',
+								name: 'Blue_Value',
 								type: 'number',
 								default: 0,
 								description: 'Blue value (0-1)',
@@ -533,8 +533,8 @@ export class FigmationCommander implements INodeType {
 								},
 							},
 							{
-								displayName: 'Color (A)',
-								name: 'colorA',
+								displayName: 'Alpha Value',
+								name: 'Alpha_Value',
 								type: 'number',
 								default: 1,
 								description: 'Alpha value (0-1)',
@@ -2553,10 +2553,10 @@ export class FigmationCommander implements INodeType {
 						commandParams = {
 							nodeId: parameters.nodeId,
 							color: {
-								r: parameters.colorR || 1,
-								g: parameters.colorG || 0,
-								b: parameters.colorB || 0,
-								a: parameters.colorA || 1,
+								r: parameters.Red_Value || 1,
+								g: parameters.Green_Value || 0,
+								b: parameters.Blue_Value || 0,
+								a: parameters.Alpha_Value || 1,
 							},
 						};
 						break;
