@@ -228,7 +228,7 @@ export class FigmaWebSocketServer extends EventEmitter {
     }
   }
 
-  private handleMessage(ws: WebSocket, message: any): void {
+  private async handleMessage(ws: WebSocket, message: any): Promise<void> {
     switch (message.type) {
       case 'ping':
         // ping/pong handling
@@ -245,14 +245,31 @@ export class FigmaWebSocketServer extends EventEmitter {
         
         console.log(`Client ${clientInfo.id} (${clientInfo.type}) registering to channel: ${clientInfo.channelId}`);
         
-        // Check if channel exists when channel ID is provided
+        // Check if channel exists when channel ID is provided, create if not exists
         if (message.channelId) {
-          const channel = this.getChannel(message.channelId);
+          let channel = this.getChannel(message.channelId);
           if (!channel) {
-            console.log(`Client ${clientInfo.id} registration failed: Channel ${message.channelId} does not exist`);
+            console.log(`Client ${clientInfo.id} registration: Channel ${message.channelId} does not exist, creating automatically`);
+            try {
+              await this.createChannel(message.channelId, message.channelId);
+              channel = this.getChannel(message.channelId);
+              console.log(`✅ Channel "${message.channelId}" created automatically for client ${clientInfo.id}`);
+            } catch (error) {
+              console.log(`❌ Failed to create channel ${message.channelId}: ${error}`);
+              ws.send(JSON.stringify({
+                type: 'registration_error',
+                error: `Failed to create channel "${message.channelId}": ${error instanceof Error ? error.message : error}`
+              }));
+              return;
+            }
+          }
+
+          // Ensure channel exists after creation attempt
+          if (!channel) {
+            console.log(`❌ Channel ${message.channelId} still not available after creation attempt`);
             ws.send(JSON.stringify({
               type: 'registration_error',
-              error: `Channel "${message.channelId}" does not exist. Please create the channel first using the trigger node.`
+              error: `Failed to access channel "${message.channelId}"`
             }));
             return;
           }

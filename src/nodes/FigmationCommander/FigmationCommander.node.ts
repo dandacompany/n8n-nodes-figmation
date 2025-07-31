@@ -32,12 +32,17 @@ export class FigmationCommander implements INodeType {
 				required: true,
 			},
 			{
-				displayName: 'Server ID',
-				name: 'serverId',
+				displayName: 'Target Channel ID',
+				name: 'targetChannelId',
 				type: 'string',
 				default: '',
-				description: 'Target WebSocket server ID (channel ID)',
+				description: 'Channel ID where the Figma plugin is connected (e.g., "hellofigma", "reference")',
 				required: true,
+				displayOptions: {
+					hide: {
+						'/command': ['get_channels'],
+					},
+				},
 			},
 			{
 				displayName: 'Command',
@@ -128,6 +133,11 @@ export class FigmationCommander implements INodeType {
 						name: 'Get Styles',
 						value: 'get_styles',
 						description: 'Get all styles in the document',
+					},
+					{
+						name: 'Search Available Fonts',
+						value: 'search_available_fonts',
+						description: 'Search for available fonts in the current Figma environment by keyword',
 					},
 					{
 						name: 'Get Local Components',
@@ -295,6 +305,11 @@ export class FigmationCommander implements INodeType {
 						description: 'Convert SVG content to Figma vector layers',
 					},
 					{
+						name: 'Create Group',
+						value: 'create_group',
+						description: 'Create a group from multiple nodes',
+					},
+					{
 						name: 'Execute Custom Command',
 						value: 'execute_custom_command',
 						description: 'Execute custom Figma API command using JSON',
@@ -387,7 +402,9 @@ export class FigmationCommander implements INodeType {
 							'create_symbol',
 							'create_avatar',
 							'create_progress_bar',
+							'create_group',
 							'execute_custom_command',
+							'search_available_fonts',
 						],
 					},
 				},
@@ -454,7 +471,7 @@ export class FigmationCommander implements INodeType {
 								description: 'Object name',
 								displayOptions: {
 									show: {
-										'/command': ['create_rectangle', 'create_frame', 'create_text', 'create_image_from_url', 'create_component_instance', 'create_slider', 'create_ellipse', 'create_button', 'create_input_field', 'create_checkbox', 'create_toggle', 'create_symbol', 'create_avatar', 'create_progress_bar'],
+										'/command': ['create_rectangle', 'create_frame', 'create_text', 'create_image_from_url', 'create_component_instance', 'create_slider', 'create_ellipse', 'create_button', 'create_input_field', 'create_checkbox', 'create_toggle', 'create_symbol', 'create_avatar', 'create_progress_bar', 'create_group'],
 									},
 								},
 							},
@@ -736,7 +753,7 @@ export class FigmationCommander implements INodeType {
 								description: 'Node IDs (comma separated)',
 								displayOptions: {
 									show: {
-										'/command': ['get_nodes_info', 'delete_multiple_nodes'],
+										'/command': ['get_nodes_info', 'delete_multiple_nodes', 'create_group'],
 									},
 								},
 							},
@@ -1153,6 +1170,21 @@ export class FigmationCommander implements INodeType {
                                 },
                             },
 							
+							// Search Available Fonts parameter
+							{
+								displayName: 'Search Keyword',
+								name: 'keyword',
+								type: 'string',
+								default: '',
+								placeholder: 'e.g., Inter, Arial, sans',
+								description: 'Keyword to filter fonts (searches in font family names, styles, and PostScript names)',
+								displayOptions: {
+									show: {
+										'/command': ['search_available_fonts'],
+									},
+								},
+							},
+							
 							// Boolean operation parameters
 							{
 								displayName: 'Operation Type',
@@ -1423,7 +1455,7 @@ export class FigmationCommander implements INodeType {
 								description: 'ID of the parent node to place the object under (optional)',
 								displayOptions: {
 									show: {
-										'/command': ['create_rectangle', 'create_frame', 'create_ellipse', 'create_text', 'create_vector_path', 'create_button', 'create_boolean_operation', 'create_icon_from_svg', 'create_input_field', 'create_checkbox', 'create_toggle', 'create_symbol', 'create_avatar', 'create_progress_bar'],
+										'/command': ['create_rectangle', 'create_frame', 'create_ellipse', 'create_text', 'create_vector_path', 'create_button', 'create_boolean_operation', 'create_icon_from_svg', 'create_input_field', 'create_checkbox', 'create_toggle', 'create_symbol', 'create_avatar', 'create_progress_bar', 'create_group'],
 									},
 								},
 							},
@@ -2159,7 +2191,19 @@ export class FigmationCommander implements INodeType {
 								name: 'fontFamily',
 								type: 'string',
 								default: 'Inter',
-								description: 'Font family name',
+								description: 'Font family name (e.g., "Noto Sans KR", "Inter", "Roboto"). This will be combined with Font Style to create a fontName object.',
+								displayOptions: {
+									show: {
+										'/command': ['create_text'],
+									},
+								},
+							},
+							{
+								displayName: 'Font Style',
+								name: 'fontStyle',
+								type: 'string',
+								default: 'Regular',
+								description: 'Font style (e.g., "Regular", "Bold", "Light"). This will be combined with Font Family to create a fontName object.',
 								displayOptions: {
 									show: {
 										'/command': ['create_text'],
@@ -2391,22 +2435,24 @@ export class FigmationCommander implements INodeType {
 				const command = this.getNodeParameter('command', i) as string;
 				const parameters = this.getNodeParameter('parameters.params', i, {}) as any;
 				const port = this.getNodeParameter('port', i, 3055) as number;
-				const serverId = this.getNodeParameter('serverId', i) as string;
+				const targetChannelId = this.getNodeParameter('targetChannelId', i, '') as string;
 				const host = 'localhost'; // Fixed to localhost
 
-				if (!serverId) {
-					throw new Error('Server ID is required.');
+				if (!targetChannelId && command !== 'get_channels') {
+					throw new Error('Target Channel ID is required for this command.');
 				}
 
 				console.log('=== Figma WebSocket Command Debug ===');
 				console.log('Host:', host);
 				console.log('Port:', port);
-				console.log('Server ID:', serverId);
+				console.log('Target Channel ID:', targetChannelId);
 				console.log('Command:', command);
 				console.log('Parameters:', parameters);
 
 				// Connect with WebSocket client
-				const webSocketClient = new FigmaWebSocketServer({ host, port }, 'client', 'command', serverId);
+				const clientPurpose = command === 'get_channels' ? 'get_channels' : 'command';
+				const channelId = command === 'get_channels' ? undefined : targetChannelId;
+				const webSocketClient = new FigmaWebSocketServer({ host, port }, 'client', clientPurpose, channelId);
 
 				// Wait for connection to complete
 				await webSocketClient.waitForConnection();
@@ -2426,6 +2472,7 @@ export class FigmationCommander implements INodeType {
 							width: parameters.width || 100,
 							height: parameters.height || 100,
 							name: parameters.name || `Rectangle ${Date.now()}`,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						
 						// Add advanced Figma API properties if provided
@@ -2450,9 +2497,10 @@ export class FigmationCommander implements INodeType {
 						}
 						
 						if (parameters.strokeWeight !== undefined) commandParams.strokeWeight = parameters.strokeWeight;
-						if (parameters.opacity !== undefined) commandParams.opacity = parameters.opacity;
-						if (parameters.rotation !== undefined) commandParams.rotation = parameters.rotation;
-						if (parameters.cornerRadius !== undefined) commandParams.cornerRadius = parameters.cornerRadius;
+						if (parameters.initialOpacity !== undefined) commandParams.opacity = parameters.initialOpacity;
+						if (parameters.initialRotation !== undefined) commandParams.rotation = parameters.initialRotation;
+						if (parameters.initialCornerRadius !== undefined) commandParams.cornerRadius = parameters.initialCornerRadius;
+						if (parameters.addDropShadow !== undefined) commandParams.addDropShadow = parameters.addDropShadow;
 						if (parameters.topLeftRadius !== undefined) commandParams.topLeftRadius = parameters.topLeftRadius;
 						if (parameters.topRightRadius !== undefined) commandParams.topRightRadius = parameters.topRightRadius;
 						if (parameters.bottomLeftRadius !== undefined) commandParams.bottomLeftRadius = parameters.bottomLeftRadius;
@@ -2469,6 +2517,7 @@ export class FigmationCommander implements INodeType {
 							width: parameters.width || 100,
 							height: parameters.height || 100,
 							name: parameters.name || `Frame ${Date.now()}`,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						
 						// Add advanced Figma API properties if provided
@@ -2493,9 +2542,10 @@ export class FigmationCommander implements INodeType {
 						}
 						
 						if (parameters.strokeWeight !== undefined) commandParams.strokeWeight = parameters.strokeWeight;
-						if (parameters.opacity !== undefined) commandParams.opacity = parameters.opacity;
-						if (parameters.rotation !== undefined) commandParams.rotation = parameters.rotation;
-						if (parameters.cornerRadius !== undefined) commandParams.cornerRadius = parameters.cornerRadius;
+						if (parameters.initialOpacity !== undefined) commandParams.opacity = parameters.initialOpacity;
+						if (parameters.initialRotation !== undefined) commandParams.rotation = parameters.initialRotation;
+						if (parameters.initialCornerRadius !== undefined) commandParams.cornerRadius = parameters.initialCornerRadius;
+						if (parameters.addDropShadow !== undefined) commandParams.addDropShadow = parameters.addDropShadow;
 						if (parameters.visible !== undefined) commandParams.visible = parameters.visible;
 						if (parameters.locked !== undefined) commandParams.locked = parameters.locked;
 						if (parameters.blendMode !== undefined) commandParams.blendMode = parameters.blendMode;
@@ -2521,6 +2571,7 @@ export class FigmationCommander implements INodeType {
 							width: parameters.width || 100,
 							height: parameters.height || 100,
 							name: parameters.name || `Ellipse ${Date.now()}`,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						
 						// Add advanced Figma API properties if provided
@@ -2545,8 +2596,9 @@ export class FigmationCommander implements INodeType {
 						}
 						
 						if (parameters.strokeWeight !== undefined) commandParams.strokeWeight = parameters.strokeWeight;
-						if (parameters.opacity !== undefined) commandParams.opacity = parameters.opacity;
-						if (parameters.rotation !== undefined) commandParams.rotation = parameters.rotation;
+						if (parameters.initialOpacity !== undefined) commandParams.opacity = parameters.initialOpacity;
+						if (parameters.initialRotation !== undefined) commandParams.rotation = parameters.initialRotation;
+						if (parameters.addDropShadow !== undefined) commandParams.addDropShadow = parameters.addDropShadow;
 						if (parameters.visible !== undefined) commandParams.visible = parameters.visible;
 						if (parameters.locked !== undefined) commandParams.locked = parameters.locked;
 						if (parameters.blendMode !== undefined) commandParams.blendMode = parameters.blendMode;
@@ -2566,9 +2618,10 @@ export class FigmationCommander implements INodeType {
 						commandParams = {
 							x: parameters.x || 0,
 							y: parameters.y || 0,
-							text: parameters.text || 'Hello World',
+							text: parameters.textContent || parameters.text || 'Hello World',
 							fontSize: parameters.fontSize || 16,
 							name: parameters.name || `Text ${Date.now()}`,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						
 						// Add advanced Figma API properties if provided
@@ -2593,14 +2646,20 @@ export class FigmationCommander implements INodeType {
 						}
 						
 						if (parameters.strokeWeight !== undefined) commandParams.strokeWeight = parameters.strokeWeight;
-						if (parameters.opacity !== undefined) commandParams.opacity = parameters.opacity;
-						if (parameters.rotation !== undefined) commandParams.rotation = parameters.rotation;
+						if (parameters.initialOpacity !== undefined) commandParams.opacity = parameters.initialOpacity;
+						if (parameters.initialRotation !== undefined) commandParams.rotation = parameters.initialRotation;
+						if (parameters.addDropShadow !== undefined) commandParams.addDropShadow = parameters.addDropShadow;
 						if (parameters.visible !== undefined) commandParams.visible = parameters.visible;
 						if (parameters.locked !== undefined) commandParams.locked = parameters.locked;
 						if (parameters.blendMode !== undefined) commandParams.blendMode = parameters.blendMode;
 						
-						// Text-specific properties
-						if (parameters.fontFamily !== undefined) commandParams.fontFamily = parameters.fontFamily;
+						// Text-specific properties - fontName 객체로 통합
+						if (parameters.fontFamily !== undefined || parameters.fontStyle !== undefined) {
+							commandParams.fontName = {
+								family: parameters.fontFamily || 'Inter',
+								style: parameters.fontStyle || 'Regular'
+							};
+						}
 						if (parameters.fontWeight !== undefined) commandParams.fontWeight = parameters.fontWeight;
 						if (parameters.textCase !== undefined) commandParams.textCase = parameters.textCase;
 						if (parameters.textDecoration !== undefined) commandParams.textDecoration = parameters.textDecoration;
@@ -2665,10 +2724,10 @@ export class FigmationCommander implements INodeType {
 								commandParams = {
 									nodeId: parameters.nodeId,
 									color: {
-										r: parameters.Red_Value || 1,
-										g: parameters.Green_Value || 0,
-										b: parameters.Blue_Value || 0,
-										a: parameters.Alpha_Value || 1,
+										r: parameters.Red_Value !== undefined ? parameters.Red_Value : 1,
+										g: parameters.Green_Value !== undefined ? parameters.Green_Value : 0,
+										b: parameters.Blue_Value !== undefined ? parameters.Blue_Value : 0,
+										a: parameters.Alpha_Value !== undefined ? parameters.Alpha_Value : 1,
 									},
 								};
 							}
@@ -2693,10 +2752,10 @@ export class FigmationCommander implements INodeType {
 						commandParams = {
 							nodeId: parameters.nodeId,
 							color: {
-								r: parameters.Stroke_Red_Value || 1,
-								g: parameters.Stroke_Green_Value || 0,
-								b: parameters.Stroke_Blue_Value || 0,
-								a: parameters.Stroke_Alpha_Value || 1,
+								r: parameters.Stroke_Red_Value !== undefined ? parameters.Stroke_Red_Value : 1,
+								g: parameters.Stroke_Green_Value !== undefined ? parameters.Stroke_Green_Value : 0,
+								b: parameters.Stroke_Blue_Value !== undefined ? parameters.Stroke_Blue_Value : 0,
+								a: parameters.Stroke_Alpha_Value !== undefined ? parameters.Stroke_Alpha_Value : 1,
 							},
 							removeStroke: parameters.Remove_Stroke || false,
 						};
@@ -2761,7 +2820,7 @@ export class FigmationCommander implements INodeType {
 							x: parameters.x || 0,
 							y: parameters.y || 0,
 							name: parameters.name || `Instance ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForImage || parameters.parentId || null,
 						};
 						break;
 
@@ -2981,7 +3040,7 @@ export class FigmationCommander implements INodeType {
 							maxValue: parameters.maxValue || 100,
 							currentValue: parameters.currentValue || 50,
 							name: parameters.name || `Slider ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -2992,7 +3051,7 @@ export class FigmationCommander implements INodeType {
 							width: parameters.width || 100,
 							height: parameters.height || 100,
 							name: parameters.name || `Ellipse ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3005,7 +3064,7 @@ export class FigmationCommander implements INodeType {
 							x: parameters.x || 0,
 							y: parameters.y || 0,
 							name: parameters.name || `Vector Path ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3018,7 +3077,7 @@ export class FigmationCommander implements INodeType {
 							text: parameters.text || 'Button',
 							buttonStyle: parameters.buttonStyle || 'primary',
 							name: parameters.name || `Button ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3030,7 +3089,7 @@ export class FigmationCommander implements INodeType {
 							operation: parameters.operation || 'UNION',
 							sourceNodeIds: parameters.sourceNodeIds.split(',').map((id: string) => id.trim()),
 							name: parameters.name || `Boolean Operation ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3046,7 +3105,7 @@ export class FigmationCommander implements INodeType {
 							width: parameters.width || 24,
 							height: parameters.height || 24,
 							name: parameters.name || `Icon ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3059,7 +3118,7 @@ export class FigmationCommander implements INodeType {
 							placeholder: parameters.placeholder || 'Enter text...',
 							inputType: parameters.inputType || 'text',
 							name: parameters.name || `Input Field ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3072,7 +3131,7 @@ export class FigmationCommander implements INodeType {
 							label: parameters.label || 'Checkbox',
 							checked: parameters.checked || false,
 							name: parameters.name || `Checkbox ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3085,7 +3144,7 @@ export class FigmationCommander implements INodeType {
 							label: parameters.label || 'Toggle',
 							enabled: parameters.enabled || false,
 							name: parameters.name || `Toggle ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3093,7 +3152,7 @@ export class FigmationCommander implements INodeType {
 						commandParams = {
 							sourceNodeId: parameters.sourceNodeId || null,
 							name: parameters.name || `Symbol ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3107,7 +3166,7 @@ export class FigmationCommander implements INodeType {
 							avatarType: parameters.avatarType || 'initials',
 							avatarText: parameters.avatarText || 'AB',
 							name: parameters.name || `Avatar ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3121,7 +3180,7 @@ export class FigmationCommander implements INodeType {
 							progressStyle: parameters.progressStyle || 'linear',
 							showProgressText: parameters.showProgressText !== undefined ? parameters.showProgressText : true,
 							name: parameters.name || `Progress Bar ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3136,7 +3195,18 @@ export class FigmationCommander implements INodeType {
 							width: parameters.width,
 							height: parameters.height,
 							name: parameters.name || `SVG Vector ${Date.now()}`,
-							parentId: parameters.parentId || null,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
+						};
+						break;
+
+					case 'create_group':
+						if (!parameters.nodeIds) {
+							throw new Error('Node IDs are required for group creation.');
+						}
+						commandParams = {
+							nodeIds: parameters.nodeIds,
+							name: parameters.name || `Group ${Date.now()}`,
+							parentId: parameters.parentIdForNode || parameters.Parent_Node_ID || parameters.parentId || null,
 						};
 						break;
 
@@ -3160,6 +3230,12 @@ export class FigmationCommander implements INodeType {
 					case 'get_styles':
 					case 'get_local_components':
 						// No parameters
+						break;
+
+					case 'search_available_fonts':
+						commandParams = {
+							keyword: parameters.keyword || '',
+						};
 						break;
 
 					// New style commands
@@ -3240,7 +3316,7 @@ export class FigmationCommander implements INodeType {
 					result = await webSocketClient.getChannels();
 				} else {
 					console.log('Sending Figma command:', command, commandParams);
-					result = await webSocketClient.sendCommandToFigma(command, commandParams, serverId);
+					result = await webSocketClient.sendCommandToFigma(command, commandParams, targetChannelId);
 				}
 
 				console.log('Command execution result:', result);
@@ -3249,7 +3325,7 @@ export class FigmationCommander implements INodeType {
 				returnData.push({
 					json: {
 						command,
-						serverId,
+						targetChannelId,
 						host,
 						port,
 						parameters: commandParams,
@@ -3265,7 +3341,7 @@ export class FigmationCommander implements INodeType {
 				returnData.push({
 					json: {
 						command: this.getNodeParameter('command', i, 'unknown'),
-						serverId: this.getNodeParameter('serverId', i, 'unknown'),
+						targetChannelId: this.getNodeParameter('targetChannelId', i, 'unknown'),
 						error: error instanceof Error ? error.message : String(error),
 						timestamp: new Date().toISOString(),
 						success: false,

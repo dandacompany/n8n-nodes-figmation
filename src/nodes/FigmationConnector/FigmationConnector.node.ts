@@ -67,11 +67,11 @@ export class FigmationConnector implements INodeType {
 			},
 
 			{
-				displayName: 'Server ID (Channel ID)',
+				displayName: 'Server ID',
 				name: 'serverId',
 				type: 'string',
 				default: '',
-				description: 'WebSocket server ID (leave empty to auto-generate, also used as channel ID)',
+				description: 'WebSocket server ID (leave empty to auto-generate)',
 			},
 			{
 				displayName: 'Event Types',
@@ -110,7 +110,7 @@ export class FigmationConnector implements INodeType {
 		const serverId = this.getNodeParameter('serverId') as string;
 		const eventTypes = this.getNodeParameter('eventTypes') as string[];
 
-		// Auto-generate server ID (also used as channel ID)
+		// Auto-generate server ID
 		const finalServerId = serverId || `server_${uuidv4().substring(0, 8)}`;
 		
 		// Generate trigger instance ID
@@ -141,15 +141,8 @@ export class FigmationConnector implements INodeType {
 		
 		console.log(`✅ WebSocket server created: ${webSocketServer.getServerUrl()}`);
 
-		// Create channel (use server ID as channel ID)
-		console.log(`📡 Creating channel: ${finalServerId}`);
-		try {
-			await webSocketServer.createChannel(finalServerId, finalServerId);
-			console.log(`✅ Channel created: ${finalServerId}`);
-		} catch (channelError) {
-			console.error(`❌ Channel creation failed: ${finalServerId}`, channelError);
-			throw new Error(`Channel creation failed: ${channelError}`);
-		}
+		// Channels will be created automatically when clients connect
+		console.log(`🏭 WebSocket server ready for channel connections`);
 
 		// Define trigger function
 		const triggerFunction = this.helpers.returnJsonArray;
@@ -263,14 +256,14 @@ export class FigmationConnector implements INodeType {
 					status: 'Active',
 					websocketUrl: webSocketServer.getServerUrl(),
 					serverId: finalServerId,
-					note: 'Use the above server ID and WebSocket URL to connect.',
+					note: 'Connect from Figma plugin using the above WebSocket URL. Channels will be created automatically.',
 				},
 			}
 		};
 
 		console.log('🎯 FigmaWebSocketTrigger node setup complete:');
 		console.log(`   - WebSocket server: ${webSocketServer.getServerUrl()}`);
-		console.log(`   - Server ID (Channel ID): ${finalServerId}`);
+		console.log(`   - Server ID: ${finalServerId}`);
 		console.log(`   - Trigger ID: ${triggerId}`);
 
 		// Execute initial event immediately
