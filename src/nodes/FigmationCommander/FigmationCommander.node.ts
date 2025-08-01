@@ -32,17 +32,12 @@ export class FigmationCommander implements INodeType {
 				required: true,
 			},
 			{
-				displayName: 'Target Channel ID',
-				name: 'targetChannelId',
+				displayName: 'Server ID',
+				name: 'serverId',
 				type: 'string',
 				default: '',
-				description: 'Channel ID where the Figma plugin is connected (e.g., "hellofigma", "reference")',
+				description: 'Target WebSocket server ID (channel ID)',
 				required: true,
-				displayOptions: {
-					hide: {
-						'/command': ['get_channels'],
-					},
-				},
 			},
 			{
 				displayName: 'Command',
@@ -133,11 +128,6 @@ export class FigmationCommander implements INodeType {
 						name: 'Get Styles',
 						value: 'get_styles',
 						description: 'Get all styles in the document',
-					},
-					{
-						name: 'Search Available Fonts',
-						value: 'search_available_fonts',
-						description: 'Search for available fonts in the current Figma environment by keyword',
 					},
 					{
 						name: 'Get Local Components',
@@ -404,7 +394,6 @@ export class FigmationCommander implements INodeType {
 							'create_progress_bar',
 							'create_group',
 							'execute_custom_command',
-							'search_available_fonts',
 						],
 					},
 				},
@@ -1169,21 +1158,6 @@ export class FigmationCommander implements INodeType {
                                     },
                                 },
                             },
-							
-							// Search Available Fonts parameter
-							{
-								displayName: 'Search Keyword',
-								name: 'keyword',
-								type: 'string',
-								default: '',
-								placeholder: 'e.g., Inter, Arial, sans',
-								description: 'Keyword to filter fonts (searches in font family names, styles, and PostScript names)',
-								displayOptions: {
-									show: {
-										'/command': ['search_available_fonts'],
-									},
-								},
-							},
 							
 							// Boolean operation parameters
 							{
@@ -2191,19 +2165,7 @@ export class FigmationCommander implements INodeType {
 								name: 'fontFamily',
 								type: 'string',
 								default: 'Inter',
-								description: 'Font family name (e.g., "Noto Sans KR", "Inter", "Roboto"). This will be combined with Font Style to create a fontName object.',
-								displayOptions: {
-									show: {
-										'/command': ['create_text'],
-									},
-								},
-							},
-							{
-								displayName: 'Font Style',
-								name: 'fontStyle',
-								type: 'string',
-								default: 'Regular',
-								description: 'Font style (e.g., "Regular", "Bold", "Light"). This will be combined with Font Family to create a fontName object.',
+								description: 'Font family name',
 								displayOptions: {
 									show: {
 										'/command': ['create_text'],
@@ -2435,24 +2397,22 @@ export class FigmationCommander implements INodeType {
 				const command = this.getNodeParameter('command', i) as string;
 				const parameters = this.getNodeParameter('parameters.params', i, {}) as any;
 				const port = this.getNodeParameter('port', i, 3055) as number;
-				const targetChannelId = this.getNodeParameter('targetChannelId', i, '') as string;
+				const serverId = this.getNodeParameter('serverId', i) as string;
 				const host = 'localhost'; // Fixed to localhost
 
-				if (!targetChannelId && command !== 'get_channels') {
-					throw new Error('Target Channel ID is required for this command.');
+				if (!serverId) {
+					throw new Error('Server ID is required.');
 				}
 
 				console.log('=== Figma WebSocket Command Debug ===');
 				console.log('Host:', host);
 				console.log('Port:', port);
-				console.log('Target Channel ID:', targetChannelId);
+				console.log('Server ID:', serverId);
 				console.log('Command:', command);
 				console.log('Parameters:', parameters);
 
 				// Connect with WebSocket client
-				const clientPurpose = command === 'get_channels' ? 'get_channels' : 'command';
-				const channelId = command === 'get_channels' ? undefined : targetChannelId;
-				const webSocketClient = new FigmaWebSocketServer({ host, port }, 'client', clientPurpose, channelId);
+				const webSocketClient = new FigmaWebSocketServer({ host, port }, 'client', 'command', serverId);
 
 				// Wait for connection to complete
 				await webSocketClient.waitForConnection();
@@ -2653,13 +2613,8 @@ export class FigmationCommander implements INodeType {
 						if (parameters.locked !== undefined) commandParams.locked = parameters.locked;
 						if (parameters.blendMode !== undefined) commandParams.blendMode = parameters.blendMode;
 						
-						// Text-specific properties - fontName 객체로 통합
-						if (parameters.fontFamily !== undefined || parameters.fontStyle !== undefined) {
-							commandParams.fontName = {
-								family: parameters.fontFamily || 'Inter',
-								style: parameters.fontStyle || 'Regular'
-							};
-						}
+						// Text-specific properties
+						if (parameters.fontFamily !== undefined) commandParams.fontFamily = parameters.fontFamily;
 						if (parameters.fontWeight !== undefined) commandParams.fontWeight = parameters.fontWeight;
 						if (parameters.textCase !== undefined) commandParams.textCase = parameters.textCase;
 						if (parameters.textDecoration !== undefined) commandParams.textDecoration = parameters.textDecoration;
@@ -2724,10 +2679,10 @@ export class FigmationCommander implements INodeType {
 								commandParams = {
 									nodeId: parameters.nodeId,
 									color: {
-										r: parameters.Red_Value !== undefined ? parameters.Red_Value : 1,
-										g: parameters.Green_Value !== undefined ? parameters.Green_Value : 0,
-										b: parameters.Blue_Value !== undefined ? parameters.Blue_Value : 0,
-										a: parameters.Alpha_Value !== undefined ? parameters.Alpha_Value : 1,
+										r: parameters.Red_Value || 1,
+										g: parameters.Green_Value || 0,
+										b: parameters.Blue_Value || 0,
+										a: parameters.Alpha_Value || 1,
 									},
 								};
 							}
@@ -2752,10 +2707,10 @@ export class FigmationCommander implements INodeType {
 						commandParams = {
 							nodeId: parameters.nodeId,
 							color: {
-								r: parameters.Stroke_Red_Value !== undefined ? parameters.Stroke_Red_Value : 1,
-								g: parameters.Stroke_Green_Value !== undefined ? parameters.Stroke_Green_Value : 0,
-								b: parameters.Stroke_Blue_Value !== undefined ? parameters.Stroke_Blue_Value : 0,
-								a: parameters.Stroke_Alpha_Value !== undefined ? parameters.Stroke_Alpha_Value : 1,
+								r: parameters.Stroke_Red_Value || 1,
+								g: parameters.Stroke_Green_Value || 0,
+								b: parameters.Stroke_Blue_Value || 0,
+								a: parameters.Stroke_Alpha_Value || 1,
 							},
 							removeStroke: parameters.Remove_Stroke || false,
 						};
@@ -3232,12 +3187,6 @@ export class FigmationCommander implements INodeType {
 						// No parameters
 						break;
 
-					case 'search_available_fonts':
-						commandParams = {
-							keyword: parameters.keyword || '',
-						};
-						break;
-
 					// New style commands
 					case 'set_opacity':
 						if (!parameters.nodeId) {
@@ -3316,7 +3265,7 @@ export class FigmationCommander implements INodeType {
 					result = await webSocketClient.getChannels();
 				} else {
 					console.log('Sending Figma command:', command, commandParams);
-					result = await webSocketClient.sendCommandToFigma(command, commandParams, targetChannelId);
+					result = await webSocketClient.sendCommandToFigma(command, commandParams, serverId);
 				}
 
 				console.log('Command execution result:', result);
@@ -3325,7 +3274,7 @@ export class FigmationCommander implements INodeType {
 				returnData.push({
 					json: {
 						command,
-						targetChannelId,
+						serverId,
 						host,
 						port,
 						parameters: commandParams,
@@ -3341,7 +3290,7 @@ export class FigmationCommander implements INodeType {
 				returnData.push({
 					json: {
 						command: this.getNodeParameter('command', i, 'unknown'),
-						targetChannelId: this.getNodeParameter('targetChannelId', i, 'unknown'),
+						serverId: this.getNodeParameter('serverId', i, 'unknown'),
 						error: error instanceof Error ? error.message : String(error),
 						timestamp: new Date().toISOString(),
 						success: false,
