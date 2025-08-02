@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 interface WebSocketTriggerInstance {
 	id: string;
-	serverId: string;
 	wsPort: number;
 	wsHost: string;
 	startTime: string;
@@ -65,14 +64,6 @@ export class FigmationConnector implements INodeType {
 				description: 'WebSocket server port (localhost only)',
 				required: true,
 			},
-
-			{
-				displayName: 'Server ID',
-				name: 'serverId',
-				type: 'string',
-				default: '',
-				description: 'WebSocket server ID (leave empty to auto-generate)',
-			},
 			{
 				displayName: 'Event Types',
 				name: 'eventTypes',
@@ -106,20 +97,14 @@ export class FigmationConnector implements INodeType {
 		
 		const wsPort = this.getNodeParameter('wsPort') as number;
 		const wsHost = 'localhost'; // Fixed to localhost
-		
-		const serverId = this.getNodeParameter('serverId') as string;
 		const eventTypes = this.getNodeParameter('eventTypes') as string[];
-
-		// Auto-generate server ID
-		const finalServerId = serverId || `server_${uuidv4().substring(0, 8)}`;
 		
 		// Generate trigger instance ID
-		const triggerId = `trigger_${finalServerId}_${Date.now()}`;
+		const triggerId = `trigger_${uuidv4().substring(0, 8)}_${Date.now()}`;
 
 		console.log('📋 Trigger parameters:', {
 			wsHost,
 			wsPort,
-			serverId: finalServerId,
 			eventTypes,
 			triggerId,
 		});
@@ -156,7 +141,6 @@ export class FigmationConnector implements INodeType {
 					json: {
 						eventType: 'command_received',
 						timestamp: new Date().toISOString(),
-						serverId: finalServerId,
 						triggerId,
 						command: eventData.command,
 						params: eventData.params,
@@ -173,7 +157,6 @@ export class FigmationConnector implements INodeType {
 					json: {
 						eventType: 'command_result',
 						timestamp: new Date().toISOString(),
-						serverId: finalServerId,
 						triggerId,
 						commandId: eventData.id,
 						result: eventData.result,
@@ -194,7 +177,6 @@ export class FigmationConnector implements INodeType {
 					json: {
 						eventType: 'client_connected',
 						timestamp: new Date().toISOString(),
-						serverId: finalServerId,
 						triggerId,
 						clientInfo,
 						connectedClients: webSocketServer.getConnectedClients(),
@@ -213,7 +195,6 @@ export class FigmationConnector implements INodeType {
 					json: {
 						eventType: 'client_disconnected',
 						timestamp: new Date().toISOString(),
-						serverId: finalServerId,
 						triggerId,
 						clientInfo,
 						connectedClients: webSocketServer.getConnectedClients(),
@@ -232,7 +213,6 @@ export class FigmationConnector implements INodeType {
 
 		const triggerInstance: WebSocketTriggerInstance = {
 			id: triggerId,
-			serverId: finalServerId,
 			wsPort,
 			wsHost,
 			startTime: new Date().toISOString(),
@@ -247,7 +227,6 @@ export class FigmationConnector implements INodeType {
 			json: {
 				eventType: 'trigger_activated',
 				timestamp: new Date().toISOString(),
-				serverId: finalServerId,
 				triggerId,
 				websocketUrl: webSocketServer.getServerUrl(),
 				status: 'Active',
@@ -255,7 +234,6 @@ export class FigmationConnector implements INodeType {
 				connectionInfo: {
 					status: 'Active',
 					websocketUrl: webSocketServer.getServerUrl(),
-					serverId: finalServerId,
 					note: 'Connect from Figma plugin using the above WebSocket URL. Channels will be created automatically.',
 				},
 			}
@@ -263,7 +241,6 @@ export class FigmationConnector implements INodeType {
 
 		console.log('🎯 FigmaWebSocketTrigger node setup complete:');
 		console.log(`   - WebSocket server: ${webSocketServer.getServerUrl()}`);
-		console.log(`   - Server ID: ${finalServerId}`);
 		console.log(`   - Trigger ID: ${triggerId}`);
 
 		// Execute initial event immediately

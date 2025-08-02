@@ -103,3 +103,4 @@ jspm_packages/
 .n8n/
 workflows/
 credentials.json
+*.log

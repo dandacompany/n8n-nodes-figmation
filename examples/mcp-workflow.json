@@ -2,1305 +2,456 @@
   "nodes": [
     {
       "parameters": {
-        "toolDescription": "Creates a group from multiple nodes in Figma. Parameters: nodeIds (string), name (string), parentId (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "search_available_fonts",
-        "parameters": {
-          "params": {
-            "keyword": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Search_Keyword', ``, 'string') }}"
-          }
-        }
+        "content": "## 컴포넌트 작업",
+        "height": 288,
+        "width": 2416,
+        "color": 3
       },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -608,
-        1152
+        -4752,
+        336
       ],
-      "id": "6086cda1-87ff-4df7-b251-9e8448e8d225",
-      "name": "Search Available Fonts"
+      "typeVersion": 1,
+      "id": "9cb14f66-e3fc-4bf9-9822-d9c89ca5b489",
+      "name": "Sticky Note7"
     },
     {
       "parameters": {
-        "toolDescription": "Sets a diamond gradient fill for a node in Figma. Parameters: nodeId (string), gradientStartColor (string), gradientEndColor (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_fill_color",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to apply the diamond gradient fill to`, 'string') }}",
-            "Fill_Type": "diamond_gradient",
-            "Gradient_Start_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Start_Color', `The center color of the diamond gradient (hex color code, e.g., #FF0000 for red)`, 'string') }}",
-            "Gradient_End_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_End_Color', `The corner color of the diamond gradient (hex color code, e.g., #0000FF for blue)`, 'string') }}"
-          }
-        }
+        "content": "## 레이어 순서 조정",
+        "height": 288,
+        "width": 2416
       },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        992,
-        960
+        -4752,
+        48
       ],
-      "id": "5459ce71-bcce-4b78-af2e-5c8524c0ea78",
-      "name": "Set Fill Diamond Gradient Color"
+      "typeVersion": 1,
+      "id": "21c217e0-9ea8-4ca9-b69a-49c485300fb1",
+      "name": "Sticky Note6"
     },
     {
       "parameters": {
-        "toolDescription": "Sets an angular gradient fill for a node in Figma. Parameters: nodeId (string), gradientStartColor (string), gradientEndColor (string), gradientAngle (number).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_fill_color",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to apply the angular gradient fill to`, 'string') }}",
-            "Fill_Type": "angular_gradient",
-            "Gradient_Start_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Start_Color', `The starting color of the angular gradient (hex color code, e.g., #FF0000 for red)`, 'string') }}",
-            "Gradient_End_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_End_Color', `The ending color of the angular gradient (hex color code, e.g., #0000FF for blue)`, 'string') }}",
-            "Gradient_Angle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Angle', `The starting angle of the angular gradient in degrees (0-360)`, 'number') }}"
-          }
-        }
+        "content": "## 오브젝트 선택",
+        "height": 288,
+        "width": 2416,
+        "color": 2
       },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        784,
-        960
+        -4752,
+        -240
       ],
-      "id": "8efaf8d0-58af-479c-884f-cfbf57e8b9e6",
-      "name": "Set Fill Angular Gradient Color"
+      "typeVersion": 1,
+      "id": "3ef46159-c467-49cb-a0ad-ab2abad84924",
+      "name": "Sticky Note5"
     },
     {
       "parameters": {
-        "toolDescription": "Sets a radial gradient fill for a node in Figma. Parameters: nodeId (string), gradientStartColor (string), gradientEndColor (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_fill_color",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to apply the radial gradient fill to`, 'string') }}",
-            "Fill_Type": "radial_gradient",
-            "Gradient_Start_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Start_Color', `The center color of the radial gradient (hex color code, e.g., #FF0000 for red)`, 'string') }}",
-            "Gradient_End_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_End_Color', `The outer color of the radial gradient (hex color code, e.g., #0000FF for blue)`, 'string') }}"
-          }
-        }
+        "content": "## 스타일 수정",
+        "height": 288,
+        "width": 2416,
+        "color": 5
       },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        592,
-        960
+        -4752,
+        -528
       ],
-      "id": "3721b753-d3a6-45cf-9903-598f10d54efb",
-      "name": "Set Fill Radial Gradient Color"
+      "typeVersion": 1,
+      "id": "a9c312cb-746d-4ef8-97e3-d2e9816516b7",
+      "name": "Sticky Note3"
     },
     {
       "parameters": {
-        "toolDescription": "Sets a linear gradient fill for a node in Figma. Parameters: nodeId (string), gradientStartColor (string), gradientEndColor (string), gradientAngle (number).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_fill_color",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to apply the linear gradient fill to`, 'string') }}",
-            "Fill_Type": "linear_gradient",
-            "Gradient_Start_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Start_Color', `The starting color of the linear gradient (hex color code, e.g., #FF0000 for red)`, 'string') }}",
-            "Gradient_End_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_End_Color', `The ending color of the linear gradient (hex color code, e.g., #0000FF for blue)`, 'string') }}",
-            "Gradient_Angle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Angle', `The angle of the linear gradient in degrees (0-360, where 0 is horizontal left-to-right)`, 'number') }}"
-          }
-        }
+        "content": "## 오브젝트 수정 / 삭제",
+        "height": 288,
+        "width": 1232,
+        "color": 4
       },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        384,
-        960
+        -4752,
+        -816
       ],
-      "id": "670884cc-c775-44a7-b0e0-f5d9222a8f50",
-      "name": "Set Fill Linear Gradient Color"
+      "typeVersion": 1,
+      "id": "35470007-4f2e-416f-aa5d-a7fbbaeb6f8e",
+      "name": "Sticky Note2"
     },
     {
       "parameters": {
-        "toolDescription": "Sets a solid fill color for a node in Figma using RGBA values. Parameters: nodeId (string), colorR (number 0-1), colorG (number 0-1), colorB (number 0-1), colorA (number 0-1).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_fill_color",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to apply the solid fill color to`, 'string') }}",
-            "Red_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Red_Value', `The red color component value (0-1 range, where 0 is no red and 1 is full red)`, 'number') }}",
-            "Green_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Green_Value', `The green color component value (0-1 range, where 0 is no green and 1 is full green)`, 'number') }}",
-            "Blue_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Blue_Value', `The blue color component value (0-1 range, where 0 is no blue and 1 is full blue)`, 'number') }}",
-            "Alpha_Value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Alpha_Value', `The alpha/transparency value (0-1 range, where 0 is fully transparent and 1 is fully opaque)`, 'number') }}"
-          }
-        }
+        "content": "## 오브젝트 생성",
+        "height": 288,
+        "width": 2416,
+        "color": 3
       },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        192,
-        960
+        -4752,
+        -1104
       ],
-      "id": "331dc406-edc6-440d-be0e-9718e6a4b019",
-      "name": "Set Fill Solid Color"
+      "typeVersion": 1,
+      "id": "5756e854-4295-4bcb-8eba-f2b94dadcb3f",
+      "name": "Sticky Note1"
     },
     {
       "parameters": {
-        "toolDescription": "Provides custom strategy guidance for Figma design workflows. Allows users to define their own strategic approach and best practices.",
-        "strategyType": "custom"
+        "content": "## 디자인 정보조회",
+        "height": 304,
+        "width": 2416
       },
-      "type": "CUSTOM.figmationStrategyTool",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1184,
-        768
+        -4752,
+        -1408
       ],
-      "id": "6803f89e-6834-40fe-8f3b-8c63afa16f42",
-      "name": "Custom Strategy"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Provides strategic guidance for organizing and maintaining component libraries in Figma. Includes atomic design principles and systematic component organization.",
-        "strategyType": "component_library"
-      },
-      "type": "CUSTOM.figmationStrategyTool",
       "typeVersion": 1,
-      "position": [
-        992,
-        768
-      ],
-      "id": "8fc3b692-eb48-45bc-84b8-df94db643749",
-      "name": "Component Library Strategy"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Provides comprehensive strategy for implementing design systems in Figma using Figmation Commander commands. Includes component creation, organization, and maintenance workflows.",
-        "strategyType": "design_system"
-      },
-      "type": "CUSTOM.figmationStrategyTool",
-      "typeVersion": 1,
-      "position": [
-        784,
-        768
-      ],
-      "id": "8c505a6d-3323-4a4b-a455-78cb9a75457d",
-      "name": "Design System Strategy"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Provides strategic guidance for converting Figma prototype reactions to visual connector lines. This strategy includes step-by-step process using Figmation Commander commands."
-      },
-      "type": "CUSTOM.figmationStrategyTool",
-      "typeVersion": 1,
-      "position": [
-        592,
-        768
-      ],
-      "id": "548511ae-46c2-40de-b849-50fcfc5c3c9d",
-      "name": "Reaction to Connector Strategy"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Executes custom Figma API commands using raw JSON input. Parameters: customJson (string)",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "execute_custom_command",
-        "parameters": {
-          "params": {
-            "customJson": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Custom_JSON_Payload', `The JSON payload to be executed as a custom command in Figma`, 'json') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        384,
-        768
-      ],
-      "id": "ce962a67-dc98-4129-a53d-68254ec32f40",
-      "name": "Execute Custom Command"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates a group from multiple nodes in Figma. Parameters: nodeIds (string), name (string), parentId (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_group",
-        "parameters": {
-          "params": {
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `Name for the group. If not provided, a default name will be generated.`, 'string') }}",
-            "nodeIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_Ids', `Comma-separated list of node IDs to group together. At least one node ID is required.`, 'string') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the group under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        1184,
-        960
-      ],
-      "id": "03dab76c-2012-4221-9a85-145fcc039903",
-      "name": "Create Group"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Converts SVG content to Figma vector layers using native Figma API. Parameters: svgContent (string), x (number), y (number), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_svg_to_vector"
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        0,
-        176
-      ],
-      "id": "7800a96a-c56f-4a66-8178-0461cbf85e8a",
-      "name": "Create SVG to Vector"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates a progress bar component in Figma. Parameters: x (number), y (number), width (number), height (number), progress (number), progressStyle (string), showProgressText (boolean), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_progress_bar",
-        "parameters": {
-          "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the progress bar should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the progress bar should be placed on the Figma canvas`, 'number') }}",
-            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the progress bar component`, 'number') }}",
-            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the progress bar component`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the progress bar component in Figma`, 'string') }}",
-            "progress": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Progress_Value', `The progress percentage value (0-100)`, 'number') }}",
-            "progressStyle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Progress_Style', `The style of progress bar: linear or circular`, 'string') }}",
-            "showProgressText": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Show_Progress_Text', `Whether to show percentage text on progress bar (true/false)`, 'boolean') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created progress bar under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        0,
-        960
-      ],
-      "id": "8212c1a8-f431-4f65-aefa-1d9543e06552",
-      "name": "Create Progress Bar"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates an avatar placeholder in Figma. Parameters: x (number), y (number), avatarSize (number), avatarType (string), avatarText (string), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_avatar",
-        "parameters": {
-          "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the avatar should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the avatar should be placed on the Figma canvas`, 'number') }}",
-            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the avatar component`, 'number') }}",
-            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the avatar component`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the avatar component in Figma`, 'string') }}",
-            "avatarType": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Avatar_Type', `The type of avatar: initials, profile, or icon`, 'string') }}",
-            "avatarSize": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Avatar_Size', `The size of the avatar in pixels (e.g., 48 for 48x48px avatar)`, 'number') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created avatar under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        -208,
-        960
-      ],
-      "id": "a2ab7905-a214-4c81-a0d8-ec598c73b005",
-      "name": "Create Avatar"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates a reusable symbol component in Figma from selected nodes. Parameters: sourceNodeId (string), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_symbol",
-        "parameters": {
-          "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the symbol should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the symbol should be placed on the Figma canvas`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the symbol component in Figma`, 'string') }}",
-            "sourceNodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Source_Node_ID', `The node ID to create symbol from (if empty, uses current selection)`, 'string') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created symbol under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        -400,
-        960
-      ],
-      "id": "a88d7e85-69c9-4190-b774-c6936e730718",
-      "name": "Create Symbol"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates a toggle switch UI component in Figma. Parameters: x (number), y (number), width (number), height (number), label (string), enabled (boolean), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_toggle",
-        "parameters": {
-          "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the toggle should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the toggle should be placed on the Figma canvas`, 'number') }}",
-            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the toggle component`, 'number') }}",
-            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the toggle component`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the toggle component in Figma`, 'string') }}",
-            "enabled": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Enabled_State', `The initial enabled state of the toggle (true/false)`, 'boolean') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created toggle under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        -608,
-        960
-      ],
-      "id": "62c27021-49b3-41d5-b671-36aa72b030d4",
-      "name": "Create Toggle"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates a checkbox UI component in Figma. Parameters: x (number), y (number), width (number), height (number), label (string), checked (boolean), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_checkbox",
-        "parameters": {
-          "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the checkbox should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the checkbox should be placed on the Figma canvas`, 'number') }}",
-            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the checkbox component`, 'number') }}",
-            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the checkbox component`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the checkbox component in Figma`, 'string') }}",
-            "checked": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Checked_State', `The initial checked state of the checkbox (true/false)`, 'boolean') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created checkbox under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        192,
-        768
-      ],
-      "id": "d627d1d4-0fa9-4627-89f8-aae889ad4391",
-      "name": "Create Checkbox"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates an input field UI component in Figma. Parameters: x (number), y (number), width (number), height (number), placeholder (string), inputType (string), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_input_field",
-        "parameters": {
-          "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the input field should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the input field should be placed on the Figma canvas`, 'number') }}",
-            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the input field component`, 'number') }}",
-            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the input field component`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the input field component in Figma`, 'string') }}",
-            "placeholder": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Placeholder_Text', `The placeholder text to display in the input field`, 'string') }}",
-            "inputType": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Input_Type', `The type of input field: text, password, email, or number`, 'string') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created input field under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        0,
-        768
-      ],
-      "id": "725712fb-9191-4680-adeb-ba2ca5e229a7",
-      "name": "Create Input Field"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates an icon in Figma from SVG data. Parameters: svgContent (string), pathData (string), x (number), y (number), width (number), height (number), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_icon_from_svg",
-        "parameters": {
-          "params": {
-            "pathData": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('SVG_Path_Data', `SVG path data string (d attribute) as alternative to svgContent`, 'string') }}",
-            "svgContent": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('SVG_Content', `Complete SVG markup for icon creation`, 'string') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created icon under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        -208,
-        768
-      ],
-      "id": "6747eb78-6eb3-42ce-9a51-49a71de529d4",
-      "name": "Create Icon from SVG"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates complex shapes using boolean operations in Figma. Parameters: operation (string), sourceNodeIds (string), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_boolean_operation",
-        "parameters": {
-          "params": {
-            "operation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Operation_Type', `The type of boolean operation: UNION, SUBTRACT, INTERSECT, or EXCLUDE`, 'string') }}",
-            "sourceNodeIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Source_Node_IDs', `Comma-separated list of node IDs to combine using the boolean operation`, 'string') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created boolean operation under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        -400,
-        768
-      ],
-      "id": "9dd216ef-6316-4934-a6ff-e3158e5b869e",
-      "name": "Create Boolean Operation"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates a button UI component in Figma. Parameters: x (number), y (number), width (number), height (number), text (string), buttonStyle (string), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_button",
-        "parameters": {
-          "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the button should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the button should be placed on the Figma canvas`, 'number') }}",
-            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the button component`, 'number') }}",
-            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the button component`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the button component in Figma`, 'string') }}",
-            "buttonStyle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Button_Style', `The visual style of the button: primary, secondary, or outline`, 'string') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created button under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        -608,
-        768
-      ],
-      "id": "fce99a08-adb1-40bb-9e81-8c2b7b1f7e34",
-      "name": "Create Button"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates a custom vector path in Figma using SVG path data. Parameters: pathData (string), x (number), y (number), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_vector_path",
-        "parameters": {
-          "params": {
-            "pathData": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('SVG_Path_Data', `SVG path data string (d attribute) for creating custom vector shapes`, 'string') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created vector path under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        1184,
-        576
-      ],
-      "id": "3de07ffe-49d9-45de-aa28-c485fbdc0ccf",
-      "name": "Create Vector Path"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates an ellipse/circle shape in Figma. Parameters: x (number), y (number), width (number), height (number), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_ellipse",
-        "parameters": {
-          "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the ellipse should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the ellipse should be placed on the Figma canvas`, 'number') }}",
-            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the ellipse`, 'number') }}",
-            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the ellipse`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the ellipse layer in Figma`, 'string') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created ellipse under. Leave empty to create at the root.`, 'string') }}",
-            "Fill_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__R_', `Fill color red value (0-1)`, 'number') }}",
-            "Fill_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__G_', `Fill color green value (0-1)`, 'number') }}",
-            "Fill_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__B_', `Fill color blue value (0-1)`, 'number') }}",
-            "Fill_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__A_', `Fill color alpha value (0-1)`, 'number') }}",
-            "Stroke_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', `Stroke color red value (0-1)`, 'number') }}",
-            "Stroke_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', `Stroke color green value (0-1)`, 'number') }}",
-            "Stroke_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', `Stroke color blue value (0-1)`, 'number') }}",
-            "Stroke_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', `Stroke color alpha value (0-1)`, 'number') }}",
-            "strokeWeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Weight', `Thickness of the stroke/border in pixels`, 'number') }}",
-            "initialOpacity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Opacity', `Opacity level of the ellipse (0-1 range)`, 'number') }}",
-            "initialRotation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Rotation', `Rotation angle of the ellipse in degrees`, 'number') }}",
-            "addDropShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Drop_Shadow', `Whether to add a drop shadow effect to the ellipse`, 'boolean') }}",
-            "arcStartAngle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Arc_Start_Angle', `Starting angle for arc/donut shape in radians (0-6.28)`, 'number') }}",
-            "arcEndAngle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Arc_End_Angle', `Ending angle for arc/donut shape in radians (0-6.28)`, 'number') }}",
-            "arcInnerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Arc_Inner_Radius', `Inner radius for donut shape in pixels`, 'number') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        992,
-        576
-      ],
-      "id": "778574df-7db0-4638-93af-5687da40a8a6",
-      "name": "Create Ellipse"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates a slider UI component in Figma. Parameters: x (number), y (number), width (number), height (number), minValue (number), maxValue (number), currentValue (number), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_slider",
-        "parameters": {
-          "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the slider should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the slider should be placed on the Figma canvas`, 'number') }}",
-            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the slider component`, 'number') }}",
-            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the slider component`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the slider component in Figma`, 'string') }}",
-            "minValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Min_Value', `The minimum value for the slider range`, 'number') }}",
-            "maxValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Max_Value', `The maximum value for the slider range`, 'number') }}",
-            "currentValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Current_Value', `The current value of the slider within the min-max range`, 'number') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        784,
-        576
-      ],
-      "id": "202c65d0-3a9b-486a-b070-7da26de1cf9a",
-      "name": "Create Slider"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates an image node in Figma from a URL or binary data. Parameters: url (string), x (number), y (number), width (number), height (number), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_image_from_url",
-        "parameters": {
-          "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the image should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the image should be placed on the Figma canvas`, 'number') }}",
-            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the image frame`, 'number') }}",
-            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the image frame`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the image layer in Figma`, 'string') }}",
-            "cornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Image_Corner_Radius', `Corner radius for the image frame in pixels`, 'number') }}",
-            "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Image_URL', `The URL of the image to load and create in Figma`, 'string') }}",
-            "parentIdForImage": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created image under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        592,
-        576
-      ],
-      "id": "0c42bb78-83a2-49fb-9ec4-867cc440814d",
-      "name": "Create Image from URL"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates prototype connections between nodes for interactive flows. Parameters: connections (string - JSON array of connection objects).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_connections",
-        "parameters": {
-          "params": {
-            "connections": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Connections', `JSON array of connection objects defining prototype interactions between nodes (e.g., [{\"from\": \"nodeId1\", \"to\": \"nodeId2\", \"trigger\": \"ON_CLICK\"}])`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        384,
-        576
-      ],
-      "id": "16a996c0-ba3c-42d2-a2bd-83bcde8c456b",
-      "name": "Create Connections"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Sets the default connector node for prototype flows. Parameters: connectorId (string - connector node ID).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_default_connector",
-        "parameters": {
-          "params": {
-            "connectorId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Connector_ID', `The node ID of the connector element to set as default for prototype flows`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        1184,
-        368
-      ],
-      "id": "da4780ac-b8a3-45f0-b34d-7b811717c196",
-      "name": "Set Default Connector"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Retrieves prototype interactions and reactions for specified nodes. Parameters: nodeIds (string - comma separated node IDs, optional).",
-        "port": 3055,
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "get_reactions",
-        "parameters": {}
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        992,
-        368
-      ],
-      "id": "ab400ab7-0fbd-4ec1-9b3c-5cb1e6a42bea",
-      "name": "Get Reactions"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Applies property overrides to a component instance. Parameters: overridesData (string - JSON object with override properties).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_instance_overrides",
-        "parameters": {
-          "params": {
-            "overridesData": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Overrides_Data', `JSON object containing property overrides for the component instance (e.g., {\"propertyName\": \"newValue\"})`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        784,
-        368
-      ],
-      "id": "e93b824a-8857-41b8-95f5-e0fd313e05bb",
-      "name": "Set Instance Overrides"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Retrieves all override properties and values for a component instance. Parameters: nodeId (string - component instance ID).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "get_instance_overrides",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the component instance node in Figma to retrieve override properties from`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        592,
-        368
-      ],
-      "id": "11464722-6c99-481e-9448-bbe199ea64a9",
-      "name": "Get Instance Overrides"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates or updates an annotation on a specific node in Figma. Parameters: nodeId (string), annotationText (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_annotation",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}",
-            "annotationText": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Annotation_Text', `The text content for the annotation comment to be added to the node`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        384,
-        368
-      ],
-      "id": "7c30f30e-5c1e-4a2f-9b75-03f6abe37cd8",
-      "name": "Set Annotation"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Retrieves all annotations from the document or a specific node. Parameters: nodeId (string - optional, if not provided gets document annotations).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "get_annotations",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node to retrieve annotations from (optional - retrieves document annotations if not provided)`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        1184,
-        176
-      ],
-      "id": "5a2b585d-6216-4b89-95d7-4b2dd258217f",
-      "name": "Get Annotations"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Sets the spacing between child items in an auto layout frame. Parameters: nodeId (string), itemSpacing (number).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_item_spacing",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}",
-            "itemSpacing": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Item_Spacing', `The spacing in pixels between child items in the auto layout frame`, 'number') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        992,
-        176
-      ],
-      "id": "32c5d355-84a0-48e7-bb14-d307af7376ce",
-      "name": "Set Item Spacing"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Sets sizing behavior for auto layout frame dimensions. Parameters: nodeId (string), horizontalSizing (string: FIXED/FILL_CONTAINER/HUG_CONTENTS), verticalSizing (string: FIXED/FILL_CONTAINER/HUG_CONTENTS).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_layout_sizing",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target auto layout frame in Figma to set sizing behavior for`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        784,
-        176
-      ],
-      "id": "9a0107ac-5cc2-4179-abaa-88b740a3d0ed",
-      "name": "Set Layout Sizing"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Sets alignment properties for auto layout frame axes. Parameters: nodeId (string), primaryAxisAlignItems (string), counterAxisAlignItems (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_axis_align",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target auto layout frame in Figma to set alignment for`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        592,
-        176
-      ],
-      "id": "d8129dba-1af3-49cf-af68-fe64c2e6b496",
-      "name": "Set Axis Align"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Sets padding values for all sides of an auto layout frame. Parameters: nodeId (string), paddingTop (number), paddingRight (number), paddingBottom (number), paddingLeft (number).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_padding",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}",
-            "paddingTop": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Padding_Top', `The top padding value in pixels for the auto layout frame`, 'number') }}",
-            "paddingRight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Padding_Right', `The right padding value in pixels for the auto layout frame`, 'number') }}",
-            "paddingBottom": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Padding_Bottom', `The bottom padding value in pixels for the auto layout frame`, 'number') }}",
-            "paddingLeft": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Padding_Left', `The left padding value in pixels for the auto layout frame`, 'number') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        384,
-        176
-      ],
-      "id": "b3a6c0d3-4e93-4eaf-a2fc-fbfffe7f3603",
-      "name": "Set Padding"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Deletes multiple nodes from Figma document in a batch operation. Parameters: nodeIds (string - comma separated node IDs).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "delete_multiple_nodes",
-        "parameters": {
-          "params": {
-            "nodeIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_IDs', `Comma-separated list of node IDs to operate on (e.g., \"id1,id2,id3\")`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        1184,
-        -16
-      ],
-      "id": "493b2683-3026-4938-8bde-61d5cf8c3481",
-      "name": "Delete Multiple Nodes"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Updates text content for multiple text nodes in a single operation. Parameters: textUpdates (string - JSON array of {nodeId, text} objects).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_multiple_text_contents",
-        "parameters": {
-          "params": {
-            "textUpdates": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Text_Updates', `JSON array of text update objects with nodeId and text properties, e.g., [{\"nodeId\":\"123\",\"text\":\"New text\"}]`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        992,
-        -16
-      ],
-      "id": "cf4d1d79-8185-44c0-8f7f-9e05f8079b9d",
-      "name": "Set Multiple Text Contents"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Scans and finds all nodes of specified types within a parent node or document. Parameters: nodeTypes (string - comma separated types like TEXT,FRAME), nodeId (string - optional parent).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "scan_nodes_by_types",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to scan within. Leave empty to scan the entire document`, 'string') }}",
-            "nodeTypes": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_Types', `Comma-separated list of node types to scan for (e.g., \"TEXT,FRAME,RECTANGLE\")`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        784,
-        -16
-      ],
-      "id": "8dca735b-67fd-4254-a4f3-1f21f4c5ba9c",
-      "name": "Scan Nodes by Types"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Retrieves detailed information for multiple nodes at once. Parameters: nodeIds (string - comma separated node IDs).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "get_nodes_info",
-        "parameters": {
-          "params": {
-            "nodeIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_IDs', `Comma-separated list of node IDs to operate on (e.g., \"id1,id2,id3\")`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        592,
-        -16
-      ],
-      "id": "7f69d7e6-67b7-48e3-8709-1ad29f94d357",
-      "name": "Get Nodes Info"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Retrieves list of all available WebSocket channels for Figma plugin connections. No parameters required."
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        384,
-        -16
-      ],
-      "id": "6faa63a0-62a6-4428-89fa-68f5052cdad6",
-      "name": "Get Channels"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Sets the auto layout mode of a frame node in Figma. Parameters: nodeId (string), layoutMode (string: NONE/HORIZONTAL/VERTICAL).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_layout_mode",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}",
-            "layoutMode": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Layout_Mode', `The auto layout direction: NONE (disable), HORIZONTAL (left to right), or VERTICAL (top to bottom)`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        192,
-        576
-      ],
-      "id": "4ead2748-d61c-46e3-aa9b-4f5e95196142",
-      "name": "Set Layout Mode"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Scans and returns all text nodes within a specified parent node or the entire document. Parameters: nodeId (string - optional parent node).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "scan_text_nodes",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to scan within. Leave empty to scan the entire document`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        0,
-        576
-      ],
-      "id": "9866e499-a0f7-4197-a410-2459e3028c05",
-      "name": "Scan Text Nodes"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Sets the corner radius of a node in Figma to create rounded corners. Parameters: nodeId (string), cornerRadius (number).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_corner_radius",
-        "parameters": {
-          "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}",
-            "cornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Corner_Radius', `The corner radius value in pixels to apply to all corners of the node`, 'number') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        -208,
-        576
-      ],
-      "id": "c89f0147-a1e6-4ba4-a834-f8988ee37828",
-      "name": "Set Corner Radius"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates an instance of an existing component in Figma. Parameters: componentKey (string), x (number), y (number), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_component_instance",
-        "parameters": {
-          "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the component instance should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the component instance should be placed on the Figma canvas`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the component instance layer in Figma`, 'string') }}",
-            "componentKey": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Component_Key', `The unique key identifier of the component to create an instance from`, 'string') }}",
-            "parentIdForImage": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created component instance under. Leave empty to create at the root.`, 'string') }}"
-          }
-        }
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        -400,
-        576
-      ],
-      "id": "83564b12-fabb-485d-a8e2-b972240278d5",
-      "name": "Create Component Instance"
+      "id": "d9f9523a-c90b-4762-8223-5ce38dd595d0",
+      "name": "Sticky Note"
     },
     {
       "parameters": {
         "toolDescription": "Gets list of all local components available in the current Figma file with their keys and names. No parameters required.",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "get_local_components"
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "get_components"
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -608,
-        576
+        -4528,
+        432
       ],
-      "id": "69003cb7-f65f-4feb-9374-b5d8004e39ce",
-      "name": "Get Local Components"
+      "id": "5afad6f3-0112-4034-aee8-c3807d3bbbc7",
+      "name": "Get Components"
     },
     {
       "parameters": {
-        "toolDescription": "Retrieves all available color, text, and effect styles from the Figma document. No parameters required.",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "get_styles"
+        "toolDescription": "Reorders multiple layers to new positions in Figma. Parameters: reorderData (array of {nodeId: string, targetIndex: number})",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "reorder_multiple_layers",
+        "parameters": {
+          "params": {}
+        }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        192,
-        368
+        -3760,
+        144
       ],
-      "id": "0d75f15c-0d03-4d48-bd0e-6e854c95be33",
-      "name": "Get Styles"
+      "id": "c47aec99-c02a-4a95-a50d-37aba12f4670",
+      "name": "Reorder Multiple Layers"
     },
     {
       "parameters": {
-        "toolDescription": "Updates the text content of an existing text node in Figma. Parameters: nodeId (string), text (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_text_content",
+        "toolDescription": "Sorts layers by position (x or y coordinate) in Figma. Parameters: parentId (string - optional), sortBy (string: x/y), sortOrder (string: asc/desc)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "sort_layers_by_position",
+        "parameters": {
+          "params": {}
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4336,
+        144
+      ],
+      "id": "88198563-815b-458f-bac5-d59a9feeb148",
+      "name": "Sort Layers by Position"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sorts layers by name alphabetically in Figma. Parameters: parentId (string - optional), sortOrder (string: asc/desc), caseSensitive (boolean)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "sort_layers_by_name",
+        "parameters": {
+          "params": {}
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3552,
+        144
+      ],
+      "id": "228184de-ac88-48b4-80c1-574f4eece3c1",
+      "name": "Sort Layers by Name"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Moves a layer one position backward (down) in the layer stack in Figma. Parameters: nodeId (string)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "move_backward",
         "parameters": {
           "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target text node in Figma to update the content of`, 'string') }}"
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the node to move backward (down) in the layer stack`, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        0,
-        368
+        -3952,
+        144
       ],
-      "id": "b0edec87-350c-4a55-aea4-989be28e6303",
-      "name": "Set Text Content"
+      "id": "478dca51-fae2-49f6-86d7-8f32f79948dd",
+      "name": "Move Backward"
     },
     {
       "parameters": {
-        "toolDescription": "Retrieves detailed information about a specific node including properties, position, and styling. Parameters: nodeId (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "get_node_info",
+        "toolDescription": "Moves a layer one position forward (up) in the layer stack in Figma. Parameters: nodeId (string)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "move_forward",
         "parameters": {
           "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to retrieve detailed information from`, 'string') }}"
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the node to move forward (up) in the layer stack`, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -208,
-        368
+        -4528,
+        144
       ],
-      "id": "98fd23b3-d3b6-46b2-a3af-1a2043c5d28f",
-      "name": "Get Node Info"
+      "id": "db3c8fce-d97e-499f-8b9f-99d3d9a29e3f",
+      "name": "Move Forward"
     },
     {
       "parameters": {
-        "toolDescription": "Exports a node as an image file from Figma. Parameters: nodeId (string), scale (number), format (string: PNG/JPG/SVG).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "export_node_as_image",
+        "toolDescription": "Moves a layer to the back (bottom) of the layer stack in Figma. Parameters: nodeId (string)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "move_to_back",
         "parameters": {
           "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}",
-            "scale": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Export_Scale', `The export scale factor (e.g., 1 for original size, 2 for 2x resolution)`, 'number') }}",
-            "format": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Export_Format', `The export file format: PNG for transparent images, JPG for photos, SVG for vector graphics`, 'string') }}"
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the node to move to the back (bottom) of the layer stack`, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -400,
-        368
+        -3344,
+        144
       ],
-      "id": "61ac6500-b402-4543-95b1-1da3b2d54d30",
-      "name": "Export Node as Image"
+      "id": "01cc319f-e523-4ee8-a8c6-56bc591a2602",
+      "name": "Move to Back"
     },
     {
       "parameters": {
-        "toolDescription": "Creates a duplicate copy of an existing node in Figma. Parameters: nodeId (string), x (number - optional position), y (number - optional position).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "clone_node",
+        "toolDescription": "Moves a layer to the front (top) of the layer stack in Figma. Parameters: nodeId (string)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "move_to_front",
         "parameters": {
           "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to be cloned`, 'string') }}"
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the node to move to the front (top) of the layer stack`, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -608,
-        368
+        -4144,
+        144
       ],
-      "id": "e37dd8af-95da-4077-acaa-735f87fbad05",
-      "name": "Clone Node"
+      "id": "33d48ac0-934a-4a0a-b334-15dc47fceff6",
+      "name": "Move to Front"
     },
     {
       "parameters": {
-        "toolDescription": "Sets the stroke/border color of a node in Figma using RGBA values. Parameters: nodeId (string), colorR (number 0-1), colorG (number 0-1), colorB (number 0-1), colorA (number 0-1).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "set_stroke_color",
+        "toolDescription": "Reorders a layer to a specific index position in Figma. Parameters: nodeId (string), targetIndex (number)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "reorder_layer",
+        "parameters": {
+          "params": {}
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4704,
+        144
+      ],
+      "id": "9bd25a9a-8b63-4bd5-be01-d9e20752975b",
+      "name": "Reorder Layer"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Apply styles to specific nodes by their IDs in Figma. Parameters: nodeIds (array of strings), fillColor (string), strokeColor (string), strokeWeight (number), opacity (number), cornerRadius (number)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "apply_styles_to_nodes",
         "parameters": {
           "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}"
+            "Stroke_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', `Red channel of the stroke color (0-1)`, 'number') }}",
+            "Stroke_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', `Green channel of the stroke color (0-1)`, 'number') }}",
+            "Stroke_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', `Blue channel of the stroke color (0-1)`, 'number') }}",
+            "Stroke_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', `Alpha channel of the stroke color (0-1)`, 'number') }}",
+            "strokeWeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Weight', `Stroke weight in pixels`, 'number') }}",
+            "nodeIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_IDs', `Comma-separated list of node IDs to apply styles to`, 'string') }}",
+            "dashPattern": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Dash_Pattern', `Dash pattern for the stroke (e.g., 5,5)`, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        192,
-        176
+        -2832,
+        -432
       ],
-      "id": "3ed91211-3de5-42f5-9df5-7c8ef38c59d8",
-      "name": "Set Stroke Color"
+      "id": "5a814a09-9544-4715-99ef-ff78a9781a30",
+      "name": "Apply Styles To Nodes"
     },
     {
       "parameters": {
-        "toolDescription": "Permanently deletes a node from Figma document. Parameters: nodeId (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "delete_node",
+        "toolDescription": "Apply text styles to selected text nodes in Figma. Parameters: fontSize (number), fontFamily (string), textColor (string), textAlign (string), letterSpacing (number), lineHeight (number)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "apply_text_styles_to_selection",
         "parameters": {
           "params": {
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to be deleted`, 'string') }}"
+            "fontFamily": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Family', `Font family name`, 'string') }}",
+            "lineHeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Line_Height', `Line height in pixels`, 'number') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -208,
-        176
+        -3040,
+        -432
       ],
-      "id": "60e57b90-f205-4fa2-8bc7-c6dceec732df",
-      "name": "Delete Node"
+      "id": "fbff8fba-c64b-41c1-aae4-08d6e09bfa15",
+      "name": "Apply Text Styles To Selection"
     },
     {
       "parameters": {
-        "toolDescription": "Resizes an existing node to new dimensions in Figma. Parameters: nodeId (string), width (number), height (number).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "resize_node",
+        "toolDescription": "Apply styles to currently selected nodes in Figma. Parameters: fillColor (string), strokeColor (string), strokeWeight (number), opacity (number), cornerRadius (number)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "apply_styles_to_selection",
         "parameters": {
           "params": {
-            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The new width in pixels for the resized node`, 'number') }}",
-            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The new height in pixels for the resized node`, 'number') }}",
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to perform the operation on`, 'string') }}"
+            "Stroke_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', `Red channel of the stroke color (0-1)`, 'number') }}",
+            "Stroke_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', `Green channel of the stroke color (0-1)`, 'number') }}",
+            "Stroke_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', `Blue channel of the stroke color (0-1)`, 'number') }}",
+            "Stroke_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', `Alpha channel of the stroke color (0-1)`, 'number') }}",
+            "strokeWeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Weight', `Stroke weight in pixels`, 'number') }}",
+            "addDropShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Drop_Shadow', `Whether to add a drop shadow effect`, 'boolean') }}",
+            "addInnerShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Inner_Shadow', `Whether to add an inner shadow effect`, 'boolean') }}",
+            "addBlur": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Blur', `Whether to add a blur effect`, 'boolean') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -400,
-        176
+        -3216,
+        -432
       ],
-      "id": "c618f82d-9a63-4259-bfdd-a50a7db8446e",
-      "name": "Resize Node"
+      "id": "0cda9bca-f867-4a20-a948-e7cf3ebbee96",
+      "name": "Apply Styles To Selection"
     },
     {
       "parameters": {
-        "toolDescription": "Moves an existing node to new coordinates in Figma. Parameters: nodeId (string), x (number), y (number).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "move_node",
+        "toolDescription": "Select nodes by name pattern in Figma. Parameters: namePattern (string), caseSensitive (boolean), scrollIntoView (boolean)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "select_nodes_by_name",
         "parameters": {
           "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the node should be moved on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the node should be moved on the Figma canvas`, 'number') }}",
-            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to be moved`, 'string') }}"
+            "matchType": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Match_Type', `Match type: contains, startsWith, endsWith`, 'string') }}",
+            "caseSensitive": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Case_Sensitive', `Whether to match case-sensitively`, 'boolean') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -608,
-        176
+        -4336,
+        -144
       ],
-      "id": "9a2ce7e1-f6ed-4ca9-8794-92771af94b80",
-      "name": "Move Node"
+      "id": "1801bcfe-97a3-4fb6-a9b4-3d26a00781da",
+      "name": "Select Nodes By Name"
     },
     {
       "parameters": {
-        "toolDescription": "Gets the currently selected nodes in Figma and returns their IDs and basic information. No parameters required.",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "get_selection"
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        192,
-        -16
-      ],
-      "id": "3d3ab83d-54ef-4f7e-85ef-9b08c8155f4f",
-      "name": "Get Selection"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Retrieves information about the current Figma document including name, id, and structure. No parameters required.",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', ``, 'string') }}",
-        "command": "get_document_info"
-      },
-      "type": "CUSTOM.figmationCommanderTool",
-      "typeVersion": 1,
-      "position": [
-        0,
-        -16
-      ],
-      "id": "9288696a-9262-40ad-aa66-cfeafa027508",
-      "name": "Get Document Info"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Creates a new text node in Figma with specified content and styling. Parameters: x (number), y (number), text (string), fontSize (number), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_text",
+        "toolDescription": "Select all nodes of a specific type in Figma. Parameters: nodeType (string), scrollIntoView (boolean)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "select_nodes_by_type",
         "parameters": {
           "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the text should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the text should be placed on the Figma canvas`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the text layer in Figma`, 'string') }}",
-            "textContent": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Text_Content', `The text content to be displayed in the text node`, 'string') }}",
-            "fontSize": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Size', `The font size in pixels for the text`, 'number') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created text under. Leave empty to create at the root.`, 'string') }}",
-            "Font_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__R_', `Red value (0-255) of the font color`, 'number') }}",
-            "Font_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__G_', `Green value (0-255) of the font color`, 'number') }}",
-            "Font_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__B_', `Blue value (0-255) of the font color`, 'number') }}",
-            "Font_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__A_', `Alpha (opacity, 0-1) value of the font color`, 'number') }}",
-            "initialOpacity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Opacity', `Opacity level of the text (0-1 range)`, 'number') }}",
-            "initialRotation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Rotation', `Rotation angle of the text in degrees`, 'number') }}",
-            "addDropShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Drop_Shadow', `Whether to add a drop shadow effect to the text`, 'boolean') }}",
-            "strokeWeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Weight', `Thickness of the text stroke/outline in pixels`, 'number') }}",
-            "fontFamily": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Family', `Font family name (e.g., Inter, Roboto, Arial)`, 'string') }}",
-            "letterSpacing": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Letter_Spacing', `Spacing between letters in pixels`, 'number') }}",
-            "lineHeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Line_Height', `Line height for multi-line text in pixels`, 'number') }}"
+            "nodeType": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_Type', `Node type: RECTANGLE, FRAME, TEXT, IMAGE, ELLIPSE, LINE, VECTOR, COMPONENT, INSTANCE, BOOLEAN_OPERATION, GROUP`, 'string') }}",
+            "inSelection": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('In_Selection_Only', `Whether to select only nodes that are currently selected`, 'boolean') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -208,
-        -16
+        -4528,
+        -144
       ],
-      "id": "018c5d9a-6225-412f-87db-a37a89f6006d",
-      "name": "Create Text"
+      "id": "abd5f33e-46ad-4366-a719-9bfa9e5d52a4",
+      "name": "Select Nodes By Type"
     },
     {
       "parameters": {
-        "toolDescription": "Creates a new frame node in Figma at specified coordinates. Parameters: x (number), y (number), width (number), height (number), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
-        "command": "create_frame",
+        "toolDescription": "Select multiple nodes in Figma by their IDs. Parameters: nodeIds (array of strings), scrollIntoView (boolean)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "select_nodes",
         "parameters": {
           "params": {
-            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the frame should be placed on the Figma canvas`, 'number') }}",
-            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the frame should be placed on the Figma canvas`, 'number') }}",
-            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the frame`, 'number') }}",
-            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the frame`, 'number') }}",
-            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the frame layer in Figma`, 'string') }}",
-            "cornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Frame_Corner_Radius', `Corner radius for the frame in pixels`, 'number') }}",
-            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created frame under. Leave empty to create at the root.`, 'string') }}",
-            "Fill_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__R_', `Fill color red value (0-1)`, 'number') }}",
-            "Fill_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__G_', `Fill color green value (0-1)`, 'number') }}",
-            "Fill_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__B_', `Fill color blue value (0-1)`, 'number') }}",
-            "Fill_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__A_', `Fill color alpha value (0-1)`, 'number') }}",
-            "Stroke_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', `Stroke color red value (0-1)`, 'number') }}",
-            "Stroke_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', `Stroke color green value (0-1)`, 'number') }}",
-            "Stroke_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', `Stroke color blue value (0-1)`, 'number') }}",
-            "Stroke_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', `Stroke color alpha value (0-1)`, 'number') }}",
-            "strokeWeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Weight', `Thickness of the stroke/border in pixels`, 'number') }}",
-            "initialOpacity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Opacity', `Opacity level of the frame (0-1 range)`, 'number') }}",
-            "initialRotation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Rotation', `Rotation angle of the frame in degrees`, 'number') }}",
-            "initialCornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Initial_Corner_Radius', `Corner radius for rounded corners in pixels`, 'number') }}",
-            "addDropShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Drop_Shadow', `Whether to add a drop shadow effect to the frame`, 'boolean') }}"
+            "nodeIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_IDs', `The unique IDs of the nodes to select`, 'string') }}",
+            "scrollIntoView": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Scroll_Into_View', `Whether to scroll the canvas to show the selected nodes`, 'boolean') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -400,
-        -16
+        -4704,
+        -144
       ],
-      "id": "4f5a21ab-bbbe-4b71-8f35-29b5a91d26ba",
-      "name": "Create Frame"
+      "id": "0974e6f4-0106-4301-8cfa-e8e8d7436874",
+      "name": "Select Nodes"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Creates design in Figma from SVG data. Parameters: svgContent (string)",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "create_design_from_svg",
+        "parameters": {
+          "params": {
+            "svgContent": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('SVG_Content', `SVG data string to create an icon in Figma. Example: <svg ...>...</svg>`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4704,
+        -1008
+      ],
+      "id": "21486383-d797-430d-a4bd-138f0a8a76ab",
+      "name": "Create Design from SVG"
+    },
+    {
+      "parameters": {
+        "path": "6bb43ca6-32e5-47f2-a9c9-6a519ca72a82"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 2,
+      "position": [
+        -2080,
+        -1456
+      ],
+      "id": "8dd968c5-b6df-4a82-ba8e-c479251f3567",
+      "name": "MCP Server Trigger",
+      "webhookId": "6bb43ca6-32e5-47f2-a9c9-6a519ca72a82"
     },
     {
       "parameters": {
         "toolDescription": "Creates a new rectangle node in Figma at specified coordinates. Parameters: x (number), y (number), width (number), height (number), name (string).",
-        "targetChannelId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Target_Channel_ID', `The channel ID in Figma to which the command will be sent.`, 'string') }}",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
         "command": "create_rectangle",
         "parameters": {
           "params": {
@@ -1323,36 +474,871 @@
             "initialOpacity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Opacity', `Opacity level of the rectangle (0-1 range)`, 'number') }}",
             "initialRotation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Rotation', `Rotation angle of the rectangle in degrees`, 'number') }}",
             "initialCornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Initial_Corner_Radius', `Corner radius for rounded corners in pixels`, 'number') }}",
-            "addDropShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Drop_Shadow', `Whether to add a drop shadow effect to the rectangle`, 'boolean') }}"
+            "addDropShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Drop_Shadow', `Whether to add a drop shadow effect to the rectangle`, 'boolean') }}",
+            "blendMode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Blend_Mode', `Blend mode for the text: NORMAL, MULTIPLY, SCREEN, OVERLAY, DARKEN, LIGHTEN, COLOR_DODGE, COLOR_BURN, HARD_LIGHT, SOFT_LIGHT, DIFFERENCE, EXCLUSION, HUE, SATURATION, COLOR, LUMINOSITY`, 'string') }}",
+            "horizontalConstraint": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Horizontal_Constraint', `Horizontal constraint for the text: LEFT, RIGHT, CENTER, LEFT_RIGHT, or SCALE`, 'string') }}",
+            "verticalConstraint": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Vertical_Constraint', `Vertical constraint for the text: TOP, BOTTOM, CENTER, TOP_BOTTOM, or SCALE`, 'string') }}",
+            "strokeCap": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Cap', `Stroke cap for the text: NONE, ROUND, SQUARE, LINE_ARROW, TRIANGLE_ARROW`, 'string') }}",
+            "strokeJoin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Join', `Stroke join for the text: MITER, ROUND, BEVEL`, 'string') }}",
+            "strokeAlign": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Align', `Stroke alignment for the text: CENTER, INSIDE, OUTSIDE`, 'string') }}"
           }
         }
       },
       "type": "CUSTOM.figmationCommanderTool",
       "typeVersion": 1,
       "position": [
-        -608,
-        -16
+        -4352,
+        -1008
       ],
-      "id": "5e1a4448-63ae-4e13-974f-5b080571440c",
+      "id": "cf1b43bb-0d81-48bb-96bc-068861edcdca",
       "name": "Create Rectangle"
     },
     {
       "parameters": {
-        "path": "6bb43ca6-32e5-47f2-a9c9-6a519ca72a82"
+        "toolDescription": "Creates a new frame node in Figma at specified coordinates. Parameters: x (number), y (number), width (number), height (number), name (string).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "create_frame",
+        "parameters": {
+          "params": {
+            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the frame should be placed on the Figma canvas`, 'number') }}",
+            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the frame should be placed on the Figma canvas`, 'number') }}",
+            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the frame`, 'number') }}",
+            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the frame`, 'number') }}",
+            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the frame layer in Figma`, 'string') }}",
+            "cornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Frame_Corner_Radius', `Corner radius for the frame in pixels`, 'number') }}",
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created frame under. Leave empty to create at the root.`, 'string') }}",
+            "Fill_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__R_', `Fill color red value (0-1)`, 'number') }}",
+            "Fill_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__G_', `Fill color green value (0-1)`, 'number') }}",
+            "Fill_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__B_', `Fill color blue value (0-1)`, 'number') }}",
+            "Fill_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__A_', `Fill color alpha value (0-1)`, 'number') }}",
+            "Stroke_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', `Stroke color red value (0-1)`, 'number') }}",
+            "Stroke_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', `Stroke color green value (0-1)`, 'number') }}",
+            "Stroke_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', `Stroke color blue value (0-1)`, 'number') }}",
+            "Stroke_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', `Stroke color alpha value (0-1)`, 'number') }}",
+            "strokeWeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Weight', `Thickness of the stroke/border in pixels`, 'number') }}",
+            "initialOpacity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Opacity', `Opacity level of the frame (0-1 range)`, 'number') }}",
+            "initialRotation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Rotation', `Rotation angle of the frame in degrees`, 'number') }}",
+            "initialCornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Initial_Corner_Radius', `Corner radius for rounded corners in pixels`, 'number') }}",
+            "addDropShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Drop_Shadow', `Whether to add a drop shadow effect to the frame`, 'boolean') }}",
+            "blendMode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Blend_Mode', `Blend mode for the text: NORMAL, MULTIPLY, SCREEN, OVERLAY, DARKEN, LIGHTEN, COLOR_DODGE, COLOR_BURN, HARD_LIGHT, SOFT_LIGHT, DIFFERENCE, EXCLUSION, HUE, SATURATION, COLOR, LUMINOSITY`, 'string') }}",
+            "horizontalConstraint": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Horizontal_Constraint', `Horizontal constraint for the text: LEFT, RIGHT, CENTER, LEFT_RIGHT, or SCALE`, 'string') }}",
+            "verticalConstraint": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Vertical_Constraint', `Vertical constraint for the text: TOP, BOTTOM, CENTER, TOP_BOTTOM, or SCALE`, 'string') }}",
+            "strokeCap": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Cap', `Stroke cap for the text: NONE, ROUND, SQUARE, LINE_ARROW, TRIANGLE_ARROW`, 'string') }}",
+            "strokeJoin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Join', `Stroke join for the text: MITER, ROUND, BEVEL`, 'string') }}",
+            "strokeAlign": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Align', `Stroke alignment for the text: CENTER, INSIDE, OUTSIDE`, 'string') }}"
+          }
+        }
       },
-      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
-      "typeVersion": 2,
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
       "position": [
-        -592,
-        -224
+        -4528,
+        -1008
       ],
-      "id": "b1362b42-87fc-4e44-be71-b6db27cf7924",
-      "name": "MCP Server Trigger",
-      "webhookId": "6bb43ca6-32e5-47f2-a9c9-6a519ca72a82"
+      "id": "1fedee9a-ff7a-4033-9202-01dce64cd48b",
+      "name": "Create Frame"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Creates a new text node in Figma with specified content and styling. Parameters: x (number), y (number), text (string), fontSize (number), name (string).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "create_text",
+        "parameters": {
+          "params": {
+            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the text should be placed on the Figma canvas`, 'number') }}",
+            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the text should be placed on the Figma canvas`, 'number') }}",
+            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the text layer in Figma`, 'string') }}",
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created text under. Leave empty to create at the root.`, 'string') }}",
+            "Font_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__R_', `Red value (0-255) of the font color`, 'number') }}",
+            "Font_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__G_', `Green value (0-255) of the font color`, 'number') }}",
+            "Font_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__B_', `Blue value (0-255) of the font color`, 'number') }}",
+            "Font_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Font_Color__A_', `Alpha (opacity, 0-1) value of the font color`, 'number') }}",
+            "letterSpacing": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Letter_Spacing', `Spacing between letters in pixels`, 'number') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3440,
+        -720
+      ],
+      "id": "4bc6bb25-b4d2-4d68-bfb3-803d25488c44",
+      "name": "Create Text"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Retrieves information about the current Figma document including name, id, and structure. No parameters required.",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "get_document_info"
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4528,
+        -1296
+      ],
+      "id": "d772e5aa-3642-4fd1-90a7-b731365af0e0",
+      "name": "Get Document Info"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Gets the currently selected nodes in Figma and returns their IDs and basic information. No parameters required.",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "get_selection"
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4352,
+        -1296
+      ],
+      "id": "a678a8eb-74d3-44d8-8795-ca9516a9cc2d",
+      "name": "Get Selection"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Moves an existing node to new coordinates in Figma. Parameters: nodeId (string), x (number), y (number).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "move_node",
+        "parameters": {
+          "params": {
+            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the node should be moved on the Figma canvas`, 'number') }}",
+            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the node should be moved on the Figma canvas`, 'number') }}",
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to be moved`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4528,
+        -720
+      ],
+      "id": "7941b443-7ea7-4e27-9e3e-976546144566",
+      "name": "Move Node"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Resizes an existing node to new dimensions in Figma. Parameters: nodeId (string), width (number), height (number).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "resize_node",
+        "parameters": {
+          "params": {
+            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The new width in pixels for the resized node`, 'number') }}",
+            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The new height in pixels for the resized node`, 'number') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4336,
+        -720
+      ],
+      "id": "787fe276-3271-4505-9310-d90fc1f21910",
+      "name": "Resize Node"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Permanently deletes a node from Figma document. Parameters: nodeId (string).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "delete_node",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to be deleted`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4160,
+        -720
+      ],
+      "id": "24d38cf9-b4f6-46f1-a733-b700e464e09c",
+      "name": "Delete Node"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets the stroke/border color of a node in Figma using RGBA values. Parameters: nodeId (string), colorR (number 0-1), colorG (number 0-1), colorB (number 0-1), colorA (number 0-1).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_stroke_color",
+        "parameters": {
+          "params": {}
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4704,
+        -432
+      ],
+      "id": "e595fa71-9244-47cd-85a9-cbaadeef150a",
+      "name": "Set Stroke Color"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Creates a duplicate copy of an existing node in Figma. Parameters: nodeId (string), x (number - optional position), y (number - optional position).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "clone_node",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to be cloned`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3984,
+        -720
+      ],
+      "id": "d9643f51-0413-431a-bfa7-4dfa61fa72aa",
+      "name": "Clone Node"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Exports a node as an image file from Figma. Parameters: nodeId (string), scale (number), format (string: PNG/JPG/SVG).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "export_node_as_image",
+        "parameters": {
+          "params": {
+            "scale": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Export_Scale', `The export scale factor (e.g., 1 for original size, 2 for 2x resolution)`, 'number') }}",
+            "format": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Export_Format', `The export file format: PNG for transparent images, JPG for photos, SVG for vector graphics`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3344,
+        432
+      ],
+      "id": "8249ebbb-2fc1-4ee5-87b7-f513f84661d3",
+      "name": "Export Node as Image"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Updates the text content of an existing text node in Figma. Parameters: nodeId (string), text (string).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_text_content",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target text node in Figma to update the content of`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3264,
+        -720
+      ],
+      "id": "2504f296-333d-4ce5-8147-bf37656b04c2",
+      "name": "Set Text Content"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Retrieves all available color, text, and effect styles from the Figma document. No parameters required.",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "get_styles"
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3824,
+        -1296
+      ],
+      "id": "c5137e5b-76a3-4240-b495-854d065f9f99",
+      "name": "Get Styles"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets the corner radius of a node in Figma to create rounded corners. Parameters: nodeId (string), cornerRadius (number).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_corner_radius",
+        "parameters": {
+          "params": {
+            "cornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Corner_Radius', `The corner radius value in pixels to apply to all corners of the node`, 'number') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3392,
+        -432
+      ],
+      "id": "c864b7eb-8234-42c4-83e4-514f01caef53",
+      "name": "Set Corner Radius"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Scans and returns all text nodes within a specified parent node or the entire document. Parameters: nodeId (string - optional parent node).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "scan_text_nodes",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to scan within. Leave empty to scan the entire document`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3280,
+        -1296
+      ],
+      "id": "1b10d4bf-a15a-43d9-8949-84e5cec2cc7e",
+      "name": "Scan Text Nodes"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets the auto layout mode of a frame node in Figma. Parameters: nodeId (string), layoutMode (string: NONE/HORIZONTAL/VERTICAL).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_layout_mode",
+        "parameters": {
+          "params": {
+            "layoutMode": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Layout_Mode', `The auto layout direction: NONE (disable), HORIZONTAL (left to right), or VERTICAL (top to bottom)`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3584,
+        -432
+      ],
+      "id": "ac82787c-f760-4414-b577-28b411707618",
+      "name": "Set Layout Mode"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Retrieves list of all available WebSocket channels for Figma plugin connections. No parameters required.",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}"
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4704,
+        -1296
+      ],
+      "id": "add5f8fe-eaeb-4dce-84cf-8550be6b4b11",
+      "name": "Get Channels"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Retrieves detailed information for multiple nodes at once. Parameters: nodeIds (string - comma separated node IDs).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "get_nodes_info",
+        "parameters": {
+          "params": {
+            "nodeIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_IDs', `Comma-separated list of node IDs to operate on (e.g., \"id1,id2,id3\")`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4176,
+        -1296
+      ],
+      "id": "526eb1e4-4f99-43a5-af1d-afee305d0744",
+      "name": "Get Nodes Info"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Scans and finds all nodes of specified types within a parent node or document. Parameters: nodeTypes (string - comma separated types like TEXT,FRAME), nodeId (string - optional parent).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "scan_nodes_by_types",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to scan within. Leave empty to scan the entire document`, 'string') }}",
+            "nodeTypes": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_Types', `Comma-separated list of node types to scan for (e.g., \"TEXT,FRAME,RECTANGLE\")`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4000,
+        -1296
+      ],
+      "id": "3144805a-7c3c-48f7-a937-e6eadd18f2fe",
+      "name": "Scan Nodes by Types"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Updates text content for multiple text nodes in a single operation. Parameters: textUpdates (string - JSON array of {nodeId, text} objects).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_multiple_text_contents",
+        "parameters": {
+          "params": {
+            "textUpdates": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Text_Updates', `JSON array of text update objects with nodeId and text properties, e.g., [{\"nodeId\":\"123\",\"text\":\"New text\"}]`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3088,
+        -720
+      ],
+      "id": "161dc2dc-2b83-43cf-972e-a37af57a4a04",
+      "name": "Set Multiple Text Contents"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Deletes multiple nodes from Figma document in a batch operation. Parameters: nodeIds (string - comma separated node IDs).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "delete_multiple_nodes",
+        "parameters": {
+          "params": {
+            "nodeIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_IDs', `Comma-separated list of node IDs to operate on (e.g., \"id1,id2,id3\")`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4704,
+        -720
+      ],
+      "id": "2447d641-0523-46b6-ac7e-02cd833c6a14",
+      "name": "Delete Multiple Nodes"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets padding values for all sides of an auto layout frame. Parameters: nodeId (string), paddingTop (number), paddingRight (number), paddingBottom (number), paddingLeft (number).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_padding",
+        "parameters": {
+          "params": {
+            "paddingTop": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Padding_Top', `The top padding value in pixels for the auto layout frame`, 'number') }}",
+            "paddingRight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Padding_Right', `The right padding value in pixels for the auto layout frame`, 'number') }}",
+            "paddingBottom": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Padding_Bottom', `The bottom padding value in pixels for the auto layout frame`, 'number') }}",
+            "paddingLeft": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Padding_Left', `The left padding value in pixels for the auto layout frame`, 'number') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4528,
+        -432
+      ],
+      "id": "5a70d3e1-76ef-4a55-87b9-4c408a91aa77",
+      "name": "Set Padding"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets alignment properties for auto layout frame axes. Parameters: nodeId (string), primaryAxisAlignItems (string), counterAxisAlignItems (string).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_axis_align",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target auto layout frame in Figma to set alignment for`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4336,
+        -432
+      ],
+      "id": "de705462-ac0d-4f8b-902d-8f96f3096771",
+      "name": "Set Axis Align"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets sizing behavior for auto layout frame dimensions. Parameters: nodeId (string), horizontalSizing (string: FIXED/FILL_CONTAINER/HUG_CONTENTS), verticalSizing (string: FIXED/FILL_CONTAINER/HUG_CONTENTS).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_layout_sizing",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target auto layout frame in Figma to set sizing behavior for`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4160,
+        -432
+      ],
+      "id": "ef5c919f-4b59-4582-aa8a-25e96be0a087",
+      "name": "Set Layout Sizing"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets the spacing between child items in an auto layout frame. Parameters: nodeId (string), itemSpacing (number).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_item_spacing",
+        "parameters": {
+          "params": {
+            "itemSpacing": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Item_Spacing', `The spacing in pixels between child items in the auto layout frame`, 'number') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3968,
+        -432
+      ],
+      "id": "0ca4d380-495a-4617-8b6e-818c90b83977",
+      "name": "Set Item Spacing"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Retrieves all annotations from the document or a specific node. Parameters: nodeId (string - optional, if not provided gets document annotations).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "get_annotations",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node to retrieve annotations from (optional - retrieves document annotations if not provided)`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3456,
+        -1296
+      ],
+      "id": "0f7a3f51-510c-46b2-9d71-b5729d8c507e",
+      "name": "Get Annotations"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Creates or updates an annotation on a specific node in Figma. Parameters: nodeId (string), annotationText (string).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_annotation",
+        "parameters": {
+          "params": {
+            "annotationText": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Annotation_Text', `The text content for the annotation comment to be added to the node`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3776,
+        -432
+      ],
+      "id": "77e8372d-a5d2-404b-b493-c6628e5100cf",
+      "name": "Set Annotation"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Retrieves all override properties and values for a component instance. Parameters: nodeId (string - component instance ID).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "get_instance_overrides",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the component instance node in Figma to retrieve override properties from`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3968,
+        432
+      ],
+      "id": "5563c50a-77b3-4202-b923-053ca70380af",
+      "name": "Get Instance Overrides"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Applies property overrides to a component instance. Parameters: overridesData (string - JSON object with override properties).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_instance_overrides",
+        "parameters": {
+          "params": {}
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4160,
+        432
+      ],
+      "id": "977a95e4-04bf-4985-b5a5-88696ba749cd",
+      "name": "Set Instance Overrides"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets the default connector node for prototype flows. Parameters: connectorId (string - connector node ID).",
+        "command": "set_default_connector",
+        "parameters": {
+          "params": {
+            "connectorId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Connector_ID', `The node ID of the connector element to set as default for prototype flows`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3808,
+        -1008
+      ],
+      "id": "76304f14-a2d2-4edb-bf5a-b555755805b3",
+      "name": "Set Default Connector"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Creates an image node in Figma from a URL or binary data. Parameters: url (string), x (number), y (number), width (number), height (number), name (string).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "create_image_from_url",
+        "parameters": {
+          "params": {
+            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the image should be placed on the Figma canvas`, 'number') }}",
+            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the image should be placed on the Figma canvas`, 'number') }}",
+            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the image frame`, 'number') }}",
+            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the image frame`, 'number') }}",
+            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the image layer in Figma`, 'string') }}",
+            "cornerRadius": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Image_Corner_Radius', `Corner radius for the image frame in pixels`, 'number') }}",
+            "scaleMode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Scale_Mode', `Scale mode for the image: FIT, FILL, TILE, CROP`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3632,
+        -1008
+      ],
+      "id": "270e3b7c-2356-42ac-be05-b20becedfcf5",
+      "name": "Create Image from URL"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Creates an ellipse/circle shape in Figma. Parameters: x (number), y (number), width (number), height (number), name (string).",
+        "command": "create_ellipse",
+        "parameters": {
+          "params": {
+            "x": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('X_Position', `The X coordinate position in pixels where the ellipse should be placed on the Figma canvas`, 'number') }}",
+            "y": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Y_Position', `The Y coordinate position in pixels where the ellipse should be placed on the Figma canvas`, 'number') }}",
+            "width": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Width', `The width in pixels for the ellipse`, 'number') }}",
+            "height": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Height', `The height in pixels for the ellipse`, 'number') }}",
+            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `A descriptive name for the ellipse layer in Figma`, 'string') }}",
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created ellipse under. Leave empty to create at the root.`, 'string') }}",
+            "Fill_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__R_', `Fill color red value (0-1)`, 'number') }}",
+            "Fill_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__G_', `Fill color green value (0-1)`, 'number') }}",
+            "Fill_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__B_', `Fill color blue value (0-1)`, 'number') }}",
+            "Fill_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fill_Color__A_', `Fill color alpha value (0-1)`, 'number') }}",
+            "Stroke_Color_R": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__R_', `Stroke color red value (0-1)`, 'number') }}",
+            "Stroke_Color_G": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__G_', `Stroke color green value (0-1)`, 'number') }}",
+            "Stroke_Color_B": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__B_', `Stroke color blue value (0-1)`, 'number') }}",
+            "Stroke_Color_A": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Color__A_', `Stroke color alpha value (0-1)`, 'number') }}",
+            "strokeWeight": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Weight', `Thickness of the stroke/border in pixels`, 'number') }}",
+            "initialOpacity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Opacity', `Opacity level of the ellipse (0-1 range)`, 'number') }}",
+            "initialRotation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Rotation', `Rotation angle of the ellipse in degrees`, 'number') }}",
+            "addDropShadow": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Add_Drop_Shadow', `Whether to add a drop shadow effect to the ellipse`, 'boolean') }}",
+            "blendMode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Blend_Mode', `Blend mode for the text: NORMAL, MULTIPLY, SCREEN, OVERLAY, DARKEN, LIGHTEN, COLOR_DODGE, COLOR_BURN, HARD_LIGHT, SOFT_LIGHT, DIFFERENCE, EXCLUSION, HUE, SATURATION, COLOR, LUMINOSITY`, 'string') }}",
+            "horizontalConstraint": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Horizontal_Constraint', `Horizontal constraint for the text: LEFT, RIGHT, CENTER, LEFT_RIGHT, or SCALE`, 'string') }}",
+            "verticalConstraint": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Vertical_Constraint', `Vertical constraint for the text: TOP, BOTTOM, CENTER, TOP_BOTTOM, or SCALE`, 'string') }}",
+            "strokeCap": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Cap', `Stroke cap for the text: NONE, ROUND, SQUARE, LINE_ARROW, TRIANGLE_ARROW`, 'string') }}",
+            "strokeJoin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Join', `Stroke join for the text: MITER, ROUND, BEVEL`, 'string') }}",
+            "strokeAlign": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Stroke_Align', `Stroke alignment for the text: CENTER, INSIDE, OUTSIDE`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4176,
+        -1008
+      ],
+      "id": "8387ec44-707c-4fa9-890a-f60722675a7a",
+      "name": "Create Ellipse"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Creates a custom vector path in Figma using SVG path data. Parameters: pathData (string), x (number), y (number), name (string).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "create_vector_path",
+        "parameters": {
+          "params": {
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created vector path under. Leave empty to create at the root.`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3984,
+        -1008
+      ],
+      "id": "bc9ba043-909b-4980-9bbd-e64097450e0e",
+      "name": "Create Vector Path"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Creates complex shapes using boolean operations in Figma. Parameters: operation (string), sourceNodeIds (string), name (string).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "create_boolean_operation",
+        "parameters": {
+          "params": {
+            "operation": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Operation_Type', `The type of boolean operation: UNION, SUBTRACT, INTERSECT, or EXCLUDE`, 'string') }}",
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the created boolean operation under. Leave empty to create at the root.`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3456,
+        -1008
+      ],
+      "id": "d0c2ddd8-5ab1-48a1-9231-f67bcb54649d",
+      "name": "Create Boolean Operation"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Creates a group from multiple nodes in Figma. Parameters: nodeIds (string), name (string), parentId (string).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "create_group",
+        "parameters": {
+          "params": {
+            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', `Name for the group. If not provided, a default name will be generated.`, 'string') }}",
+            "nodeIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_Ids', `Comma-separated list of node IDs to group together. At least one node ID is required.`, 'string') }}",
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', `The ID of the parent node to place the group under. Leave empty to create at the root.`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4704,
+        432
+      ],
+      "id": "58f7811e-5249-4322-9a09-917c6c2462e0",
+      "name": "Create Group"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Sets a linear gradient fill for a node in Figma. Parameters: nodeId (string), gradientStartColor (string), gradientEndColor (string), gradientAngle (number).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "set_fill_color",
+        "parameters": {
+          "params": {
+            "nodeId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_ID', `The unique ID of the target node in Figma to apply the linear gradient fill to`, 'string') }}",
+            "Fill_Type": "linear_gradient",
+            "Gradient_Start_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Start_Color', `The starting color of the linear gradient (hex color code, e.g., #FF0000 for red)`, 'string') }}",
+            "Gradient_End_Color": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_End_Color', `The ending color of the linear gradient (hex color code, e.g., #0000FF for blue)`, 'string') }}",
+            "Gradient_Angle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Gradient_Angle', `The angle of the linear gradient in degrees (0-360, where 0 is horizontal left-to-right)`, 'number') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -2656,
+        -432
+      ],
+      "id": "4deeddd6-0ca8-4659-87e9-3f5f0c6b87b9",
+      "name": "Set Fill Linear Gradient Color"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Creates a group from multiple nodes in Figma. Parameters: nodeIds (string), name (string), parentId (string).",
+        "port": 3055,
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "search_available_fonts",
+        "parameters": {}
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3632,
+        -1296
+      ],
+      "id": "60ac4fdd-c93a-43ab-b192-c72566e36709",
+      "name": "Search Available Fonts"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Creates an instance of an existing component in Figma. Parameters: componentKey (string), x (number), y (number), name (string).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "create_component",
+        "parameters": {
+          "params": {
+            "nodeIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Node_IDs', `The unique IDs of the nodes to create an instance of`, 'string') }}",
+            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Component_Name', `The name of the component to create an instance of`, 'string') }}",
+            "description": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Component_Description', `The description of the component to create an instance of`, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -4336,
+        432
+      ],
+      "id": "03ad04b9-f85f-40d8-8a4b-728e5c4f0c02",
+      "name": "Create Component"
+    },
+    {
+      "parameters": {
+        "content": "## 텍스트 처리",
+        "height": 288,
+        "width": 1184,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -3520,
+        -816
+      ],
+      "typeVersion": 1,
+      "id": "d18d1704-6008-4a46-98c0-5f0ceaf69b22",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Retrieves all override properties and values for a component instance. Parameters: nodeId (string - component instance ID).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "create_instance",
+        "parameters": {
+          "params": {
+            "parentIdForNode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Node_ID', ``, 'string') }}"
+          }
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3760,
+        432
+      ],
+      "id": "be97a8de-fc33-40e0-b843-1c8554bbec47",
+      "name": "Create Instance"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Retrieves all override properties and values for a component instance. Parameters: nodeId (string - component instance ID).",
+        "channelId": "={{ /*n8n-auto-generated-fromAI-override*/  $fromAI('Channel_ID', `The channel ID to use for the Figma command`, 'string') }}",
+        "command": "detach_instance",
+        "parameters": {
+          "params": {}
+        }
+      },
+      "type": "CUSTOM.figmationCommanderTool",
+      "typeVersion": 1,
+      "position": [
+        -3552,
+        432
+      ],
+      "id": "ee31532d-0115-4cd7-894d-261aaad1c540",
+      "name": "Detach Instance"
     }
   ],
   "connections": {
-    "Search Available Fonts": {
+    "Get Components": {
       "ai_tool": [
         [
           {
@@ -1363,7 +1349,7 @@
         ]
       ]
     },
-    "Set Fill Diamond Gradient Color": {
+    "Reorder Multiple Layers": {
       "ai_tool": [
         [
           {
@@ -1374,7 +1360,7 @@
         ]
       ]
     },
-    "Set Fill Angular Gradient Color": {
+    "Sort Layers by Position": {
       "ai_tool": [
         [
           {
@@ -1385,7 +1371,7 @@
         ]
       ]
     },
-    "Set Fill Radial Gradient Color": {
+    "Sort Layers by Name": {
       "ai_tool": [
         [
           {
@@ -1396,7 +1382,7 @@
         ]
       ]
     },
-    "Set Fill Linear Gradient Color": {
+    "Move Backward": {
       "ai_tool": [
         [
           {
@@ -1407,7 +1393,7 @@
         ]
       ]
     },
-    "Set Fill Solid Color": {
+    "Move Forward": {
       "ai_tool": [
         [
           {
@@ -1418,7 +1404,7 @@
         ]
       ]
     },
-    "Custom Strategy": {
+    "Move to Back": {
       "ai_tool": [
         [
           {
@@ -1429,7 +1415,7 @@
         ]
       ]
     },
-    "Component Library Strategy": {
+    "Move to Front": {
       "ai_tool": [
         [
           {
@@ -1440,7 +1426,7 @@
         ]
       ]
     },
-    "Design System Strategy": {
+    "Reorder Layer": {
       "ai_tool": [
         [
           {
@@ -1451,7 +1437,7 @@
         ]
       ]
     },
-    "Reaction to Connector Strategy": {
+    "Apply Styles To Nodes": {
       "ai_tool": [
         [
           {
@@ -1462,7 +1448,7 @@
         ]
       ]
     },
-    "Execute Custom Command": {
+    "Apply Text Styles To Selection": {
       "ai_tool": [
         [
           {
@@ -1473,7 +1459,7 @@
         ]
       ]
     },
-    "Create Group": {
+    "Apply Styles To Selection": {
       "ai_tool": [
         [
           {
@@ -1484,7 +1470,7 @@
         ]
       ]
     },
-    "Create SVG to Vector": {
+    "Select Nodes By Name": {
       "ai_tool": [
         [
           {
@@ -1495,7 +1481,7 @@
         ]
       ]
     },
-    "Create Progress Bar": {
+    "Select Nodes By Type": {
       "ai_tool": [
         [
           {
@@ -1506,7 +1492,7 @@
         ]
       ]
     },
-    "Create Avatar": {
+    "Select Nodes": {
       "ai_tool": [
         [
           {
@@ -1517,7 +1503,7 @@
         ]
       ]
     },
-    "Create Symbol": {
+    "Create Design from SVG": {
       "ai_tool": [
         [
           {
@@ -1528,469 +1514,7 @@
         ]
       ]
     },
-    "Create Toggle": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Checkbox": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Input Field": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Icon from SVG": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Boolean Operation": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Button": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Vector Path": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Ellipse": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Slider": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Image from URL": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Connections": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Default Connector": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Reactions": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Instance Overrides": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Instance Overrides": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Annotation": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Annotations": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Item Spacing": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Layout Sizing": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Axis Align": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Padding": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Delete Multiple Nodes": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Multiple Text Contents": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Scan Nodes by Types": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Nodes Info": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Channels": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Layout Mode": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Scan Text Nodes": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Corner Radius": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Component Instance": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Local Components": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Styles": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Text Content": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Node Info": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Export Node as Image": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Clone Node": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Stroke Color": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Delete Node": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Resize Node": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Move Node": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Selection": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Document Info": {
-      "ai_tool": [
-        [
-          {
-            "node": "MCP Server Trigger",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Text": {
+    "Create Rectangle": {
       "ai_tool": [
         [
           {
@@ -2012,7 +1536,414 @@
         ]
       ]
     },
-    "Create Rectangle": {
+    "Create Text": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Document Info": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Selection": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Move Node": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resize Node": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Node": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Stroke Color": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clone Node": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Export Node as Image": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Text Content": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Styles": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Corner Radius": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scan Text Nodes": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Layout Mode": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Channels": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Nodes Info": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scan Nodes by Types": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Multiple Text Contents": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Multiple Nodes": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Padding": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Axis Align": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Layout Sizing": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Item Spacing": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Annotations": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Annotation": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Instance Overrides": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Instance Overrides": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Default Connector": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Image from URL": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Ellipse": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Vector Path": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Boolean Operation": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Group": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Fill Linear Gradient Color": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Available Fonts": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Component": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Instance": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Detach Instance": {
       "ai_tool": [
         [
           {

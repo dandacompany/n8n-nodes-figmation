@@ -1,6 +1,6 @@
 # n8n-nodes-figmation
 
-n8n custom nodes package for Figma workflow automation. Connects to Figma plugin via WebSocket server to execute 36 Figma API commands.
+n8n custom nodes package for Figma workflow automation. Connects to Figma plugin via WebSocket server to execute 55+ Figma API commands including batch style operations, multiple node selection, and component instance management.
 
 ## 🎯 Core Architecture
 
@@ -71,11 +71,15 @@ sequenceDiagram
 
 ## ⚡ Key Features
 
-- **36 Figma API Commands Support**: create_rectangle, create_text, move_node, and more
+- **55+ Figma API Commands Support**: create_rectangle, create_text, move_node, instance management, and more
 - **WebSocket Server**: Real-time communication with Figma plugin
 - **Channel-based Isolation**: Multi-channel support for workflow separation
 - **MCP Integration**: Tool nodes for AI agent compatibility
 - **Dynamic UI**: Auto-generate parameter fields based on selected command
+- **Batch Style Operations**: Apply styles to multiple nodes at once
+- **Multiple Node Selection**: Select nodes by IDs, type, or name pattern
+- **Component Instance Management**: Get/set instance overrides, detach instances from components
+- **Font Search**: Search available fonts with keyword filtering
 - **Localhost-only Connections**: Simplified configuration for enhanced security and stability
 - **Fixed Host Configuration**: WebSocket host fixed to localhost for reliable local development
 
@@ -126,10 +130,11 @@ mindmap
       Plugin Registration
       Connection Event Triggering
     FigmationCommander
-      36 Figma API Commands
+      42+ Figma API Commands
       Dynamic Parameter UI
       Command Execution
       Result Handling
+      Batch Operations
     FigmationCommanderTool
       MCP Protocol Support
       AI Agent Integration
@@ -144,7 +149,16 @@ mindmap
 
 ## 📋 Changelog
 
-### v1.2.1 (Latest)
+### v1.2.2 (Latest)
+- ✨ **Component Instance Management**: Added get_instance_overrides, set_instance_overrides, detach_instance commands
+- 🔍 **Font Search Enhancement**: Added keyword filtering to search_available_fonts
+- 🎨 **UI Component Properties**: Enhanced get_components with variant property information
+- 🔧 **Node ID Normalization**: Fixed hyphen to colon conversion for Figma node IDs
+- 📝 **User-Friendly UI**: Improved set_instance_overrides with structured array inputs instead of JSON
+- 🐛 **Dynamic Page Fix**: Replaced synchronous API calls with async versions
+- 🗑️ **Cleanup**: Removed unused get_reactions placeholder command
+
+### v1.2.1
 - 🏠 **Localhost Only**: Simplified to localhost-only connections for better stability
 - 🗑️ **Removed Complex Features**: Eliminated connection types, host configuration, and path settings
 - 🔧 **Fixed Parameter Dependencies**: Resolved n8n displayOptions circular dependency issues
@@ -166,7 +180,7 @@ mindmap
 - 📚 **Enhanced Documentation**: Updated setup instructions for external access
 
 ### v1.0.0
-- 🎉 **Initial Release**: 36 Figma API commands support
+- 🎉 **Initial Release**: 43+ Figma API commands support
 - 🔌 **WebSocket Communication**: Real-time connection with Figma plugin
 - 📡 **Channel-based Isolation**: Multi-channel support for workflow separation
 - 🤖 **MCP Integration**: Tool nodes for AI agent compatibility
@@ -223,29 +237,102 @@ Starts WebSocket server and manages connection with Figma plugin.
 
 Main action node that executes Figma API commands.
 
-**Supported Commands (36):**
+**Supported Commands (55+):**
 
-#### Creation Commands
-- `create_rectangle`: Create rectangle
-- `create_frame`: Create frame
-- `create_text`: Create text
+#### Shape Creation Commands
+- `create_rectangle`: Create rectangle with optional corner radius
+- `create_ellipse`: Create ellipse with optional arc data
 - `create_circle`: Create circle
 - `create_line`: Create line
+- `create_star`: Create star shape
+- `create_polygon`: Create polygon
+- `create_vector_path`: Create custom vector path from SVG data
+
+#### Text Commands
+- `create_text`: Create text node with font styling
+- `update_text`: Update text content and properties
+- `set_text_content`: Change text content (alias for update_text)
+- `set_font`: Set font properties
+- `scan_text_nodes`: Find all text nodes in document
+- `set_multiple_text_contents`: Update multiple text nodes at once
+- `search_available_fonts`: Search fonts with keyword filtering
+
+#### Frame and Layout Commands
+- `create_frame`: Create frame container
+- `create_auto_layout`: Create auto-layout frame
+- `create_instance`: Create instance from component
+- `create_component`: Create component from existing node IDs
+- `set_layout_grid`: Apply layout grid
+- `set_layout_mode`: Configure auto-layout properties
+- `set_padding`: Set padding for auto-layout
+- `set_item_spacing`: Set spacing between items
+
+#### UI Component Commands
+- `create_button`: Create button component
+- `create_input_field`: Create input field component
+- `create_checkbox`: Create checkbox component
+- `create_toggle`: Create toggle switch component
+
+#### Style Commands
+- `set_fill_color`: Set fill color
+- `set_stroke_color`: Set stroke color and properties
+- `set_opacity`: Set node opacity
+- `set_corner_radius`: Set corner radius
+- `set_individual_corner_radius`: Set individual corner radii
+- `apply_effect`: Apply visual effects
+
+#### Effect Commands
+- `add_drop_shadow`: Add drop shadow effect
+- `add_inner_shadow`: Add inner shadow effect
+- `add_blur`: Add blur effect
+
+#### Selection Commands
+- `select_nodes`: Select multiple nodes by IDs
+- `select_nodes_by_type`: Select all nodes of specific type
+- `select_nodes_by_name`: Select nodes by name pattern
+
+#### Batch Style Commands
+- `apply_styles_to_selection`: Apply styles to selected nodes
+- `apply_text_styles_to_selection`: Apply text styles to selected text nodes
+- `apply_styles_to_nodes`: Apply styles to specific nodes by IDs
 
 #### Manipulation Commands
-- `move_node`: Move node
-- `resize_node`: Resize node
-- `set_fill_color`: Set fill color
-- `set_stroke_color`: Set stroke color or remove stroke completely
-- `set_text_content`: Change text content
+- `move_node`: Move node to new position
+- `resize_node`: Resize node dimensions
+- `rotate_node`: Rotate node
+- `set_rotation`: Set rotation angle
+- `group_nodes`: Group multiple nodes
+- `ungroup_node`: Ungroup nodes
+
+#### Boolean Operations
+- `boolean_union`: Union operation
+- `boolean_subtract`: Subtract operation
+- `boolean_intersect`: Intersect operation
+- `boolean_exclude`: Exclude operation
+- `create_boolean_operation`: Create boolean operation with type
+
+#### Image Commands
+- `create_image_from_url`: Create image from URL
+- `replace_image`: Replace existing image
+- `create_design_from_svg`: Create design from SVG
+
+#### Instance Management Commands
+- `get_instance_overrides`: Get override properties of a component instance
+- `set_instance_overrides`: Apply overrides to a component instance
+- `detach_instance`: Detach instance from its main component
 
 #### Information Commands
 - `get_document_info`: Get document information
 - `get_selection`: Get selected elements information
 - `get_node_info`: Get specific node information
+- `get_nodes_info`: Get multiple nodes information
+- `get_page_info`: Get current page information
+- `get_components`: Get list of components with properties
+- `search_nodes`: Search nodes by criteria
 
 #### Management Commands
-- `delete_node`: Delete node
+- `delete_node`: Delete single node
+- `delete_multiple_nodes`: Delete multiple nodes
 - `clone_node`: Clone node
 - `export_node_as_image`: Export node as image
 
@@ -288,7 +375,9 @@ Tool node for AI agent compatibility. Supports MCP (Model Context Protocol) inte
 
 ### MCP Integration Workflow
 
-Check `examples/mcp-workflow.json` file for complete MCP workflow with 36 tool nodes.
+Check `examples/mcp-workflow.json` file for complete MCP workflow with 55+ tool nodes supporting all Figma commands.
+
+**Note**: The MCP workflow example includes advanced gradient fills, component instance management, and custom commands. New features like instance overrides and font search have been added for enhanced AI agent compatibility.
 
 ## Architecture
 

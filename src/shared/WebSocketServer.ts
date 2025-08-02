@@ -326,8 +326,9 @@ export class FigmaWebSocketServer extends EventEmitter {
         break;
 
       case 'send_command':
+      case 'command':
         // Forward commands received from n8n clients to Figma clients in specific channel
-        console.log('Received send_command from client:', message);
+        console.log(`Received ${message.type} from client:`, message);
         const senderClientInfo = this.clients.get(ws);
         if (senderClientInfo) {
           // Store sender client info (for routing responses later)
