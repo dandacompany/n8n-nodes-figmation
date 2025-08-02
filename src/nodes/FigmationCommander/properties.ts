@@ -1077,6 +1077,30 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 			},
 		},
 	},
+	{
+		displayName: 'X Position',
+		name: 'x',
+		type: 'number',
+		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'X\', `X position for the SVG design`, \'number\') }}',
+		description: 'X position where the SVG design will be placed',
+		displayOptions: {
+			show: {
+				'/command': ['create_design_from_svg'],
+			},
+		},
+	},
+	{
+		displayName: 'Y Position',
+		name: 'y',
+		type: 'number',
+		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Y\', `Y position for the SVG design`, \'number\') }}',
+		description: 'Y position where the SVG design will be placed',
+		displayOptions: {
+			show: {
+				'/command': ['create_design_from_svg'],
+			},
+		},
+	},
 	// Boolean operation parameters
 	{
 		displayName: 'Operation Type',
