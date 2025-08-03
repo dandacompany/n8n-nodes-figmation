@@ -404,6 +404,9 @@ export function mapParametersForCommand(command: string, parameters: any): any {
 		case 'create_group':
 			return mapCreateGroupParams(parameters);
 
+		case 'create_instance':
+			return mapCreateInstanceParams(parameters);
+
 		case 'get_document_info':
 		case 'get_selection':
 		case 'get_styles':
@@ -1321,6 +1324,9 @@ function mapGetComponentsParams(parameters: any): any {
 }
 
 function mapCreateInstanceParams(parameters: any): any {
+	console.log('=== mapCreateInstanceParams Debug ===');
+	console.log('Input parameters:', JSON.stringify(parameters, null, 2));
+	
 	if (!parameters.componentId) {
 		throw new Error('Component ID is required.');
 	}
@@ -1342,14 +1348,28 @@ function mapCreateInstanceParams(parameters: any): any {
 	}
 	
 	// Component properties (for variant overrides)
-	if (parameters.componentProperties && parameters.componentProperties.property) {
+	if (parameters.componentProperties) {
+		console.log('componentProperties type:', typeof parameters.componentProperties);
+		console.log('componentProperties value:', parameters.componentProperties);
+		
 		result.componentProperties = {};
-		// Parse the fixedCollection values - property array contains the actual values
-		for (const propItem of parameters.componentProperties.property || []) {
-			if (propItem.name && propItem.value !== undefined) {
-				result.componentProperties[propItem.name] = propItem.value;
+		
+		// Handle both object and array formats
+		if (Array.isArray(parameters.componentProperties.property)) {
+			// Array format from fixedCollection
+			console.log('Processing as array format');
+			for (const propItem of parameters.componentProperties.property) {
+				if (propItem.name && propItem.value !== undefined) {
+					result.componentProperties[propItem.name] = propItem.value;
+				}
 			}
+		} else if (typeof parameters.componentProperties === 'object') {
+			// Direct object format
+			console.log('Processing as direct object format');
+			result.componentProperties = parameters.componentProperties;
 		}
+		
+		console.log('Final componentProperties:', result.componentProperties);
 	}
 	
 	return result;

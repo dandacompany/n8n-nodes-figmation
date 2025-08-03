@@ -44,7 +44,7 @@ export class FigmationCommander implements INodeType {
 				const command = this.getNodeParameter('command', i) as string;
 				const parameters = this.getNodeParameter('parameters.params', i, {}) as any;
 				const port = this.getNodeParameter('port', i, 3055) as number;
-				const channelId = this.getNodeParameter('channelId', i) as string;
+				const channelId = command === 'get_channels' ? '' : this.getNodeParameter('channelId', i) as string;
 				const host = 'localhost'; // Fixed to localhost
 
 				if (!channelId && command !== 'get_channels') {

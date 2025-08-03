@@ -1,5 +1,4 @@
 import { INodeProperties } from 'n8n-workflow';
-import { getParameterDefault } from './default-values';
 
 // Command options for the main command selector
 export const FIGMA_COMMANDS = [
@@ -391,11 +390,11 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'X Position',
 		name: 'x',
 		type: 'number',
-		default: getParameterDefault('X_POSITION'),
+		default: 100,
 		description: 'X coordinate',
 		displayOptions: {
 			show: {
-				'/command': ['create_rectangle', 'create_frame', 'create_instance', 'create_text', 'move_node', 'create_image_from_url', 'create_ellipse'],
+				'/command': ['create_design_from_svg', 'create_rectangle', 'create_frame', 'create_instance', 'create_text', 'move_node', 'create_image_from_url', 'create_ellipse'],
 			},
 		},
 	},
@@ -403,11 +402,11 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Y Position',
 		name: 'y',
 		type: 'number',
-		default: getParameterDefault('Y_POSITION'),
+		default: 100,
 		description: 'Y coordinate',
 		displayOptions: {
 			show: {
-				'/command': ['create_rectangle', 'create_frame', 'create_instance', 'create_text', 'move_node', 'create_image_from_url', 'create_ellipse'],
+				'/command': ['create_design_from_svg', 'create_rectangle', 'create_frame', 'create_instance', 'create_text', 'move_node', 'create_image_from_url', 'create_ellipse'],
 			},
 		},
 	},
@@ -415,7 +414,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Width',
 		name: 'width',
 		type: 'number',
-		default: getParameterDefault('WIDTH'),
+		default: 100,
 		description: 'Width',
 		displayOptions: {
 			show: {
@@ -427,7 +426,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Height',
 		name: 'height',
 		type: 'number',
-		default: getParameterDefault('HEIGHT'),
+		default: 100,
 		description: 'Height',
 		displayOptions: {
 			show: {
@@ -439,11 +438,23 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Name',
 		name: 'name',
 		type: 'string',
-		default: getParameterDefault('NAME'),
+		default: 'New Layer',
 		description: 'Object name',
 		displayOptions: {
 			show: {
-				'/command': ['create_rectangle', 'create_frame', 'create_instance', 'create_text', 'create_image_from_url', 'create_ellipse', 'create_group'],
+				'/command': ['create_rectangle', 'create_frame', 'create_text', 'create_image_from_url', 'create_ellipse', 'create_group'],
+			},
+		},
+	},
+	{
+		displayName: 'Instance Name',
+		name: 'name',
+		type: 'string',
+		default: 'New Instance',
+		description: 'Name for the new instance',
+		displayOptions: {
+			show: {
+				'/command': ['create_instance'],
 			},
 		},
 	},
@@ -452,7 +463,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Text Content',
 		name: 'textContent',
 		type: 'string',
-		default: getParameterDefault('TEXT_CONTENT'),
+		default: 'Hello World',
 		description: 'Text content',
 		displayOptions: {
 			show: {
@@ -464,7 +475,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Font Size',
 		name: 'fontSize',
 		type: 'number',
-		default: getParameterDefault('FONT_SIZE'),
+		default: 16,
 		description: 'Font size',
 		displayOptions: {
 			show: {
@@ -477,7 +488,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Node ID',
 		name: 'nodeId',
 		type: 'string',
-		default: getParameterDefault('NODE_ID'),
+		default: '',
 		description: 'Target node ID',
 		displayOptions: {
 			show: {
@@ -490,7 +501,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Component ID',
 		name: 'componentId',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Component_ID\', `ID of the component to create instance from`, \'string\') }}',
+		default: '123:456',
 		description: 'The ID of the component to create an instance from',
 		displayOptions: {
 			show: {
@@ -503,7 +514,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'New Text Content',
 		name: 'newTextContent',
 		type: 'string',
-		default: getParameterDefault('NEW_TEXT_CONTENT'),
+		default: 'Updated Text',
 		description: 'New text content to set for the text node',
 		displayOptions: {
 			show: {
@@ -555,7 +566,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Red Value',
 		name: 'Red_Value',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Red_Value\', `Red value (0-1) for the fill color`, \'number\') }}',
+		default: 0.5,
 		description: 'Red value (0-1)',
 		displayOptions: {
 			show: {
@@ -568,7 +579,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Stroke Red Value',
 		name: 'Stroke_Red_Value',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Stroke_Red_Value\', `Red value (0-1) for the stroke color`, \'number\') }}',
+		default: 0.5,
 		description: 'Stroke red value (0-1)',
 		displayOptions: {
 			show: {
@@ -580,7 +591,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Green Value',
 		name: 'Green_Value',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Green_Value\', `Green value (0-1) for the fill color`, \'number\') }}',
+		default: 0.5,
 		description: 'Green value (0-1)',
 		displayOptions: {
 			show: {
@@ -593,7 +604,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Stroke Green Value',
 		name: 'Stroke_Green_Value',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Stroke_Green_Value\', `Green value (0-1) for the stroke color`, \'number\') }}',
+		default: 0.5,
 		description: 'Stroke green value (0-1)',
 		displayOptions: {
 			show: {
@@ -605,7 +616,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Blue Value',
 		name: 'Blue_Value',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Blue_Value\', `Blue value (0-1) for the fill color`, \'number\') }}',
+		default: 0.5,
 		description: 'Blue value (0-1)',
 		displayOptions: {
 			show: {
@@ -618,7 +629,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Stroke Blue Value',
 		name: 'Stroke_Blue_Value',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Stroke_Blue_Value\', `Blue value (0-1) for the stroke color`, \'number\') }}',
+		default: 0.5,
 		description: 'Stroke blue value (0-1)',
 		displayOptions: {
 			show: {
@@ -630,7 +641,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Alpha Value',
 		name: 'Alpha_Value',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Alpha_Value\', `Alpha value (0-1) for the fill color`, \'number\') }}',
+		default: 1,
 		description: 'Alpha value (0-1)',
 		displayOptions: {
 			show: {
@@ -643,7 +654,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Stroke Alpha Value',
 		name: 'Stroke_Alpha_Value',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Stroke_Alpha_Value\', `Alpha value (0-1) for the stroke color`, \'number\') }}',
+		default: 1,
 		description: 'Stroke alpha value (0-1)',
 		displayOptions: {
 			show: {
@@ -655,7 +666,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Remove Stroke',
 		name: 'Remove_Stroke',
 		type: 'boolean',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Remove_Stroke\', `Whether to remove stroke completely (overrides color settings)`, \'boolean\') }}',
+		default: false,
 		description: 'Remove stroke completely (overrides color settings)',
 		displayOptions: {
 			show: {
@@ -668,7 +679,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Gradient Start Color',
 		name: 'Gradient_Start_Color',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Gradient_Start_Color\', `Gradient start color in hex format (e.g., #FF0000)`, \'string\') }}',
+		default: '#FF0000',
 		description: 'Gradient start color (hex format)',
 		displayOptions: {
 			show: {
@@ -681,7 +692,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Gradient End Color',
 		name: 'Gradient_End_Color',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Gradient_End_Color\', `Gradient end color in hex format (e.g., #0000FF)`, \'string\') }}',
+		default: '#0000FF',
 		description: 'Gradient end color (hex format)',
 		displayOptions: {
 			show: {
@@ -694,7 +705,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Gradient Angle',
 		name: 'Gradient_Angle',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Gradient_Angle\', `Gradient angle in degrees (0-360)`, \'number\') }}',
+		default: 45,
 		description: 'Gradient angle in degrees (0-360)',
 		displayOptions: {
 			show: {
@@ -708,7 +719,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Export Scale',
 		name: 'scale',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Export_Scale\', `Export scale factor (e.g., 1 for original size, 2 for 2x resolution)`, \'number\') }}',
+		default: 1,
 		description: 'Export scale',
 		displayOptions: {
 			show: {
@@ -747,7 +758,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Node IDs',
 		name: 'nodeIds',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Node_IDs\', `Comma-separated list of node IDs`, \'string\') }}',
+		default: '123:456',
 		description: 'Node IDs (comma separated)',
 		displayOptions: {
 			show: {
@@ -759,7 +770,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Corner Radius',
 		name: 'cornerRadius',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Corner_Radius\', `Corner radius in pixels`, \'number\') }}',
+		default: 10,
 		description: 'Corner radius',
 		displayOptions: {
 			show: {
@@ -771,7 +782,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Node Types',
 		name: 'nodeTypes',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Node_Types\', `Node types to search (comma separated, e.g. TEXT,FRAME)`, \'string\') }}',
+		default: 'TEXT,FRAME',
 		description: 'Node types to search (comma separated, e.g. TEXT,FRAME)',
 		displayOptions: {
 			show: {
@@ -783,7 +794,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Text Updates',
 		name: 'textUpdates',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Text_Updates\', `Text updates array in JSON format`, \'string\') }}',
+		default: '[{"nodeId":"123:456","text":"Hello"}]',
 		description: 'Text updates array in JSON format',
 		displayOptions: {
 			show: {
@@ -822,7 +833,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Padding Top',
 		name: 'paddingTop',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Padding_Top\', `Top padding value in pixels`, \'number\') }}',
+		default: 10,
 		description: 'Top padding',
 		displayOptions: {
 			show: {
@@ -834,7 +845,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Padding Right',
 		name: 'paddingRight',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Padding_Right\', `Right padding value in pixels`, \'number\') }}',
+		default: 10,
 		description: 'Right padding',
 		displayOptions: {
 			show: {
@@ -846,7 +857,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Padding Bottom',
 		name: 'paddingBottom',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Padding_Bottom\', `Bottom padding value in pixels`, \'number\') }}',
+		default: 10,
 		description: 'Bottom padding',
 		displayOptions: {
 			show: {
@@ -858,7 +869,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Padding Left',
 		name: 'paddingLeft',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Padding_Left\', `Left padding value in pixels`, \'number\') }}',
+		default: 10,
 		description: 'Left padding',
 		displayOptions: {
 			show: {
@@ -870,7 +881,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Item Spacing',
 		name: 'itemSpacing',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Item_Spacing\', `Spacing between auto layout children in pixels`, \'number\') }}',
+		default: 10,
 		description: 'Item spacing',
 		displayOptions: {
 			show: {
@@ -882,7 +893,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Annotation Text',
 		name: 'annotationText',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Annotation_Text\', `Text content for the annotation comment`, \'string\') }}',
+		default: 'Hello',
 		description: 'Annotation text',
 		displayOptions: {
 			show: {
@@ -894,7 +905,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Node ID',
 		name: 'nodeId',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Node_ID\', `The ID of the instance node to apply overrides to`, \'string\') }}',
+		default: '123:456',
 		description: 'Instance node ID to apply overrides',
 		displayOptions: {
 			show: {
@@ -943,7 +954,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Connector ID',
 		name: 'connectorId',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Connector_ID\', `The node ID of the connector element to set as default`, \'string\') }}',
+		default: '123:456',
 		description: 'Connector node ID',
 		displayOptions: {
 			show: {
@@ -981,7 +992,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Image URL',
 		name: 'url',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Image_URL\', `The URL of the image to load and create in Figma`, \'string\') }}',
+		default: 'https://example.com/image.png',
 		description: 'URL of the image to load',
 		required: true,
 		displayOptions: {
@@ -996,7 +1007,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Binary Property',
 		name: 'binaryProperty',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Binary_Property\', `Name of the binary property containing the image`, \'string\') }}',
+		default: 'image',
 		description: 'Name of the binary property containing the image',
 		required: true,
 		displayOptions: {
@@ -1010,7 +1021,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Parent Node ID',
 		name: 'parentIdForImage',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Parent_Node_ID\', `The ID of the parent node to place the created image under. Leave empty to create at the root.`, \'string\') }}',
+		default: '',
 		description: 'ID of the parent node to place the object under (optional)',
 		displayOptions: {
 			show: {
@@ -1057,7 +1068,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'SVG Path Data',
 		name: 'pathData',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'SVG_Path_Data\', `SVG path data string (d attribute) for creating custom vector shapes`, \'string\') }}',
+		default: 'M 0 0 L 100 0 L 100 100 Z',
 		description: 'SVG path data for the vector shape',
 		displayOptions: {
 			show: {
@@ -1069,32 +1080,8 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'SVG Content',
 		name: 'svgContent',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'SVG_Content\', `Complete SVG markup for icon creation or vector conversion`, \'string\') }}',
+		default: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M 0 0 L 100 0 L 100 100 Z" /></svg>',
 		description: 'Complete SVG markup for icon creation or vector conversion',
-		displayOptions: {
-			show: {
-				'/command': ['create_design_from_svg'],
-			},
-		},
-	},
-	{
-		displayName: 'X Position',
-		name: 'x',
-		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'X\', `X position for the SVG design`, \'number\') }}',
-		description: 'X position where the SVG design will be placed',
-		displayOptions: {
-			show: {
-				'/command': ['create_design_from_svg'],
-			},
-		},
-	},
-	{
-		displayName: 'Y Position',
-		name: 'y',
-		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Y\', `Y position for the SVG design`, \'number\') }}',
-		description: 'Y position where the SVG design will be placed',
 		displayOptions: {
 			show: {
 				'/command': ['create_design_from_svg'],
@@ -1140,7 +1127,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Source Node IDs',
 		name: 'sourceNodeIds',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Source_Node_IDs\', `Comma-separated list of node IDs to combine using the boolean operation`, \'string\') }}',
+		default: '123:456,456:789',
 		description: 'Comma-separated list of node IDs to combine',
 		displayOptions: {
 			show: {
@@ -1166,7 +1153,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Fill Color (R)',
 		name: 'Fill_Color_R',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Fill_Color__R_\', `Red channel of the fill color (0-1)`, \'number\') }}',
+		default: 0.5,
 		description: 'Fill color red value (0-1)',
 		displayOptions: {
 			show: {
@@ -1178,7 +1165,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Fill Color (G)',
 		name: 'Fill_Color_G',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Fill_Color__G_\', `Green channel of the fill color (0-1)`, \'number\') }}',
+		default: 0.5,
 		description: 'Fill color green value (0-1)',
 		displayOptions: {
 			show: {
@@ -1190,7 +1177,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Fill Color (B)',
 		name: 'Fill_Color_B',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Fill_Color__B_\', `Blue channel of the fill color (0-1)`, \'number\') }}',
+		default: 0.5,
 		description: 'Fill color blue value (0-1)',
 		displayOptions: {
 			show: {
@@ -1202,7 +1189,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Fill Color (A)',
 		name: 'Fill_Color_A',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Fill_Color__A_\', `Alpha channel of the fill color (0-1)`, \'number\') }}',
+		default: 1,
 		description: 'Fill color alpha value (0-1)',
 		displayOptions: {
 			show: {
@@ -1276,7 +1263,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Font Color (R)',
 		name: 'Font_Color_R',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Font_Color__R_\', `Red channel of the font color (0-1)`, \'number\') }}',
+		default: 0,
 		description: 'Font color red value (0-1)',
 		displayOptions: {
 			show: {
@@ -1288,7 +1275,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Font Color (G)',
 		name: 'Font_Color_G',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Font_Color__G_\', `Green channel of the font color (0-1)`, \'number\') }}',
+		default: 0,
 		description: 'Font color green value (0-1)',
 		displayOptions: {
 			show: {
@@ -1300,7 +1287,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Font Color (B)',
 		name: 'Font_Color_B',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Font_Color__B_\', `Blue channel of the font color (0-1)`, \'number\') }}',
+		default: 0,
 		description: 'Font color blue value (0-1)',
 		displayOptions: {
 			show: {
@@ -1312,7 +1299,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Font Color (A)',
 		name: 'Font_Color_A',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Font_Color__A_\', `Alpha channel of the font color (0-1)`, \'number\') }}',
+		default: 1,
 		description: 'Font color alpha value (0-1)',
 		displayOptions: {
 			show: {
@@ -1325,7 +1312,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Opacity',
 		name: 'initialOpacity',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Opacity\', `Opacity of the node (0-1)`, \'number\') }}',
+		default: 1,
 		description: 'Initial opacity value (0-1)',
 		displayOptions: {
 			show: {
@@ -1337,7 +1324,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Rotation',
 		name: 'initialRotation',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Rotation\', `Rotation angle of the node in degrees`, \'number\') }}',
+		default: 0,
 		description: 'Initial rotation angle in degrees',
 		displayOptions: {
 			show: {
@@ -1349,7 +1336,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Initial Corner Radius',
 		name: 'initialCornerRadius',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Initial_Corner_Radius\', `Corner radius in pixels`, \'number\') }}',
+		default: 0,
 		description: 'Initial corner radius for rectangles and frames',
 		displayOptions: {
 			show: {
@@ -1582,7 +1569,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Opacity',
 		name: 'opacity',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Opacity\', `Opacity value (0-1)`, \'number\') }}',
+		default: 0.5,
 		description: 'Opacity value (0-1)',
 		displayOptions: {
 			show: {
@@ -1595,7 +1582,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Rotation Angle',
 		name: 'rotation',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Rotation_Angle\', `Rotation angle in degrees`, \'number\') }}',
+		default: 0,
 		description: 'Rotation angle in degrees',
 		displayOptions: {
 			show: {
@@ -1608,7 +1595,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Shadow X Offset',
 		name: 'shadowOffsetX',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Shadow_X_Offset\', `Shadow horizontal offset`, \'number\') }}',
+		default: 0,
 		description: 'Shadow horizontal offset',
 		displayOptions: {
 			show: {
@@ -1621,7 +1608,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Shadow Y Offset',
 		name: 'shadowOffsetY',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Shadow_Y_Offset\', `Shadow vertical offset`, \'number\') }}',
+		default: 0,
 		description: 'Shadow vertical offset',
 		displayOptions: {
 			show: {
@@ -1634,7 +1621,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Shadow Blur',
 		name: 'shadowBlur',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Shadow_Blur\', `Shadow blur radius`, \'number\') }}',
+		default: 0,
 		description: 'Shadow blur radius',
 		displayOptions: {
 			show: {
@@ -1696,7 +1683,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Blur Radius',
 		name: 'blurRadius',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Blur_Radius\', `Blur effect radius`, \'number\') }}',
+		default: 0,
 		description: 'Blur effect radius',
 		displayOptions: {
 			show: {
@@ -1709,7 +1696,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Top Left Radius',
 		name: 'topLeftRadius',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Top_Left_Radius\', `Top left corner radius in pixels`, \'number\') }}',
+		default: 0,
 		description: 'Top left corner radius',
 		displayOptions: {
 			show: {
@@ -1721,7 +1708,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Top Right Radius',
 		name: 'topRightRadius',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Top_Right_Radius\', `Top right corner radius in pixels`, \'number\') }}',
+		default: 0,
 		description: 'Top right corner radius',
 		displayOptions: {
 			show: {
@@ -1733,7 +1720,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Bottom Right Radius',
 		name: 'bottomRightRadius',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Bottom_Right_Radius\', `Bottom right corner radius in pixels`, \'number\') }}',
+		default: 0,
 		description: 'Bottom right corner radius',
 		displayOptions: {
 			show: {
@@ -1745,7 +1732,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Bottom Left Radius',
 		name: 'bottomLeftRadius',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Bottom_Left_Radius\', `Bottom left corner radius in pixels`, \'number\') }}',
+		default: 0,
 		description: 'Bottom left corner radius',
 		displayOptions: {
 			show: {
@@ -1880,7 +1867,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Font Family',
 		name: 'fontFamily',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Font_Family\', `Font family name (e.g., Inter, Roboto, Arial)`, \'string\') }}',
+		default: 'Inter',
 		description: 'Font family name',
 		displayOptions: {
 			show: {
@@ -1915,7 +1902,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Letter Spacing',
 		name: 'letterSpacing',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Letter_Spacing\', `Letter spacing in pixels`, \'number\') }}',
+		default: 0,
 		description: 'Letter spacing in pixels',
 		displayOptions: {
 			show: {
@@ -1927,7 +1914,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Line Height',
 		name: 'lineHeight',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Line_Height\', `Line height for multi-line text in pixels`, \'number\') }}',
+		default: 1,
 		description: 'Line height multiplier',
 		displayOptions: {
 			show: {
@@ -2065,7 +2052,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Arc Start Angle',
 		name: 'arcStartAngle',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Arc_Start_Angle\', `Starting angle for arc/donut shape in radians (0-6.28)`, \'number\') }}',
+		default: 0,
 		description: 'Start angle for ellipse arc (in radians)',
 		displayOptions: {
 			show: {
@@ -2077,7 +2064,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Arc End Angle',
 		name: 'arcEndAngle',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Arc_End_Angle\', `Ending angle for arc/donut shape in radians (0-6.28)`, \'number\') }}',
+		default: 0,
 		description: 'End angle for ellipse arc (in radians, 6.28 = full circle)',
 		displayOptions: {
 			show: {
@@ -2089,7 +2076,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Arc Inner Radius',
 		name: 'arcInnerRadius',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Arc_Inner_Radius\', `Inner radius for donut shape in pixels`, \'number\') }}',
+		default: 0,
 		description: 'Inner radius for ellipse arc (0 = filled circle)',
 		displayOptions: {
 			show: {
@@ -2102,7 +2089,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Node IDs',
 		name: 'nodeIds',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Node_IDs\', `Comma-separated list of node IDs to select`, \'string\') }}',
+		default: '123:456',
 		description: 'Comma-separated list of node IDs to select',
 		displayOptions: {
 			show: {
@@ -2114,7 +2101,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Scroll Into View',
 		name: 'scrollIntoView',
 		type: 'boolean',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Scroll_Into_View\', `Whether to scroll the selected nodes into view`, \'boolean\') }}',
+		default: true,
 		description: 'Whether to scroll the selected nodes into view',
 		displayOptions: {
 			show: {
@@ -2150,7 +2137,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'In Selection Only',
 		name: 'inSelection',
 		type: 'boolean',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'In_Selection_Only\', `Whether to search only within current selection`, \'boolean\') }}',
+		default: true,
 		description: 'Whether to search only within current selection',
 		displayOptions: {
 			show: {
@@ -2162,7 +2149,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Name Pattern',
 		name: 'namePattern',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Name_Pattern\', `Pattern to match node names`, \'string\') }}',
+		default: '*text*',
 		description: 'Pattern to match node names',
 		displayOptions: {
 			show: {
@@ -2193,7 +2180,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Case Sensitive',
 		name: 'caseSensitive',
 		type: 'boolean',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Case_Sensitive\', `Whether the name matching should be case sensitive`, \'boolean\') }}',
+		default: true,
 		description: 'Whether the name matching should be case sensitive',
 		displayOptions: {
 			show: {
@@ -2307,7 +2294,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Target Index',
 		name: 'targetIndex',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Target_Index\', `The target index position (0 = bottom/back, higher = top/front)`, \'number\') }}',
+		default: 0,
 		description: 'Target index position for the layer (0 = bottom)',
 		displayOptions: {
 			show: {
@@ -2319,7 +2306,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Parent Node ID',
 		name: 'parentNodeId',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Parent_Node_ID\', `The unique ID of the parent node to sort layers for`, \'string\') }}',
+		default: '123:456',
 		description: 'ID of parent node to sort children within (empty = current page)',
 		displayOptions: {
 			show: {
@@ -2335,7 +2322,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 			{ name: 'Ascending', value: 'ascending' },
 			{ name: 'Descending', value: 'descending' },
 		],
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Sort_Order\', `Sort order: \'asc\' for ascending or \'desc\' for descending`, \'string\') }}',
+		default: 'asc',
 		description: 'Order to sort layers',
 		displayOptions: {
 			show: {
@@ -2347,7 +2334,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Case Sensitive',
 		name: 'caseSensitive',
 		type: 'boolean',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Case_Sensitive\', `Whether to sort case-sensitively`, \'boolean\') }}',
+		default: true,
 		description: 'Whether name sorting should be case sensitive',
 		displayOptions: {
 			show: {
@@ -2364,7 +2351,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 			{ name: 'Y Position', value: 'y' },
 			{ name: 'Reading Order (Y then X)', value: 'xy' },
 		],
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Sort_By\', `Sort by coordinate: \'x\' for horizontal or \'y\' for vertical position`, \'string\') }}',
+		default: 'x',
 		description: 'Criteria for position-based sorting',
 		displayOptions: {
 			show: {
@@ -2376,7 +2363,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Start Index',
 		name: 'startIndex',
 		type: 'number',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Start_Index\', `The index of the first node to reorder`, \'number\') }}',
+		default: 0,
 		description: 'Starting index position for reordered layers',
 		displayOptions: {
 			show: {
@@ -2389,7 +2376,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Node IDs',
 		name: 'nodeIds',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Node_IDs\', `Comma-separated list of node IDs to convert to component (or single node ID)`, \'string\') }}',
+		default: '123:456',
 		description: 'Comma-separated list of node IDs to convert to component (or single node ID)',
 		displayOptions: {
 			show: {
@@ -2401,7 +2388,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Component Name',
 		name: 'name',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Component_Name\', `Name for the new component`, \'string\') }}',
+		default: 'New Component',
 		description: 'Name for the new component',
 		displayOptions: {
 			show: {
@@ -2413,7 +2400,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Component Description',
 		name: 'description',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Component_Description\', `Description for the new component`, \'string\') }}',
+		default: 'New Component Description',
 		description: 'Description for the new component',
 		displayOptions: {
 			show: {
@@ -2426,7 +2413,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		displayName: 'Keyword',
 		name: 'keyword',
 		type: 'string',
-		default: '={{ /*n8n-auto-generated-fromAI-override*/ $fromAI(\'Keyword\', `Font search keyword (e.g., "Inter", "Bold", etc.)`, \'string\') }}',
+		default: 'Inter',
 		description: 'Keyword to filter fonts (searches in font family and style names)',
 		displayOptions: {
 			show: {
@@ -2453,6 +2440,13 @@ export const figmationCommanderProperties: INodeProperties[] = [
 		default: 'hellofigma',
 		description: 'Target channel ID for WebSocket communication',
 		required: true,
+		displayOptions: {
+			hide: {
+				command: [
+					'get_channels',
+				],
+			},
+		},
 	},
 	{
 		displayName: 'Command',
