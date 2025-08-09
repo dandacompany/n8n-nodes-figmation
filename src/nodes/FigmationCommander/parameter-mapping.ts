@@ -202,11 +202,18 @@ export function createShadowParams(
  * Helper function to map parent ID from various parameter formats
  */
 export function mapParentId(parameters: any): string | null {
-	return parameters.parentIdForNode || 
+	const parentId = parameters.parentIdForNode || 
 		   parameters.Parent_Node_ID || 
 		   parameters.parentId || 
 		   parameters.parentIdForImage || 
 		   null;
+	
+	// Return null if parentId is empty string or only whitespace
+	if (parentId && typeof parentId === 'string' && parentId.trim() === '') {
+		return null;
+	}
+	
+	return parentId;
 }
 
 /**

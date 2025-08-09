@@ -1144,7 +1144,7 @@ export const PARAMETER_DEFINITIONS: INodeProperties[] = [
 		description: 'ID of the parent node to place the object under (optional)',
 		displayOptions: {
 			show: {
-				'/command': ['create_rectangle', 'create_frame', 'create_instance', 'create_ellipse', 'create_text', 'create_vector_path', 'create_boolean_operation', 'create_icon_from_svg', 'create_group'],
+				'/command': ['create_rectangle', 'create_frame', 'create_instance', 'create_ellipse', 'create_text', 'create_vector_path', 'create_boolean_operation', 'create_icon_from_svg', 'create_group', 'create_design_from_svg'],
 			},
 		},
 	},
